@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procesos de Desarrollo de Software</title>
+  <link rel="stylesheet" href="proceso.css">
+  <!-- Iconos FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER Y MENÚ HAMBURGUESA COMPATIBLE CON EL INDEX -->
+  <header class="header">
+    <a href="index.html" class="logo">educación</a>
+    
+    <button class="menu-btn" id="menuBtn" aria-label="Menú" type="button">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="nav-menu" id="navMenu">
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a href="index.html" class="menu-link">
+            <span class="icon-box"><i class="fa-solid fa-house"></i></span> Inicio
+          </a>
+        </li>
+        <li class="menu-item has-dropdown">
+          <button type="button" class="dropdown-btn">
+            <span class="icon-box"><i class="fa-solid fa-diagram-project"></i></span>
+            <span class="text">Procesos de Software</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </button>
+          <ul class="dropdown-list">
+            <li><a href="proceso.html#sdlc">Ciclo de Vida (SDLC)</a></li>
+            <li><a href="proceso.html#modelos">Modelos Tradicionales</a></li>
+            <li><a href="proceso.html#ilustraciones">Ilustraciones</a></li>
+          </ul>
+        </li>
+        <li class="menu-item has-dropdown">
+          <button type="button" class="dropdown-btn">
+            <span class="icon-box"><i class="fa-solid fa-circle-check"></i></span>
+            <span class="text">Calidad de Software</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </button>
+          <ul class="dropdown-list">
+            <li><a href="gestion.html#fundamentos">Fundamentos</a></li>
+            <li><a href="gestion.html#aseguramiento">Aseguramiento</a></li>
+            <li><a href="gestion.html#herramientas">Herramientas</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
+  <main class="page-container">
+
+    <!-- SECCIÓN 1: CICLO DE VIDA (SDLC) -->
+    <section id="sdlc" class="section-block">
+      <!-- Accesos / Pills superiores -->
+      <div class="top-nav-pills">
+        <a href="#sdlc" class="pill-btn active">Ciclo de vida del desarrollo de software</a>
+        <a href="#modelos" class="pill-btn">Modelos tradicionales</a>
+        <a href="#ilustraciones" class="pill-btn">Ilustraciones de modelos tradicionales</a>
+      </div>
+
+      <span class="badge-navy">PROCESOS DE DESARROLLO DE SOFTWARE</span>
+      <h1 class="main-heading">Ciclo de vida del desarrollo de software.</h1>
+      <p class="section-intro">
+        El SDLC organiza el trabajo en etapas conectadas para construir, validar y evolucionar software.
+      </p>
+
+      <!-- Interacción SDLC (Lista interactiva de etapas) -->
+      <div class="sdlc-interactive-grid">
+        <div class="sdlc-steps-list">
+          <button type="button" class="sdlc-step-btn active" data-step="1">
+            1 · Requisitos
+          </button>
+          <button type="button" class="sdlc-step-btn" data-step="2">
+            2 · Diseño
+          </button>
+          <button type="button" class="sdlc-step-btn" data-step="3">
+            3 · Desarrollo
+          </button>
+          <button type="button" class="sdlc-step-btn" data-step="4">
+            4 · Pruebas
+          </button>
+          <button type="button" class="sdlc-step-btn" data-step="5">
+            5 · Despliegue
+          </button>
+          <button type="button" class="sdlc-step-btn" data-step="6">
+            6 · Mantenimiento
+          </button>
+        </div>
+
+        <!-- Visor del detalle de la etapa seleccionada -->
+        <div class="sdlc-detail-card">
+          <h2 class="card-heading" id="sdlcTitle">Requisitos</h2>
+          <p class="card-description" id="sdlcDesc">
+            Define necesidades, alcance y criterios de aceptación antes de planificar la solución.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SECCIÓN 2: MODELOS TRADICIONALES -->
+    <section id="modelos" class="section-block">
+      <span class="badge-coral">MODELOS TRADICIONALES</span>
+      <h2 class="section-title">Modelos para organizar el desarrollo.</h2>
+      <p class="section-intro">
+        Compará Cascada, Modelo en V e Iterativo para reconocer ventajas, límites y contextos de uso.
+      </p>
+
+      <!-- Tabs de selección de Modelo -->
+      <div class="filter-pills">
+        <button type="button" class="filter-btn active" data-model="cascada">Cascada</button>
+        <button type="button" class="filter-btn" data-model="modelov">Modelo en V</button>
+        <button type="button" class="filter-btn" data-model="iterativo">Iterativo</button>
+      </div>
+
+      <!-- Tarjeta informativa del modelo seleccionado -->
+      <div class="info-card wide-card">
+        <h2 class="card-heading" id="modelTitle">Modelo en cascada</h2>
+        <p class="card-description" id="modelDesc" style="margin-bottom: 1.5rem;">
+          Avanza secuencialmente y funciona bien cuando los requisitos son estables.
+        </p>
+
+        <div class="grid-2-col">
+          <div class="pill-info-card card-mint-light">
+            <span id="modelAdvantage">Ventaja: orden y documentación clara.</span>
+          </div>
+          <div class="pill-info-card card-pink-light">
+            <span id="modelLimit">Límite: menor flexibilidad ante cambios.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SECCIÓN 3: ILUSTRACIONES DE MODELOS TRADICIONALES -->
+    <section id="ilustraciones" class="section-block">
+      <span class="badge-navy">· ILUSTRACIONES TRADICIONALES</span>
+      <h2 class="section-title">Diagramas para entender cada modelo.</h2>
+      <p class="section-intro">
+        Seleccioná cualquier esquema para ampliar su explicación visual.
+      </p>
+
+      <div class="grid-3-col">
+        <!-- Diagrama Cascada -->
+        <div class="diagram-card">
+          <div class="diagram-preview">
+            <span class="flow-pill">Requisitos</span>
+            <i class="fa-solid fa-arrow-right text-coral"></i>
+            <span class="flow-pill">Diseño</span>
+            <i class="fa-solid fa-arrow-right text-coral"></i>
+            <div class="flow-break">
+              <span class="flow-pill">Pruebas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diagrama Modelo en V -->
+        <div class="diagram-card flex-center">
+          <span class="v-symbol">V</span>
+        </div>
+
+        <!-- Diagrama Iterativo -->
+        <div class="diagram-card">
+          <div class="diagram-preview">
+            <span class="flow-pill">Plan</span>
+            <i class="fa-solid fa-rotate-right text-coral"></i>
+            <span class="flow-pill">Construir</span>
+            <i class="fa-solid fa-rotate-right text-coral"></i>
+            <span class="flow-pill">Aprender</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-info">
+      <h3 class="footer-heading">Sobre nosotros</h3>
+      <p>Un espacio educativo dedicado a comprender cómo se construye software de calidad.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#sobre-nosotros">· Sobre nosotros y contacto</a>
+    </nav>
+  </footer>
+
+  <script src="proceso.js"></script>
+</body>
+</html>

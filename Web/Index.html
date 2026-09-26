@@ -1,11 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Educación - Sistemas de gestión de calidad</title>
+    <!-- FontAwesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
+    <!-- Header principal -->
+    <header class="header">
+        <div class="logo">educación</div>
+        
+        <!-- Botón Hamburguesa -->
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Menú de navegación flotante -->
+        <nav class="nav-menu" id="navMenu">
+            <ul class="menu-list">
+                <!-- Opción Inicio -->
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">
+                        <span class="icon-box"><i class="fa-solid fa-house"></i></span>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+
+                <!-- Sección 1 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-regular fa-circle-check"></i></span>
+                        <span class="text">Gestión de la calidad del software</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="gestion.html#fundamentos">US–02 · Fundamentos de Calidad</a></li>
+                        <li><a href="gestion.html#aseguramientos">Técnicas de aseguramiento de la calidad</a></li>
+                        <li><a href="gestion.html#herramientas">Herramientas de calidad</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sección 2 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-solid fa-code-branch"></i></span>
+                        <span class="text">Procesos de desarrollo de software</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="proceso.html#ciclodevida">Ciclo de vida del desarrollo de software</a></li>
+                        <li><a href="proceso.html#modelo">US–06 · Modelos Tradicionales</a></li>
+                        <li><a href="proceso.html#ilu">Ilustraciones de modelos tradicionales</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sección 3 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-solid fa-rotate"></i></span>
+                        <span class="text">Metodologías ágiles</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="#">US–08 · Metodologías Ágiles</a></li>
+                        <li><a href="#">Ilustraciones ágiles</a></li>
+                        <li><a href="#">Scrum</a></li>
+                        <li><a href="#">US–11 · Kanban en profundidad</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sección 4 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <span class="text">Recursos y aprendizaje</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="#">Glosario</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Enlaces de interés</a></li>
+                        <li><a href="#">US–15 · Ejercicios y Casos Prácticos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Hero Principal -->
+    <main class="hero-container">
+        <div class="content">
+            <div class="badge">
+                GESTIÓN DE CALIDAD DE SOFTWARE
+            </div>
+
+            <h1 class="title">
+                Sistemas de gestión de calidad
+            </h1>
+
+            <p class="description">
+                Un recorrido educativo para comprender calidad, procesos de desarrollo y metodologías de trabajo.
+            </p>
+
+            <a href="fundamentos.html" class="btn-primary">
+                Comenzar el recorrido
+            </a>
+        </div>
+    </main>
+
+    <!-- Sección Accesos Rápidos -->
+    <section class="quick-access-section">
+        <div class="badge-dark">
+            ACCESOS RÁPIDOS
+        </div>
+
+        <h2 class="section-title">
+            Una ruta para aprender con claridad.
+        </h2>
+
+        <!-- Tarjetas -->
+        <div class="cards-grid">
+            <a href="fundamentos.html" class="card card-white">
+                <div class="icon-box">
+                    <i class="fa-regular fa-circle-check"></i>
+                </div>
+                <p class="card-text">Calidad de software</p>
+            </a>
+
+            <a href="#" class="card card-mint">
+                <div class="icon-box">
+                    <i class="fa-solid fa-code-branch"></i>
+                </div>
+                <p class="card-text">Procesos de desarrollo</p>
+            </a>
+
+            <a href="#" class="card card-white">
+                <div class="icon-box">
+                    <i class="fa-solid fa-rotate"></i>
+                </div>
+                <p class="card-text">Metodologías ágiles</p>
+            </a>
+
+            <a href="#" class="card card-gray">
+                <div class="icon-box">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <p class="card-text">Recursos y aprendizaje</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-info">
+            <strong>Sobre nosotros</strong>
+            <p>Un espacio educativo dedicado a comprender cómo se construye software de calidad.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="index.html">Inicio</a>
+            <a href="#">US–16 y US–17 · Sobre nosotros y contacto</a>
+        </nav>
+    </footer>
+
+    <!-- Archivo JS -->
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Calidad de Software</title>
+  <link rel="stylesheet" href="gestion.css">
+  <!-- Iconos de FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER Y MENÚ HAMBURGUESA COMPATIBLE -->
+  <header class="header">
+    <a href="index.html" class="logo">educación</a>
+    
+    <button class="menu-btn" id="menuBtn" aria-label="Menú" type="button">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="nav-menu" id="navMenu">
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a href="index.html" class="menu-link">
+            <span class="icon-box"><i class="fa-solid fa-house"></i></span> Inicio
+          </a>
+        </li>
+        <li class="menu-item has-dropdown">
+          <button type="button" class="dropdown-btn">
+            <span class="icon-box"><i class="fa-solid fa-circle-check"></i></span>
+            <span class="text">Fundamentos</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </button>
+          <ul class="dropdown-list">
+            <li><a href="gestion.html#fundamentos">Conceptos Clave</a></li>
+            <li><a href="gestion.html#fundamentos">Métricas y Estándares</a></li>
+          </ul>
+        </li>
+        <li class="menu-item has-dropdown">
+          <button type="button" class="dropdown-btn">
+            <span class="icon-box"><i class="fa-solid fa-flask"></i></span>
+            <span class="text">Aseguramiento</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </button>
+          <ul class="dropdown-list">
+            <li><a href="gestion.html#aseguramiento">Pruebas Unitarias</a></li>
+            <li><a href="gestion.html#aseguramiento">Pruebas de Integración</a></li>
+            <li><a href="gestion.html#aseguramiento">Pruebas de Sistema</a></li>
+          </ul>
+        </li>
+        <li class="menu-item has-dropdown">
+          <button type="button" class="dropdown-btn">
+            <span class="icon-box"><i class="fa-solid fa-wrench"></i></span>
+            <span class="text">Herramientas</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </button>
+          <ul class="dropdown-list">
+            <li><a href="gestion.html#herramientas">Bug Trackers</a></li>
+            <li><a href="gestion.html#herramientas">Linters</a></li>
+            <li><a href="gestion.html#herramientas">Test Management</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
+  <main class="page-container">
+
+    <!-- SECCIÓN 1: FUNDAMENTOS DE CALIDAD -->
+    <section id="fundamentos" class="section-block">
+      <!-- Filtros rápidos superiores -->
+      <div class="top-nav-pills">
+        <a href="#fundamentos" class="pill-btn active">Fundamentos</a>
+        <a href="#aseguramiento" class="pill-btn">Aseguramiento</a>
+        <a href="#herramientas" class="pill-btn">Herramientas</a>
+      </div>
+
+      <span class="badge-coral">FUNDAMENTOS DE CALIDAD</span>
+      <h1 class="main-heading">Fundamentos de calidad del software.</h1>
+      <p class="section-intro">
+        La calidad se relaciona con la capacidad de un producto para satisfacer necesidades mediante atributos, métricas y estándares compartidos.
+      </p>
+
+      <!-- Tarjetas Principales -->
+      <div class="grid-2-col">
+        <div class="info-card">
+          <h2 class="card-heading">Conceptos clave</h2>
+          <p class="card-description">
+            Adecuación funcional, rendimiento, usabilidad, fiabilidad, seguridad y mantenibilidad ayudan a evaluar un producto.
+          </p>
+        </div>
+        <div class="info-card card-highlight">
+          <h2 class="card-heading">Métricas</h2>
+          <p class="card-description">
+            Las métricas aportan evidencia para evaluar, aprender y mejorar decisiones de calidad.
+          </p>
+        </div>
+      </div>
+
+      <!-- Filtro / Pestañas de Estándares ISO -->
+      <div class="iso-tabs">
+        <button type="button" class="iso-tab-btn active" data-iso="iso9126">ISO 9126</button>
+        <button type="button" class="iso-tab-btn" data-iso="iso25000">ISO 25000</button>
+      </div>
+
+      <!-- Contenedor del Estándar Seleccionado -->
+      <div class="info-card wide-card iso-content" id="isoContent">
+        <h2 class="card-heading" id="isoTitle">ISO 9126: modelo de calidad</h2>
+        <p class="card-description" id="isoDesc">
+          Estándar clásico que clasifica la calidad del software en atributos internos, externos y de uso.
+        </p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SECCIÓN 2: TÉCNICAS DE ASEGURAMIENTO -->
+    <section id="aseguramiento" class="section-block">
+      <span class="badge-navy">US-03 · TÉCNICAS DE ASEGURAMIENTO</span>
+      <h2 class="section-title">Pruebas para aprender antes de liberar.</h2>
+      <p class="section-intro">
+        Explorá los niveles y técnicas de prueba para conocer su definición, objetivo y ejemplo.
+      </p>
+
+      <!-- Acordeones de Pruebas -->
+      <div class="accordion-grid">
+        <div class="accordion-item">
+          <button type="button" class="accordion-header">
+            <span>Pruebas unitarias</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Verifican componentes o módulos individuales aislados del resto del sistema para asegurar su funcionamiento correcto.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button type="button" class="accordion-header">
+            <span>Pruebas de integración</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Evalúan la interacción entre módulos o servicios combinados para detectar fallos en sus interfaces o contratos.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button type="button" class="accordion-header">
+            <span>Pruebas de sistema</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Validan el sistema completo e integrado para garantizar que cumple con los requisitos funcionales y no funcionales especificados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SECCIÓN 3: HERRAMIENTAS DE CALIDAD -->
+    <section id="herramientas" class="section-block">
+      <span class="badge-coral">US-04 · HERRAMIENTAS DE CALIDAD</span>
+      <h2 class="section-title">Herramientas que hacen visible la calidad.</h2>
+      <p class="section-intro">
+        Filtrá por categoría para conocer propósito y momento de uso de cada herramienta.
+      </p>
+
+      <!-- Botones de Filtro -->
+      <div class="filter-pills">
+        <button type="button" class="filter-btn active" data-filter="all">Todas</button>
+        <button type="button" class="filter-btn" data-filter="bug-trackers">Bug Trackers</button>
+        <button type="button" class="filter-btn" data-filter="linters">Linters</button>
+      </div>
+
+      <!-- Tarjetas de Herramientas -->
+      <div class="grid-3-col">
+        <div class="info-card tool-card" data-category="bug-trackers">
+          <h2 class="card-heading">Bug Trackers</h2>
+          <p class="card-description">
+            Registran, priorizan y permiten seguir defectos durante pruebas y mantenimiento.
+          </p>
+        </div>
+
+        <div class="info-card tool-card" data-category="linters">
+          <h2 class="card-heading">Linters</h2>
+          <p class="card-description">
+            Analizan código para detectar problemas de estilo y calidad durante desarrollo.
+          </p>
+        </div>
+
+        <div class="info-card tool-card" data-category="test-management">
+          <h2 class="card-heading">Test Management</h2>
+          <p class="card-description">
+            Organizan casos, ejecuciones y evidencia de las validaciones.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-info">
+      <h3 class="footer-heading">Sobre nosotros</h3>
+      <p>Un espacio educativo dedicado a comprender cómo se construye software de calidad.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#sobre-nosotros">US-16 y US-17 · Sobre nosotros y contacto</a>
+    </nav>
+  </footer>
+
+  <script src="gestion.js"></script>
+</body>
+</html>

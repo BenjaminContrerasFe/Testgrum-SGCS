@@ -1,0 +1,135 @@
+/* ==========================================================
+   ESTILOS METODOLOGÍAS ÁGILES & KANBAN
+   ========================================================== */
+
+/* Banner Manifiesto Ágil */
+.agile-manifesto-card {
+  background-color: #0f2238;
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 2.2rem;
+  margin-top: 2rem;
+}
+
+.manifesto-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.manifesto-desc {
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+/* Sub-heading */
+.sub-heading {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* Botones de eventos Sprint */
+.sprint-events-pills {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.sprint-event-btn {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  padding: 0.75rem 1.8rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sprint-event-btn.active {
+  background-color: #d8f3ec;
+  border-color: transparent;
+}
+
+/* Tablero Kanban */
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.kanban-column {
+  background-color: #edf3f2;
+  border-radius: 18px;
+  padding: 1.5rem;
+  min-height: 220px;
+}
+
+.kanban-col-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.kanban-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.task-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.kanban-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.kanban-btn {
+  background-color: #d8f3ec;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f5132;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.kanban-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.kanban-btn:not(:disabled):hover {
+  background-color: #bbf0e2;
+}
+
+.kanban-footnote {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Adaptación Mobile Kanban */
+@media (max-width: 768px) {
+  .kanban-board {
+    grid-template-columns: 1fr;
+  }
+}

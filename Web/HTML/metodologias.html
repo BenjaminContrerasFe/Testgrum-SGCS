@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodologías Ágiles</title>
+  <link rel="stylesheet" href="../CSS/metodologias.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER COMPATIBLE -->
+  <header class="header">
+    <a href="../index.html" class="logo">educación</a>
+    
+    <button class="menu-btn" id="menuBtn" aria-label="Menú" type="button">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="nav-menu" id="navMenu">
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a href="../index.html" class="menu-link">
+            <span class="icon-box"><i class="fa-solid fa-house"></i></span> Inicio
+          </a>
+        </li>
+        <li class="menu-item has-dropdown">
+          <button type="button" class="dropdown-btn">
+            <span class="icon-box"><i class="fa-solid fa-diagram-project"></i></span>
+            <span class="text">Procesos de Software</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </button>
+          <ul class="dropdown-list">
+            <li><a href="proceso.html#sdlc">Ciclo de Vida (SDLC)</a></li>
+            <li><a href="proceso.html#modelos">Modelos Tradicionales</a></li>
+            <li><a href="proceso.html#ilustraciones">Ilustraciones</a></li>
+          </ul>
+        </li>
+        <li class="menu-item has-dropdown">
+          <button type="button" class="dropdown-btn">
+            <span class="icon-box"><i class="fa-solid fa-bolt"></i></span>
+            <span class="text">Metodologías Ágiles</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </button>
+          <ul class="dropdown-list">
+            <li><a href="metodologias.html#metodologias">Generalidades</a></li>
+            <li><a href="metodologias.html#ilustraciones-agiles">Ilustraciones</a></li>
+            <li><a href="metodologias.html#scrum">Scrum en Profundidad</a></li>
+            <li><a href="metodologias.html#kanban">Kanban</a></li>
+          </ul>
+        </li>
+        <li class="menu-item has-dropdown">
+          <button type="button" class="dropdown-btn">
+            <span class="icon-box"><i class="fa-solid fa-circle-check"></i></span>
+            <span class="text">Calidad de Software</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </button>
+          <ul class="dropdown-list">
+            <li><a href="gestion.html#fundamentos">Fundamentos</a></li>
+            <li><a href="gestion.html#aseguramiento">Aseguramiento</a></li>
+            <li><a href="gestion.html#herramientas">Herramientas</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="page-container">
+
+    <!-- SECCIÓN 1: INTRODUCCIÓN A METODOLOGÍAS ÁGILES -->
+    <section id="metodologias" class="section-block">
+      <div class="top-nav-pills">
+        <a href="#metodologias" class="pill-btn active">Metodologías ágiles</a>
+        <a href="#ilustraciones-agiles" class="pill-btn">Ilustraciones ágiles</a>
+        <a href="#scrum" class="pill-btn">Scrum</a>
+        <a href="#kanban" class="pill-btn">Kanban</a>
+      </div>
+
+      <span class="badge-coral">METODOLOGÍAS ÁGILES</span>
+      <h1 class="main-heading">Adaptar, colaborar y aprender continuamente.</h1>
+      <p class="section-intro">
+        Scrum, Kanban y XP proponen ciclos de trabajo con retroalimentación frecuente y mejora continua.
+      </p>
+
+      <div class="grid-3-col">
+        <div class="info-card">
+          <h2 class="card-heading">Scrum</h2>
+          <p class="card-description">Trabajo iterativo en Sprints, con roles, eventos y artefactos.</p>
+        </div>
+        <div class="info-card">
+          <h2 class="card-heading">Kanban</h2>
+          <p class="card-description">Gestión visual del flujo y mejora continua.</p>
+        </div>
+        <div class="info-card">
+          <h2 class="card-heading">XP</h2>
+          <p class="card-description">Prácticas técnicas y retroalimentación frecuente.</p>
+        </div>
+      </div>
+
+      <!-- Banner de Manifiesto Ágil -->
+      <div class="agile-manifesto-card">
+        <h2 class="manifesto-title">Los 4 valores del Manifiesto Ágil</h2>
+        <p class="manifesto-desc">Personas e interacciones, software funcionando, colaboración y respuesta al cambio.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SECCIÓN 2: ILUSTRACIONES ÁGILES -->
+    <section id="ilustraciones-agiles" class="section-block">
+      <span class="badge-navy">US-09 · ILUSTRACIONES ÁGILES</span>
+      <h2 class="section-title">Esquemas de los flujos ágiles.</h2>
+      <p class="section-intro">
+        Ampliá los diagramas del ciclo Sprint, flujo Kanban y bucle XP.
+      </p>
+
+      <div class="grid-3-col">
+        <div class="diagram-card">
+          <div class="diagram-preview">
+            <span class="flow-pill">Planificar</span>
+            <i class="fa-solid fa-arrow-right text-coral"></i>
+            <span class="flow-pill">Sprint <i class="fa-solid fa-rotate-right"></i></span>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <div class="diagram-preview">
+            <span class="flow-pill">Por hacer</span>
+            <i class="fa-solid fa-arrow-right text-coral"></i>
+            <span class="flow-pill">Hecho</span>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <div class="diagram-preview">
+            <span class="flow-pill">Código</span>
+            <i class="fa-solid fa-rotate-right text-coral"></i>
+            <span class="flow-pill">Prueba</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SECCIÓN 3: SCRUM EN PROFUNDIDAD -->
+    <section id="scrum" class="section-block">
+      <span class="badge-coral">US-10 · SCRUM EN PROFUNDIDAD</span>
+      <h2 class="section-title">Scrum: roles, eventos y artefactos.</h2>
+      <p class="section-intro">
+        Explorá los elementos que ayudan a entregar Incrementos de valor en Sprints.
+      </p>
+
+      <!-- Pestañas Roles / Eventos / Artefactos -->
+      <div class="filter-pills">
+        <button type="button" class="filter-btn active" data-scrum="roles">Roles</button>
+        <button type="button" class="filter-btn" data-scrum="eventos">Eventos</button>
+        <button type="button" class="filter-btn" data-scrum="artefactos">Artefactos</button>
+      </div>
+
+      <div class="info-card wide-card mb-2">
+        <p class="card-description bold-text" id="scrumCategoryDesc">
+          <strong>Product Owner, Scrum Master y Developers</strong> colaboran para maximizar el valor del Incremento.
+        </p>
+      </div>
+
+      <h3 class="sub-heading mb-1">Cronograma de Sprint</h3>
+      <div class="sprint-events-pills">
+        <button type="button" class="sprint-event-btn active" data-event="planning">Planning</button>
+        <button type="button" class="sprint-event-btn" data-event="daily">Daily</button>
+        <button type="button" class="sprint-event-btn" data-event="review">Review</button>
+        <button type="button" class="sprint-event-btn" data-event="retro">Retro</button>
+      </div>
+
+      <div class="info-card wide-card">
+        <p class="card-description" id="sprintEventDesc">
+          Planning: define el objetivo del Sprint y el trabajo inicial.
+        </p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SECCIÓN 4: KANBAN Y TABLERO INTERACTIVO -->
+    <section id="kanban" class="section-block">
+      <span class="badge-navy">KANBAN</span>
+      <h2 class="section-title">Kanban como gestión visual de procesos.</h2>
+      <p class="section-intro">
+        Kanban hace visible el flujo de trabajo y limita el trabajo en proceso para favorecer la finalización.
+      </p>
+
+      <!-- Tablero Kanban -->
+      <div class="kanban-board">
+        <!-- Columna 1 -->
+        <div class="kanban-column" id="col-todo">
+          <h3 class="kanban-col-title">Por hacer</h3>
+          <div class="kanban-card" id="taskCard">
+            <p class="task-title">Validar formulario</p>
+            <div class="kanban-actions">
+              <button type="button" class="kanban-btn" id="btnMoveLeft" disabled><i class="fa-solid fa-arrow-left"></i></button>
+              <button type="button" class="kanban-btn" id="btnMoveRight"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna 2 -->
+        <div class="kanban-column" id="col-wip">
+          <h3 class="kanban-col-title">En proceso · WIP 1</h3>
+        </div>
+
+        <!-- Columna 3 -->
+        <div class="kanban-column" id="col-done">
+          <h3 class="kanban-col-title">Hecho</h3>
+        </div>
+      </div>
+      <p class="kanban-footnote">Mové la tarjeta para observar el flujo.</p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-info">
+      <h3 class="footer-heading">Sobre nosotros</h3>
+      <p>Un espacio educativo dedicado a comprender cómo se construye software de calidad.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="../index.html">Inicio</a>
+      <a href="index.html#sobre-nosotros">US-16 y US-17 · Sobre nosotros y contacto</a>
+    </nav>
+  </footer>
+
+  <script src="../JavaScript/motodologias.js"></script>
+</body>
+</html>

@@ -1,172 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educación - Sistemas de gestión de calidad</title>
-    <!-- FontAwesome para los iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="CSS/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistemas de gestión de calidad | Testgrum</title>
+  <meta name="description" content="Recorrido educativo sobre calidad de software, procesos de desarrollo y metodologías ágiles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
-    <!-- Header principal -->
-    <header class="header">
-        <div class="logo">Educación</div>
-        
-        <!-- Botón Hamburguesa -->
-        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menú">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">
+        <img src="img/logo-testgrum.png" alt="Testgrum, ir al inicio" width="120" height="28">
+      </a>
 
-        <!-- Menú de navegación flotante -->
-        <nav class="nav-menu" id="navMenu">
-            <ul class="menu-list">
-                <!-- Opción Inicio -->
-                <li class="menu-item">
-                    <a href="index.html" class="menu-link">
-                        <span class="icon-box"><i class="fa-solid fa-house"></i></span>
-                        <span>Inicio</span>
-                    </a>
-                </li>
+      <button type="button" class="menu-toggle" id="menuToggle"
+              aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
 
-                <!-- Sección 1 -->
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-regular fa-circle-check"></i></span>
-                        <span class="text">Gestión de la calidad del software</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="HTML/gestion.html#fundamentos">Fundamentos de Calidad</a></li>
-                        <li><a href="HTML/gestion.html#aseguramientos">Técnicas de aseguramiento de la calidad</a></li>
-                        <li><a href="HTML/gestion.html#herramientas">Herramientas de calidad</a></li>
-                    </ul>
-                </li>
+      <nav class="nav-menu" id="navMenu" aria-label="Principal" hidden>
+        <ul>
+        <li class="nav-menu__item">
+          <a href="index.html" class="nav-menu__link">
+            <i class="nav-menu__icon fa-solid fa-house" aria-hidden="true"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-calidad">
+            <i class="nav-menu__icon fa-regular fa-circle-check" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Gestión de la calidad</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-calidad" hidden>
+              <li><a href="html/gestion.html#fundamentos">Fundamentos de calidad</a></li>
+              <li><a href="html/gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
+              <li><a href="html/gestion.html#herramientas">Herramientas de calidad</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-procesos">
+            <i class="nav-menu__icon fa-solid fa-code-branch" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Procesos de desarrollo</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-procesos" hidden>
+              <li><a href="html/proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
+              <li><a href="html/proceso.html#modelos">Modelos tradicionales</a></li>
+              <li><a href="html/proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-agiles">
+            <i class="nav-menu__icon fa-solid fa-rotate" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Metodologías ágiles</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-agiles" hidden>
+              <li><span class="is-soon" aria-disabled="true">Metodologías ágiles <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Ilustraciones ágiles <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Scrum en profundidad <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Kanban en profundidad <small>Sprint 2</small></span></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-recursos">
+            <i class="nav-menu__icon fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Recursos y aprendizaje</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-recursos" hidden>
+              <li><span class="is-soon" aria-disabled="true">Glosario <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Preguntas frecuentes <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Enlaces de interés <small>Sprint 3</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Ejercicios y casos prácticos <small>Sprint 3</small></span></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-interactivo">
+            <i class="nav-menu__icon fa-solid fa-sliders" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Herramientas interactivas</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-interactivo" hidden>
+              <li><span class="is-soon" aria-disabled="true">Comparador de metodologías <small>Sprint 3</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Encuesta metodológica <small>Sprint 3</small></span></li>
+          </ul>
+        </li>
+      </ul>
+      </nav>
+    </div>
+  </header>
 
-                <!-- Sección 2 -->
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-solid fa-code-branch"></i></span>
-                        <span class="text">Procesos de desarrollo de software</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="HTML/proceso.html#ciclodevida">Ciclo de vida del desarrollo de software</a></li>
-                        <li><a href="proceso.html#modelo">US–06 · Modelos Tradicionales</a></li>
-                        <li><a href="proceso.html#ilu">Ilustraciones de modelos tradicionales</a></li>
-                    </ul>
-                </li>
-
-                <!-- Sección 3 -->
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-solid fa-rotate"></i></span>
-                        <span class="text">Metodologías ágiles</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="#">US–08 · Metodologías Ágiles</a></li>
-                        <li><a href="#">Ilustraciones ágiles</a></li>
-                        <li><a href="#">Scrum</a></li>
-                        <li><a href="#">US–11 · Kanban en profundidad</a></li>
-                    </ul>
-                </li>
-
-                <!-- Sección 4 -->
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-solid fa-graduation-cap"></i></span>
-                        <span class="text">Recursos y aprendizaje</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="#">Glosario</a></li>
-                        <li><a href="#">Preguntas frecuentes</a></li>
-                        <li><a href="#">Enlaces de interés</a></li>
-                        <li><a href="#">US–15 · Ejercicios y Casos Prácticos</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Sección Hero Principal -->
-    <main class="hero-container">
-        <div class="content">
-            <div class="badge">
-                GESTIÓN DE CALIDAD DE SOFTWARE
-            </div>
-
-            <h1 class="title">
-                Sistemas de gestión de calidad
-            </h1>
-
-            <p class="description">
-                Un recorrido educativo para comprender calidad, procesos de desarrollo y metodologías de trabajo.
-            </p>
-
-            <a href="HTML/gestion.html" class="btn-primary">
-                Comenzar el recorrido
-            </a>
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- Recomendado: descargar la foto, pasarla a WebP y servirla desde img/ -->
+      <img class="hero__image"
+           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop"
+           alt="" fetchpriority="high">
+      <div class="container">
+        <div class="hero__content">
+          <span class="badge badge--accent">Gestión de calidad de software</span>
+          <h1 class="heading-xl hero__title" id="hero-title">Sistemas de gestión de calidad</h1>
+          <p class="hero__text">
+            Un recorrido educativo para entender qué hace que un software sea de calidad,
+            cómo se organiza su desarrollo y qué metodologías usan los equipos hoy.
+          </p>
+          <a href="html/gestion.html#fundamentos" class="btn btn--primary">
+            Comenzar el recorrido <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+          </a>
         </div>
-    </main>
-
-    <!-- Sección Accesos Rápidos -->
-    <section class="quick-access-section">
-        <div class="badge-dark">
-            ACCESOS RÁPIDOS
-        </div>
-
-        <h2 class="section-title">
-            Una ruta para aprender con claridad.
-        </h2>
-
-        <!-- Tarjetas -->
-        <div class="cards-grid">
-            <a href="HTML/gestion.html" class="card card-white">
-                <div class="icon-box">
-                    <i class="fa-regular fa-circle-check"></i>
-                </div>
-                <p class="card-text">Calidad de software</p>
-            </a>
-
-            <a href="HTML/proceso.html" class="card card-mint">
-                <div class="icon-box">
-                    <i class="fa-solid fa-code-branch"></i>
-                </div>
-                <p class="card-text">Procesos de desarrollo</p>
-            </a>
-
-            <a href="#" class="card card-white">
-                <div class="icon-box">
-                    <i class="fa-solid fa-rotate"></i>
-                </div>
-                <p class="card-text">Metodologías ágiles</p>
-            </a>
-
-            <a href="#" class="card card-gray">
-                <div class="icon-box">
-                    <i class="fa-solid fa-book-open"></i>
-                </div>
-                <p class="card-text">Recursos y aprendizaje</p>
-            </a>
-        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-     <footer class="footer">
-        <div class="footer-info">
-            <strong>Sobre nosotros</strong>
-            <p>Un espacio educativo dedicado a comprender cómo se construye software de calidad.</p>
+    <section class="section" aria-labelledby="ruta-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge badge--ink">Accesos rápidos</span>
+          <h2 class="heading-lg" id="ruta-title">Una ruta para aprender con claridad</h2>
+          <p class="lead">Seguí las secciones en orden o entrá directo a la que necesites.</p>
         </div>
-        <nav class="footer-nav">
-            <a href="#">Sobre nosotros y contacto</a>
-        </nav>
-    </footer>
 
-    <!-- Archivo JS -->
-    <script src="JavaScript/scrip.js"></script>
+        <ol class="grid grid--4 route">
+          <li>
+            <a href="html/gestion.html" class="card route__card">
+              <span class="route__icon"><i class="fa-regular fa-circle-check" aria-hidden="true"></i></span>
+              <h3 class="heading-md">Calidad de software</h3>
+              <p>Conceptos, métricas, normas ISO, pruebas y herramientas.</p>
+            </a>
+          </li>
+          <li>
+            <a href="html/proceso.html" class="card route__card">
+              <span class="route__icon"><i class="fa-solid fa-code-branch" aria-hidden="true"></i></span>
+              <h3 class="heading-md">Procesos de desarrollo</h3>
+              <p>Ciclo de vida del software y modelos tradicionales.</p>
+            </a>
+          </li>
+          <li>
+            <div class="card route__card is-soon" aria-disabled="true">
+              <span class="route__icon"><i class="fa-solid fa-rotate" aria-hidden="true"></i></span>
+              <h3 class="heading-md">Metodologías ágiles</h3>
+              <p>Scrum, Kanban y XP en detalle.</p>
+              <small>Sprint 2</small>
+            </div>
+          </li>
+          <li>
+            <div class="card route__card is-soon" aria-disabled="true">
+              <span class="route__icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
+              <h3 class="heading-md">Recursos y aprendizaje</h3>
+              <p>Glosario, preguntas frecuentes y ejercicios.</p>
+              <small>Sprint 2</small>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__title">Testgrum</p>
+        <p>Un espacio educativo para entender cómo se construye software de calidad.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Pie de página">
+        <a href="index.html">Inicio</a>
+        <span class="is-soon" aria-disabled="true">Sobre nosotros y contacto (Sprint 3)</span>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

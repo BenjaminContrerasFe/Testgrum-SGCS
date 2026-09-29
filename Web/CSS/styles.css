@@ -1,403 +1,104 @@
 /* ==========================================================
-   VARIABLES Y ESTILOS GLOBALES
+   INICIO.CSS — Solo para index.html (US-01)
    ========================================================== */
-:root {
-  --bg-cream: #fae7b1;
-  --bg-card-white: #ffffff;
-  --bg-card-mint: #d8f3ec;
-  --bg-card-gray: #e6eded;
-  
-  --primary-coral: #ff6f59;
-  --primary-coral-hover: #e05a45;
-  --dark-navy: #0e2038;
-  --text-dark: #121826;
-  --text-muted: #536471;
-  --border-light: #e5e3dc;
 
-  --font-serif: "Georgia", "Times New Roman", serif;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--font-sans);
-  background-color: var(--bg-cream);
-  color: var(--text-dark);
-  line-height: 1.5;
-  min-height: 100vh;
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(420px, 70vh, 620px);
   display: flex;
-  flex-direction: column;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-button {
-  background: none;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  color: inherit;
-}
-
-/* ==========================================================
-   HEADER Y MENÚ FLOTANTE
-   ========================================================== */
-.header {
-  background-color: var(--bg-cream);
-  padding: 1.2rem 3rem;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 1000;
+  color: var(--color-on-dark);
+  background-color: var(--color-ink);
 }
 
-.logo {
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  letter-spacing: -0.5px;
+/* La foto va como <img> para poder darle alt="" y lazy/priority,
+   y se oscurece con una capa del color tinta de la paleta */
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
 }
 
-.menu-btn {
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(11, 27, 51, 0.92) 0%, rgba(11, 27, 51, 0.7) 55%, rgba(11, 27, 51, 0.45) 100%);
+}
+
+.hero__content {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+  max-width: 640px;
+}
+
+.hero__title {
+  color: var(--color-on-dark);
+}
+
+.hero__text {
+  font-size: 1.15rem;
+  color: var(--color-on-dark-muted);
+  max-width: 52ch;
+}
+
+/* ---------- Ruta de aprendizaje ---------- */
+.route {
+  counter-reset: route;
+}
+
+.route__card {
   position: relative;
-  z-index: 1002;
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  min-height: 190px;
+  counter-increment: route;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Número de paso: la ruta ES una secuencia, por eso se numera */
+.route__card::before {
+  content: counter(route, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+a.route__card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+.route__icon {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.menu-btn:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.menu-btn * {
-  pointer-events: none;
-}
-
-/* Menú flotante estilo tarjeta redonda */
-.nav-menu {
-  position: absolute;
-  top: 4.2rem;
-  right: 3rem;
-  width: 360px;
-  background-color: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  padding: 1rem 0;
-  display: none; /* Oculto por defecto */
-  z-index: 1001;
-}
-
-/* Regla JS para mantener abierto en clics táctiles */
-.nav-menu.show {
-  display: block !important;
-}
-
-.menu-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.menu-item {
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.menu-item:last-child {
-  border-bottom: none;
-}
-
-.menu-link,
-.dropdown-btn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  text-align: left;
-  transition: background-color 0.2s ease;
-  cursor: pointer;
-}
-
-.menu-link:hover,
-.dropdown-btn:hover {
-  background-color: #f8fafc;
-}
-
-.menu-link .icon-box,
-.dropdown-btn .icon-box {
-  width: 28px;
-  margin-right: 0.8rem;
-  display: inline-flex;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: var(--text-dark);
-}
-
-.dropdown-btn .text {
-  flex: 1;
-  pointer-events: none;
-}
-
-.dropdown-btn .arrow {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  transition: transform 0.3s ease;
-  pointer-events: none;
-}
-
-/* Submenús internos */
-.dropdown-list {
-  display: none; /* Oculto por defecto */
-  background-color: #f9fafb;
-  padding: 0.5rem 0;
-}
-
-/* Regla JS para mantener abierto el submenú en clics táctiles */
-.has-dropdown.open .dropdown-list {
-  display: block !important;
-}
-
-.has-dropdown.open .arrow {
-  transform: rotate(180deg);
-}
-
-.dropdown-list li a {
-  display: block;
-  padding: 0.6rem 1.5rem 0.6rem 3.5rem;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  transition: color 0.2s ease;
-}
-
-.dropdown-list li a:hover {
-  color: var(--text-dark);
-  font-weight: 500;
-}
-
-.hero-container {
-  position: relative;
-  min-height: 480px;
-  background-image: linear-gradient(
-      rgba(15, 23, 42, 0.75), 
-      rgba(15, 23, 42, 0.75)
-    ),
-    url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  padding: 4rem 3rem;
-  color: #ffffff;
-}
-
-.hero-container .content {
-  max-width: 650px;
-}
-
-.badge {
-  display: inline-block;
-  background-color: var(--primary-coral);
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  padding: 0.45rem 1rem;
-  border-radius: 50px;
-  margin-bottom: 1.8rem;
-  text-transform: uppercase;
-}
-
-.title {
-  font-family: var(--font-serif);
-  font-size: 2.8rem;
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-.description {
-  font-size: 1.05rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background-color: var(--primary-coral);
-  color: #ffffff;
-  padding: 0.75rem 1.6rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.2s ease;
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-coral-hover);
-  transform: translateY(-1px);
-}
-
-
-.quick-access-section {
-  padding: 3.5rem 3rem 4rem;
-  background-color: var(--bg-cream);
-}
-
-.badge-dark {
-  display: inline-block;
-  background-color: var(--dark-navy);
-  color: #ffffff;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  padding: 0.4rem 0.9rem;
-  border-radius: 50px;
-  margin-bottom: 1.2rem;
-  text-transform: uppercase;
-}
-
-.section-title {
-  font-family: var(--font-serif);
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 2.5rem;
-}
-
-.cards-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.2rem;
+  place-items: center;
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 1.1rem;
 }
 
-.card {
-  background-color: var(--bg-card-white);
-  border-radius: 16px;
-  padding: 1.5rem;
-  min-height: 110px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+.route__card.is-soon {
+  background-color: transparent;
+  border-style: dashed;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+.route__card.is-soon small {
+  justify-self: start;
 }
 
-.card .icon-box {
-  width: 36px;
-  height: 36px;
-  background-color: #e8f7f3;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.8rem;
-  color: var(--text-dark);
-  font-size: 1rem;
-}
-
-.card-text {
-  font-size: 0.95rem;
-  font-family: var(--font-serif);
-  color: var(--text-dark);
-  line-height: 1.3;
-}
-
-.card-text strong {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-}
-
-.card-white { background-color: #ffffff; }
-.card-mint { background-color: var(--bg-card-mint); }
-.card-gray { background-color: var(--bg-card-gray); }
-
-
-.footer {
-  background-color: var(--bg-cream);
-  border-top: 1px solid var(--border-light);
-  padding: 2.5rem 3rem;
-  margin-top: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  font-size: 0.9rem;
-}
-
-.footer-info {
-  color: var(--text-muted);
-}
-
-.footer-nav {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.footer-nav a {
-  font-weight: 600;
-  color: var(--text-dark);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.footer-nav a:hover {
-  color: var(--primary-coral);
-}
-
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
-@media (max-width: 1024px) {
-  .cards-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-  .header, .quick-access-section, .hero-container, .footer {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  .nav-menu {
-    right: 1.5rem;
-    width: calc(100vw - 3rem);
-  }
-  .cards-grid { grid-template-columns: 1fr; }
-  .footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
-  .title { font-size: 2.2rem; }
+/* Los <li> no generan caja: la tarjeta es la celda de la grilla */
+.route > li {
+  display: contents;
 }

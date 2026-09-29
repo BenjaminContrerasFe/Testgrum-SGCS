@@ -3,160 +3,275 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Procesos de Desarrollo de Software</title>
-  <link rel="stylesheet" href="../CSS/proceso.css">
-  <!-- Iconos FontAwesome -->
+  <title>Procesos de desarrollo de software | Testgrum</title>
+  <meta name="description" content="Ciclo de vida del software y modelos tradicionales: cascada, en V e iterativo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/proceso.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="logo">
+        <img src="../img/logo-testgrum.png" alt="Testgrum, ir al inicio" width="120" height="28">
+      </a>
 
-  <!-- HEADER Y MENÚ HAMBURGUESA COMPATIBLE CON EL INDEX -->
-   <!-- Header principal -->
-    <header class="header">
-        <div class="logo">Educación</div>
-        
-        <!-- Botón Hamburguesa -->
-        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menú">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+      <button type="button" class="menu-toggle" id="menuToggle"
+              aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
 
-        <!-- Menú de navegación flotante -->
-        <nav class="nav-menu" id="navMenu">
-            <ul class="menu-list">
-                <!-- Opción Inicio -->
-                <li class="menu-item">
-                    <a href="../Index.html" class="menu-link">
-                        <span class="icon-box"><i class="fa-solid fa-house"></i></span>
-                        <span>Inicio</span>
-                    </a>
-                </li>
-
-                <!-- Sección 1 -->
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-regular fa-circle-check"></i></span>
-                        <span class="text">Gestión de la calidad del software</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="HTML/gestion.html#fundamentos">Fundamentos de Calidad</a></li>
-                        <li><a href="HTML/gestion.html#aseguramientos">Técnicas de aseguramiento de la calidad</a></li>
-                        <li><a href="HTML/gestion.html#herramientas">Herramientas de calidad</a></li>
-                    </ul>
-                </li>
-
-                <!-- Sección 2 -->
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-solid fa-code-branch"></i></span>
-                        <span class="text">Procesos de desarrollo de software</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="proceso.html#ciclodevida">Ciclo de vida del desarrollo de software</a></li>
-                        <li><a href="proceso.html#modelo">US–06 · Modelos Tradicionales</a></li>
-                        <li><a href="proceso.html#ilu">Ilustraciones de modelos tradicionales</a></li>
-                    </ul>
-                </li>
-
-                <!-- Sección 3 -->
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-solid fa-rotate"></i></span>
-                        <span class="text">Metodologías ágiles</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="#">US–08 · Metodologías Ágiles</a></li>
-                        <li><a href="#">Ilustraciones ágiles</a></li>
-                        <li><a href="#">Scrum</a></li>
-                        <li><a href="#">US–11 · Kanban en profundidad</a></li>
-                    </ul>
-                </li>
-
-                <!-- Sección 4 -->
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-solid fa-graduation-cap"></i></span>
-                        <span class="text">Recursos y aprendizaje</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="#">Glosario</a></li>
-                        <li><a href="#">Preguntas frecuentes</a></li>
-                        <li><a href="#">Enlaces de interés</a></li>
-                        <li><a href="#">US–15 · Ejercicios y Casos Prácticos</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-  <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
-  <main class="page-container">
-
-    <!-- SECCIÓN 1: CICLO DE VIDA (SDLC) -->
-    <section id="sdlc" class="section-block">
-      <!-- Accesos / Pills superiores -->
-      <div class="top-nav-pills">
-        <a href="#sdlc" class="pill-btn active">Ciclo de vida del desarrollo de software</a>
-        <a href="#modelos" class="pill-btn">Modelos tradicionales</a>
-        <a href="#ilustraciones" class="pill-btn">Ilustraciones de modelos tradicionales</a>
-      </div>
-
-      <span class="badge-navy">PROCESOS DE DESARROLLO DE SOFTWARE</span>
-      <h1 class="main-heading">Ciclo de vida del desarrollo de software.</h1>
-      <p class="section-intro">
-        El SDLC organiza el trabajo en etapas conectadas para construir, validar y evolucionar software.
-      </p>
-
-      <!-- Interacción SDLC (Lista interactiva de etapas) -->
-      <div class="sdlc-interactive-grid">
-        <div class="sdlc-steps-list">
-          <button type="button" class="sdlc-step-btn active" data-step="1">
-            1 · Requisitos
+      <nav class="nav-menu" id="navMenu" aria-label="Principal" hidden>
+        <ul>
+        <li class="nav-menu__item">
+          <a href="../index.html" class="nav-menu__link">
+            <i class="nav-menu__icon fa-solid fa-house" aria-hidden="true"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-calidad">
+            <i class="nav-menu__icon fa-regular fa-circle-check" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Gestión de la calidad</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
-          <button type="button" class="sdlc-step-btn" data-step="2">
-            2 · Diseño
+          <ul class="submenu" id="submenu-calidad" hidden>
+              <li><a href="gestion.html#fundamentos">Fundamentos de calidad</a></li>
+              <li><a href="gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
+              <li><a href="gestion.html#herramientas">Herramientas de calidad</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-procesos">
+            <i class="nav-menu__icon fa-solid fa-code-branch" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Procesos de desarrollo</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
-          <button type="button" class="sdlc-step-btn" data-step="3">
-            3 · Desarrollo
+          <ul class="submenu" id="submenu-procesos" hidden>
+              <li><a href="proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
+              <li><a href="proceso.html#modelos">Modelos tradicionales</a></li>
+              <li><a href="proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-agiles">
+            <i class="nav-menu__icon fa-solid fa-rotate" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Metodologías ágiles</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
-          <button type="button" class="sdlc-step-btn" data-step="4">
-            4 · Pruebas
+          <ul class="submenu" id="submenu-agiles" hidden>
+              <li><span class="is-soon" aria-disabled="true">Metodologías ágiles <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Ilustraciones ágiles <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Scrum en profundidad <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Kanban en profundidad <small>Sprint 2</small></span></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-recursos">
+            <i class="nav-menu__icon fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Recursos y aprendizaje</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
-          <button type="button" class="sdlc-step-btn" data-step="5">
-            5 · Despliegue
+          <ul class="submenu" id="submenu-recursos" hidden>
+              <li><span class="is-soon" aria-disabled="true">Glosario <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Preguntas frecuentes <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Enlaces de interés <small>Sprint 3</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Ejercicios y casos prácticos <small>Sprint 3</small></span></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-interactivo">
+            <i class="nav-menu__icon fa-solid fa-sliders" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Herramientas interactivas</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
-          <button type="button" class="sdlc-step-btn" data-step="6">
-            6 · Mantenimiento
-          </button>
+          <ul class="submenu" id="submenu-interactivo" hidden>
+              <li><span class="is-soon" aria-disabled="true">Comparador de metodologías <small>Sprint 3</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Encuesta metodológica <small>Sprint 3</small></span></li>
+          </ul>
+        </li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="page-nav" aria-label="Secciones de esta página">
+    <div class="container chip-group">
+      <a href="#sdlc" class="chip">Ciclo de vida</a>
+      <a href="#modelos" class="chip">Modelos tradicionales</a>
+      <a href="#ilustraciones" class="chip">Ilustraciones</a>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <!-- ============ US-05 · SDLC ============ -->
+    <section class="section" id="sdlc" aria-labelledby="sdlc-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge badge--ink">Procesos de desarrollo de software</span>
+          <h1 class="heading-xl" id="sdlc-title">Ciclo de vida del desarrollo de software</h1>
+          <p class="lead">
+            El SDLC organiza el trabajo en etapas conectadas para construir, validar y hacer evolucionar
+            el software. Elegí una etapa o avanzá paso a paso.
+          </p>
         </div>
 
-        <!-- Visor del detalle de la etapa seleccionada -->
-        <div class="sdlc-detail-card">
-          <h2 class="card-heading" id="sdlcTitle">Requisitos</h2>
-          <p class="card-description" id="sdlcDesc">
-            Define necesidades, alcance y criterios de aceptación antes de planificar la solución.
-          </p>
+        <!-- El JS genera los pasos desde el arreglo SDLC_STAGES -->
+        <ol class="timeline" id="sdlcTimeline" aria-label="Etapas del ciclo de vida"></ol>
+
+        <article class="card stage-detail" id="stageDetail" aria-live="polite">
+          <h2 class="heading-md" id="stageTitle">1. Requisitos</h2>
+          <p id="stageDesc">Se relevan las necesidades de usuarios y negocio.</p>
+          <dl class="stage-detail__meta">
+            <div><dt>Entregable típico</dt><dd id="stageOutput"></dd></div>
+            <div><dt>Por qué importa</dt><dd id="stageWhy"></dd></div>
+          </dl>
+          <div class="stage-detail__controls">
+            <button type="button" class="btn btn--ghost" id="stagePrev">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Etapa anterior
+            </button>
+            <button type="button" class="btn btn--primary" id="stageNext">
+              Etapa siguiente <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ US-06 · MODELOS TRADICIONALES (Sprint 2) ============ -->
+    <section class="section" id="modelos" aria-labelledby="modelos-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge">Modelos tradicionales</span>
+          <h2 class="heading-lg" id="modelos-title">Modelos para organizar el desarrollo</h2>
+          <p class="lead">Compará cascada, modelo en V e iterativo para reconocer ventajas, límites y contextos de uso.</p>
+        </div>
+
+        <div class="chip-group tablist-spaced" role="tablist" aria-label="Modelos tradicionales">
+          <button type="button" class="chip" role="tab" id="tab-cascada" aria-controls="panel-cascada" aria-selected="true">Cascada</button>
+          <button type="button" class="chip" role="tab" id="tab-v" aria-controls="panel-v" aria-selected="false">Modelo en V</button>
+          <button type="button" class="chip" role="tab" id="tab-iterativo" aria-controls="panel-iterativo" aria-selected="false">Iterativo e incremental</button>
+        </div>
+
+        <div class="card model-panel" role="tabpanel" id="panel-cascada" aria-labelledby="tab-cascada" tabindex="0">
+          <h3 class="heading-md">Modelo en cascada</h3>
+          <p>Avanza por etapas secuenciales: cada una empieza cuando la anterior terminó y fue aprobada.</p>
+          <div class="pros-cons">
+            <div class="pros-cons__box pros-cons__box--pro">
+              <h4><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ventajas</h4>
+              <ul><li>Orden y documentación clara.</li><li>Fácil de planificar y controlar.</li></ul>
+            </div>
+            <div class="pros-cons__box pros-cons__box--con">
+              <h4><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Desventajas</h4>
+              <ul><li>Poca flexibilidad ante cambios.</li><li>El cliente ve el producto recién al final.</li></ul>
+            </div>
+          </div>
+          <p class="model-when"><strong>Cuándo usarlo:</strong> requisitos estables y bien entendidos, proyectos cortos o muy regulados.</p>
+        </div>
+
+        <div class="card model-panel" role="tabpanel" id="panel-v" aria-labelledby="tab-v" tabindex="0" hidden>
+          <h3 class="heading-md">Modelo en V</h3>
+          <p>Relaciona cada etapa de desarrollo con su nivel de prueba: los requisitos con la aceptación, el diseño con la integración y el código con las pruebas unitarias.</p>
+          <div class="pros-cons">
+            <div class="pros-cons__box pros-cons__box--pro">
+              <h4><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ventajas</h4>
+              <ul><li>Las pruebas se planifican desde el inicio.</li><li>Detección temprana de errores de diseño.</li></ul>
+            </div>
+            <div class="pros-cons__box pros-cons__box--con">
+              <h4><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Desventajas</h4>
+              <ul><li>Tan rígido como la cascada.</li><li>Costoso si cambian los requisitos.</li></ul>
+            </div>
+          </div>
+          <p class="model-when"><strong>Cuándo usarlo:</strong> sistemas críticos (salud, aviación) donde la verificación es obligatoria.</p>
+        </div>
+
+        <div class="card model-panel" role="tabpanel" id="panel-iterativo" aria-labelledby="tab-iterativo" tabindex="0" hidden>
+          <h3 class="heading-md">Modelo iterativo e incremental</h3>
+          <p>Construye el producto en ciclos cortos; cada ciclo entrega una parte funcional que se mejora en el siguiente.</p>
+          <div class="pros-cons">
+            <div class="pros-cons__box pros-cons__box--pro">
+              <h4><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ventajas</h4>
+              <ul><li>Entregas tempranas y retroalimentación constante.</li><li>Los riesgos aparecen antes.</li></ul>
+            </div>
+            <div class="pros-cons__box pros-cons__box--con">
+              <h4><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Desventajas</h4>
+              <ul><li>Requiere más gestión en cada iteración.</li><li>Sin control, el alcance puede crecer sin fin.</li></ul>
+            </div>
+          </div>
+          <p class="model-when"><strong>Cuándo usarlo:</strong> requisitos que van a cambiar o proyectos grandes que conviene dividir.</p>
         </div>
       </div>
     </section>
 
-    <hr class="section-divider">
+    <!-- ============ US-07 · ILUSTRACIONES (Sprint 2: pasar a SVG + lightbox) ============ -->
+    <section class="section" id="ilustraciones" aria-labelledby="ilustraciones-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge badge--ink">Ilustraciones</span>
+          <h2 class="heading-lg" id="ilustraciones-title">Diagramas para entender cada modelo</h2>
+          <p class="lead">Un esquema por modelo para ver de un vistazo cómo fluye el trabajo.</p>
+        </div>
 
+        <div class="grid grid--3">
+          <figure class="card diagram">
+            <div class="diagram__art" role="img" aria-label="Cascada: requisitos, diseño, desarrollo y pruebas en escalera descendente">
+              <div class="cascade">
+                <span class="flow-pill">Requisitos</span>
+                <span class="flow-pill">Diseño</span>
+                <span class="flow-pill">Desarrollo</span>
+                <span class="flow-pill">Pruebas</span>
+              </div>
+            </div>
+            <figcaption><strong>Cascada</strong>Cada etapa "cae" en la siguiente, sin volver atrás.</figcaption>
+          </figure>
+
+          <figure class="card diagram">
+            <div class="diagram__art" role="img" aria-label="Modelo en V: requisitos se valida con aceptación, diseño con integración, y en la base está la codificación">
+              <div class="v-model">
+                <span class="flow-pill">Requisitos</span>
+                <span class="flow-pill">Aceptación</span>
+                <span class="flow-pill">Diseño</span>
+                <span class="flow-pill">Integración</span>
+                <span class="flow-pill v-model__base">Codificación</span>
+              </div>
+            </div>
+            <figcaption><strong>Modelo en V</strong>A la izquierda se construye, a la derecha se prueba cada nivel.</figcaption>
+          </figure>
+
+          <figure class="card diagram">
+            <div class="diagram__art" role="img" aria-label="Iterativo: planificar, construir y evaluar se repite en ciclos">
+              <div class="loop">
+                <span class="flow-pill">Planificar</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                <span class="flow-pill">Construir</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                <span class="flow-pill">Evaluar</span>
+                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+              </div>
+            </div>
+            <figcaption><strong>Iterativo</strong>El ciclo se repite y en cada vuelta el producto crece.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-   <footer class="footer">
-        <div class="footer-info">
-            <strong>Sobre nosotros</strong>
-            <p>Un espacio educativo dedicado a comprender cómo se construye software de calidad.</p>
-        </div>
-        <nav class="footer-nav">
-            <a href="#">Sobre nosotros y contacto</a>
-        </nav>
-    </footer>
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__title">Testgrum</p>
+        <p>Un espacio educativo para entender cómo se construye software de calidad.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Pie de página">
+        <a href="../index.html">Inicio</a>
+        <span class="is-soon" aria-disabled="true">Sobre nosotros y contacto (Sprint 3)</span>
+      </nav>
+    </div>
+  </footer>
 
-  <script src="../JavaScript/proceso.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/proceso.js"></script>
 </body>
 </html>

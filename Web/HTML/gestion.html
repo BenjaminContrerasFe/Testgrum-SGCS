@@ -3,239 +3,339 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión de Calidad de Software</title>
-  <link rel="stylesheet" href="../CSS/gestion.css">
-  <!-- Iconos de FontAwesome -->
+  <title>Gestión de la calidad del software | Testgrum</title>
+  <meta name="description" content="Fundamentos de calidad, técnicas de prueba y herramientas de calidad de software.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/gestion.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="logo">
+        <img src="../img/logo-testgrum.png" alt="Testgrum, ir al inicio" width="150" height="50">
+      </a>
 
-  <header class="header">
-        <div class="logo">Educación</div>
-        
-        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menú">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+      <button type="button" class="menu-toggle" id="menuToggle"
+              aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
 
-        <nav class="nav-menu" id="navMenu">
-            <ul class="menu-list">
+      <nav class="nav-menu" id="navMenu" aria-label="Principal" hidden>
+        <ul>
+        <li class="nav-menu__item">
+          <a href="../index.html" class="nav-menu__link">
+            <i class="nav-menu__icon fa-solid fa-house" aria-hidden="true"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-calidad">
+            <i class="nav-menu__icon fa-regular fa-circle-check" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Gestión de la calidad</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-calidad" hidden>
+              <li><a href="gestion.html#fundamentos">Fundamentos de calidad</a></li>
+              <li><a href="gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
+              <li><a href="gestion.html#herramientas">Herramientas de calidad</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-procesos">
+            <i class="nav-menu__icon fa-solid fa-code-branch" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Procesos de desarrollo</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-procesos" hidden>
+              <li><a href="proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
+              <li><a href="proceso.html#modelos">Modelos tradicionales</a></li>
+              <li><a href="proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-agiles">
+            <i class="nav-menu__icon fa-solid fa-rotate" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Metodologías ágiles</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-agiles" hidden>
+              <li><span class="is-soon" aria-disabled="true">Metodologías ágiles <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Ilustraciones ágiles <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Scrum en profundidad <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Kanban en profundidad <small>Sprint 2</small></span></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-recursos">
+            <i class="nav-menu__icon fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Recursos y aprendizaje</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-recursos" hidden>
+              <li><span class="is-soon" aria-disabled="true">Glosario <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Preguntas frecuentes <small>Sprint 2</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Enlaces de interés <small>Sprint 3</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Ejercicios y casos prácticos <small>Sprint 3</small></span></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-interactivo">
+            <i class="nav-menu__icon fa-solid fa-sliders" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Herramientas interactivas</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-interactivo" hidden>
+              <li><span class="is-soon" aria-disabled="true">Comparador de metodologías <small>Sprint 3</small></span></li>
+              <li><span class="is-soon" aria-disabled="true">Encuesta metodológica <small>Sprint 3</small></span></li>
+          </ul>
+        </li>
+      </ul>
+      </nav>
+    </div>
+  </header>
 
-              <li class="menu-item">
-                    <a href="../Index.html" class="menu-link">
-                        <span class="icon-box"><i class="fa-solid fa-house"></i></span>
-                        <span>Inicio</span>
-                    </a>
-                </li>
+  <nav class="page-nav" aria-label="Secciones de esta página">
+    <div class="container chip-group">
+      <a href="#fundamentos" class="chip">Fundamentos</a>
+      <a href="#aseguramiento" class="chip">Aseguramiento</a>
+      <a href="#herramientas" class="chip">Herramientas</a>
+    </div>
+  </nav>
 
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-regular fa-circle-check"></i></span>
-                        <span class="text">Gestión de la calidad del software</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="HTML/gestion.html#fundamentos">Fundamentos de Calidad</a></li>
-                        <li><a href="HTML/gestion.html#aseguramientos">Técnicas de aseguramiento de la calidad</a></li>
-                        <li><a href="HTML/gestion.html#herramientas">Herramientas de calidad</a></li>
-                    </ul>
-                </li>
+  <main id="contenido">
+    <!-- ============ US-02 · FUNDAMENTOS ============ -->
+    <section class="section" id="fundamentos" aria-labelledby="fundamentos-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge">Fundamentos de calidad</span>
+          <h1 class="heading-xl" id="fundamentos-title">Fundamentos de calidad del software</h1>
+          <p class="lead">
+            La calidad es el grado en que un producto satisface las necesidades declaradas e implícitas
+            de quienes lo usan. Para evaluarla se combinan atributos, métricas y estándares compartidos.
+          </p>
+        </div>
 
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-solid fa-code-branch"></i></span>
-                        <span class="text">Procesos de desarrollo de software</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="proceso.html#ciclodevida">Ciclo de vida del desarrollo de software</a></li>
-                        <li><a href="proceso.html#modelo">US–06 · Modelos Tradicionales</a></li>
-                        <li><a href="proceso.html#ilu">Ilustraciones de modelos tradicionales</a></li>
-                    </ul>
-                </li>
-
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-solid fa-rotate"></i></span>
-                        <span class="text">Metodologías ágiles</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="#">US–08 · Metodologías Ágiles</a></li>
-                        <li><a href="#">Ilustraciones ágiles</a></li>
-                        <li><a href="#">Scrum</a></li>
-                        <li><a href="#">US–11 · Kanban en profundidad</a></li>
-                    </ul>
-                </li>
-
-                <li class="menu-item has-dropdown">
-                    <button type="button" class="dropdown-btn">
-                        <span class="icon-box"><i class="fa-solid fa-graduation-cap"></i></span>
-                        <span class="text">Recursos y aprendizaje</span>
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </button>
-                    <ul class="dropdown-list">
-                        <li><a href="#">Glosario</a></li>
-                        <li><a href="#">Preguntas frecuentes</a></li>
-                        <li><a href="#">Enlaces de interés</a></li>
-                        <li><a href="#">US–15 · Ejercicios y Casos Prácticos</a></li>
-                    </ul>
-                </li>
+        <div class="grid grid--3">
+          <article class="card">
+            <h2 class="heading-md">Conceptos clave</h2>
+            <p>Distinguimos la calidad del <strong>producto</strong> (lo que se entrega) de la calidad del <strong>proceso</strong> (cómo se construye).</p>
+            <ul class="concept-list">
+              <li>Verificación: ¿lo construimos bien?</li>
+              <li>Validación: ¿construimos lo correcto?</li>
+              <li>Defecto, error y falla</li>
             </ul>
-        </nav>
-    </header>
-
-  <main class="page-container">
-
-    <section id="fundamentos" class="section-block">
-      <!-- Filtros rápidos superiores -->
-      <div class="top-nav-pills">
-        <a href="#fundamentos" class="pill-btn active">Fundamentos</a>
-        <a href="#aseguramiento" class="pill-btn">Aseguramiento</a>
-        <a href="#herramientas" class="pill-btn">Herramientas</a>
-      </div>
-
-      <span class="badge-coral">FUNDAMENTOS DE CALIDAD</span>
-      <h1 class="main-heading">Fundamentos de calidad del software.</h1>
-      <p class="section-intro">
-        La calidad del software representa el grado en el que un sistema, producto o componente satisface tanto las necesidades explícitas e implícitas de los usuarios como los requisitos técnicos y operativos definidos. 
-        No se trata únicamente de la ausencia de fallos o errores en el código, sino de una evaluación integral basada en atributos medibles, métricas cuantitativas y estándares internacionales compartidos que garantizan un producto confiable, seguro y funcional.
-      </p>
-
-      <!-- Tarjetas Principales -->
-      <div class="grid-2-col">
-        <div class="info-card">
-          <h2 class="card-heading">Conceptos clave</h2>
-          <p class="card-description">
-          Distinguimos la calidad del producto (Lo que se entrega) de la calidad del proceso (Como se construye).<br>
-          <br>- Verificacion:¿Lo construimos bien?.</br>
-         <br>- Validacion:¿Construimos lo correcto?.</br>
-          <br>- Detector: Error y falla.</br>
-          </p>
+          </article>
+          <article class="card card--soft">
+            <h2 class="heading-md">Métricas</h2>
+            <p>Convierten la calidad en números comparables para decidir con evidencia.</p>
+            <ul class="concept-list">
+              <li>Densidad de defectos</li>
+              <li>Cobertura de pruebas</li>
+              <li>Complejidad ciclomática</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h2 class="heading-md">Estándares</h2>
+            <p>Dan un vocabulario común para definir, medir y evaluar la calidad entre equipos y organizaciones.</p>
+            <ul class="concept-list">
+              <li>ISO/IEC 9126 (histórico)</li>
+              <li>ISO/IEC 25000 · SQuaRE</li>
+            </ul>
+          </article>
         </div>
-        <div class="info-card card-highlight">
-          <h2 class="card-heading">Métricas</h2>
-          <p class="card-description">
-          Convierten la calidad en numeros comparables para decidir con evidencia.<br>
-           <br>- Densidad de defectos. <br>
-           <br>- Cobertura de pruebas.<br>
-           <br>- Complejidad ciclomatica.<br>
-          </p>
-        </div>
-      </div>
 
-      <!-- Filtro / Pestañas de Estándares ISO -->
-      <div class="iso-tabs">
-        <button type="button" class="iso-tab-btn active" data-iso="iso9126">ISO 9126</button>
-        <button type="button" class="iso-tab-btn" data-iso="iso25000">ISO 25000</button>
-      </div>
-
-      <!-- Contenedor del Estándar Seleccionado -->
-      <div class="info-card wide-card iso-content" id="isoContent">
-        <h2 class="card-heading" id="isoTitle">ISO 9126: modelo de calidad</h2>
-        <p class="card-description" id="isoDesc">
-          Estándar clásico que clasifica la calidad del software en atributos internos, externos y de uso.
-        </p>
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- SECCIÓN 2: TÉCNICAS DE ASEGURAMIENTO -->
-    <section id="aseguramiento" class="section-block">
-      <span class="badge-navy">TÉCNICAS DE ASEGURAMIENTO</span>
-      <h2 class="section-title">Pruebas para aprender antes de liberar.</h2>
-      <p class="section-intro">
-        Explorá los niveles y técnicas de prueba para conocer su definición, objetivo y ejemplo.
-      </p>
-
-      <!-- Acordeones de Pruebas -->
-      <div class="accordion-grid">
-        <div class="accordion-item">
-          <button type="button" class="accordion-header">
-            <span>Pruebas unitarias</span>
-            <i class="fa-solid fa-chevron-down arrow"></i>
-          </button>
-          <div class="accordion-content">
-            <p>Verifican componentes o módulos individuales aislados del resto del sistema para asegurar su funcionamiento correcto.</p>
+        <div class="tabs">
+          <h2 class="heading-md subheading">Comparar estándares ISO</h2>
+          <div class="chip-group" role="tablist" aria-label="Estándares ISO">
+            <button type="button" class="chip" role="tab" id="tab-9126" aria-controls="panel-9126" aria-selected="true">ISO 9126</button>
+            <button type="button" class="chip" role="tab" id="tab-25000" aria-controls="panel-25000" aria-selected="false">ISO 25000</button>
           </div>
-        </div>
 
-        <div class="accordion-item">
-          <button type="button" class="accordion-header">
-            <span>Pruebas de integración</span>
-            <i class="fa-solid fa-chevron-down arrow"></i>
-          </button>
-          <div class="accordion-content">
-            <p>Evalúan la interacción entre módulos o servicios combinados para detectar fallos en sus interfaces o contratos.</p>
+          <div class="card iso-panel" role="tabpanel" id="panel-9126" aria-labelledby="tab-9126" tabindex="0">
+            <h3 class="heading-md">ISO/IEC 9126: modelo de calidad del producto</h3>
+            <p>Publicada en 1991, define la calidad desde tres vistas (interna, externa y en uso) y la organiza en seis características:</p>
+            <ul class="iso-traits">
+              <li><strong>Funcionalidad</strong>Hace lo que se necesita.</li>
+              <li><strong>Fiabilidad</strong>Mantiene su desempeño sin fallar.</li>
+              <li><strong>Usabilidad</strong>Es fácil de aprender y usar.</li>
+              <li><strong>Eficiencia</strong>Usa bien tiempo y recursos.</li>
+              <li><strong>Mantenibilidad</strong>Es fácil de modificar.</li>
+              <li><strong>Portabilidad</strong>Se adapta a otros entornos.</li>
+            </ul>
+            <p class="note">Fue reemplazada por la familia ISO/IEC 25000, pero sigue siendo la base conceptual de los modelos actuales.</p>
           </div>
-        </div>
 
-        <div class="accordion-item">
-          <button type="button" class="accordion-header">
-            <span>Pruebas de sistema</span>
-            <i class="fa-solid fa-chevron-down arrow"></i>
-          </button>
-          <div class="accordion-content">
-            <p>Validan el sistema completo e integrado para garantizar que cumple con los requisitos funcionales y no funcionales especificados.</p>
+          <div class="card iso-panel" role="tabpanel" id="panel-25000" aria-labelledby="tab-25000" tabindex="0" hidden>
+            <h3 class="heading-md">ISO/IEC 25000: familia SQuaRE</h3>
+            <p>Reúne normas para requisitos, medición y evaluación de calidad. Su modelo de producto, ISO/IEC 25010, amplía las características a ocho:</p>
+            <ul class="iso-traits">
+              <li><strong>Adecuación funcional</strong>Cubre las funciones necesarias.</li>
+              <li><strong>Eficiencia de desempeño</strong>Tiempos y consumo de recursos.</li>
+              <li><strong>Compatibilidad</strong>Convive e intercambia datos con otros sistemas.</li>
+              <li><strong>Usabilidad</strong>Facilidad de uso y accesibilidad.</li>
+              <li><strong>Fiabilidad</strong>Disponibilidad y tolerancia a fallos.</li>
+              <li><strong>Seguridad</strong>Protege datos y accesos.</li>
+              <li><strong>Mantenibilidad</strong>Modularidad y facilidad de prueba.</li>
+              <li><strong>Portabilidad</strong>Instalación y adaptación a entornos.</li>
+            </ul>
+            <p class="note">La revisión 2023 de ISO/IEC 25010 suma "protección" (safety) y renombra algunas características; conviene aclararlo si el programa usa la versión nueva.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <hr class="section-divider">
-
-    <!-- SECCIÓN 3: HERRAMIENTAS DE CALIDAD -->
-    <section id="herramientas" class="section-block">
-      <span class="badge-coral">US-04 · HERRAMIENTAS DE CALIDAD</span>
-      <h2 class="section-title">Herramientas que hacen visible la calidad.</h2>
-      <p class="section-intro">
-        Filtrá por categoría para conocer propósito y momento de uso de cada herramienta.
-      </p>
-
-      <!-- Botones de Filtro -->
-      <div class="filter-pills">
-        <button type="button" class="filter-btn active" data-filter="all">Todas</button>
-        <button type="button" class="filter-btn" data-filter="bug-trackers">Bug Trackers</button>
-        <button type="button" class="filter-btn" data-filter="linters">Linters</button>
-      </div>
-
-      <!-- Tarjetas de Herramientas -->
-      <div class="grid-3-col">
-        <div class="info-card tool-card" data-category="bug-trackers">
-          <h2 class="card-heading">Bug Trackers</h2>
-          <p class="card-description">
-            Registran, priorizan y permiten seguir defectos durante pruebas y mantenimiento.
-          </p>
+    <!-- ============ US-03 · ASEGURAMIENTO ============ -->
+    <section class="section" id="aseguramiento" aria-labelledby="aseguramiento-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge badge--ink">Técnicas de aseguramiento</span>
+          <h2 class="heading-lg" id="aseguramiento-title">Pruebas para aprender antes de liberar</h2>
+          <p class="lead">Abrí cada nivel de prueba para ver su definición, objetivo y un ejemplo.</p>
         </div>
 
-        <div class="info-card tool-card" data-category="linters">
-          <h2 class="card-heading">Linters</h2>
-          <p class="card-description">
-            Analizan código para detectar problemas de estilo y calidad durante desarrollo.
-          </p>
+        <h3 class="heading-md subheading">Niveles de prueba</h3>
+        <div class="grid grid--pairs">
+          <div class="disclosure" data-group="niveles">
+            <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="nivel-unitarias">
+              Pruebas unitarias <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="disclosure__panel" id="nivel-unitarias"><div>
+              <dl class="disclosure__body">
+                <dt>Definición</dt><dd>Verifican una unidad mínima de código (función, método o componente) aislada del resto.</dd>
+                <dt>Objetivo</dt><dd>Detectar errores lo antes posible y al menor costo.</dd>
+                <dt>Ejemplo</dt><dd>Probar que la función que valida un email rechace "usuario@".</dd>
+              </dl>
+            </div></div>
+          </div>
+
+          <div class="disclosure" data-group="niveles">
+            <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="nivel-integracion">
+              Pruebas de integración <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="disclosure__panel" id="nivel-integracion"><div>
+              <dl class="disclosure__body">
+                <dt>Definición</dt><dd>Evalúan cómo interactúan varios módulos o servicios cuando se combinan.</dd>
+                <dt>Objetivo</dt><dd>Encontrar fallas en interfaces, contratos y flujo de datos entre partes.</dd>
+                <dt>Ejemplo</dt><dd>Comprobar que el formulario de contacto guarda bien los datos en la base.</dd>
+              </dl>
+            </div></div>
+          </div>
+
+          <div class="disclosure" data-group="niveles">
+            <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="nivel-sistema">
+              Pruebas de sistema <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="disclosure__panel" id="nivel-sistema"><div>
+              <dl class="disclosure__body">
+                <dt>Definición</dt><dd>Validan el sistema completo e integrado en un entorno parecido al real.</dd>
+                <dt>Objetivo</dt><dd>Confirmar requisitos funcionales y no funcionales (rendimiento, seguridad).</dd>
+                <dt>Ejemplo</dt><dd>Recorrer el sitio completo en celular y escritorio verificando cada sección.</dd>
+              </dl>
+            </div></div>
+          </div>
+
+          <div class="disclosure" data-group="niveles">
+            <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="nivel-aceptacion">
+              Pruebas de aceptación <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="disclosure__panel" id="nivel-aceptacion"><div>
+              <dl class="disclosure__body">
+                <dt>Definición</dt><dd>Las realiza o valida el cliente o usuario para decidir si acepta el producto.</dd>
+                <dt>Objetivo</dt><dd>Confirmar que el software resuelve la necesidad real del negocio.</dd>
+                <dt>Ejemplo</dt><dd>La Sprint Review, donde el Product Owner acepta o rechaza cada historia.</dd>
+              </dl>
+            </div></div>
+          </div>
         </div>
 
-        <div class="info-card tool-card" data-category="test-management">
-          <h2 class="card-heading">Test Management</h2>
-          <p class="card-description">
-            Organizan casos, ejecuciones y evidencia de las validaciones.
-          </p>
+        <h3 class="heading-md subheading">Tipos de prueba según el conocimiento del código</h3>
+        <div class="table-wrap">
+          <table class="compare-table">
+            <caption class="sr-only">Comparación entre pruebas de caja negra y caja blanca</caption>
+            <thead>
+              <tr><th scope="col">Aspecto</th><th scope="col">Caja negra</th><th scope="col">Caja blanca</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Qué mira</th><td>Entradas y salidas, sin ver el código.</td><td>La estructura interna del código.</td></tr>
+              <tr><th scope="row">Técnicas</th><td>Particiones de equivalencia, valores límite, tablas de decisión.</td><td>Cobertura de sentencias, de ramas y de caminos.</td></tr>
+              <tr><th scope="row">Quién la hace</th><td>Testers y usuarios.</td><td>Desarrolladores.</td></tr>
+              <tr><th scope="row">Ejemplo</th><td>Enviar el formulario con el email vacío y esperar un aviso.</td><td>Asegurar que cada <code>if</code> de la validación se ejecute al menos una vez.</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
+    <!-- ============ US-04 · HERRAMIENTAS ============ -->
+    <section class="section" id="herramientas" aria-labelledby="herramientas-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge">Herramientas de calidad</span>
+          <h2 class="heading-lg" id="herramientas-title">Herramientas que hacen visible la calidad</h2>
+          <p class="lead">Filtrá por categoría para conocer el propósito y el momento de uso de cada herramienta.</p>
+        </div>
+
+        <div class="filter-bar">
+          <div class="chip-group" role="group" aria-label="Filtrar herramientas por categoría">
+            <button type="button" class="chip" data-filter="todas" aria-pressed="true">Todas</button>
+            <button type="button" class="chip" data-filter="bug-trackers" aria-pressed="false">Bug trackers</button>
+            <button type="button" class="chip" data-filter="linters" aria-pressed="false">Linters</button>
+            <button type="button" class="chip" data-filter="test-management" aria-pressed="false">Gestión de pruebas</button>
+            <button type="button" class="chip" data-filter="analisis" aria-pressed="false">Análisis estático</button>
+          </div>
+          <p class="filter-count" id="toolCount" aria-live="polite">Mostrando 4 herramientas</p>
+        </div>
+
+        <div class="grid grid--pairs">
+          <article class="card tool-card" data-category="bug-trackers">
+            <span class="tool-card__icon"><i class="fa-solid fa-bug" aria-hidden="true"></i></span>
+            <h3 class="heading-md">Bug trackers</h3>
+            <p>Registran, priorizan y siguen los defectos desde que se detectan hasta que se cierran. Se usan en pruebas y mantenimiento.</p>
+            <ul class="tool-card__tags" aria-label="Ejemplos"><li>Jira</li><li>Bugzilla</li><li>GitHub Issues</li></ul>
+          </article>
+
+          <article class="card tool-card" data-category="linters">
+            <span class="tool-card__icon"><i class="fa-solid fa-spell-check" aria-hidden="true"></i></span>
+            <h3 class="heading-md">Linters</h3>
+            <p>Revisan el código mientras se escribe y marcan errores de estilo o malas prácticas antes de ejecutarlo.</p>
+            <ul class="tool-card__tags" aria-label="Ejemplos"><li>ESLint</li><li>Stylelint</li><li>HTMLHint</li></ul>
+          </article>
+
+          <article class="card tool-card" data-category="test-management">
+            <span class="tool-card__icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
+            <h3 class="heading-md">Gestión de pruebas</h3>
+            <p>Organizan casos de prueba, ejecuciones y evidencias, y muestran qué se probó y con qué resultado.</p>
+            <ul class="tool-card__tags" aria-label="Ejemplos"><li>TestRail</li><li>Zephyr</li><li>Xray</li></ul>
+          </article>
+
+          <article class="card tool-card" data-category="analisis">
+            <span class="tool-card__icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+            <h3 class="heading-md">Análisis estático</h3>
+            <p>Miden la calidad del código en conjunto: duplicación, complejidad, cobertura y vulnerabilidades.</p>
+            <ul class="tool-card__tags" aria-label="Ejemplos"><li>SonarQube</li><li>Codacy</li><li>CodeClimate</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-        <div class="footer-info">
-            <strong>Sobre nosotros</strong>
-            <p>Un espacio educativo dedicado a comprender cómo se construye software de calidad.</p>
-        </div>
-        <nav class="footer-nav">
-            <a href="#">Sobre nosotros y contacto</a>
-        </nav>
-    </footer>
-  <script src="../JavaScript/gestion.js> </script>
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__title">Testgrum</p>
+        <p>Un espacio educativo para entender cómo se construye software de calidad.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Pie de página">
+        <a href="../index.html">Inicio</a>
+        <span class="is-soon" aria-disabled="true">Sobre nosotros y contacto (Sprint 3)</span>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/gestion.js"></script>
 </body>
 </html>

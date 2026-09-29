@@ -11,48 +11,86 @@
 <body>
 
   <!-- HEADER Y MENÚ HAMBURGUESA COMPATIBLE CON EL INDEX -->
-  <header class="header">
-    <a href="../index.html" class="logo">educación</a>
-    
-    <button class="menu-btn" id="menuBtn" aria-label="Menú" type="button">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+   <!-- Header principal -->
+    <header class="header">
+        <div class="logo">Educación</div>
+        
+        <!-- Botón Hamburguesa -->
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
-    <nav class="nav-menu" id="navMenu">
-      <ul class="menu-list">
-        <li class="menu-item">
-          <a href="../index.html" class="menu-link">
-            <span class="icon-box"><i class="fa-solid fa-house"></i></span> Inicio
-          </a>
-        </li>
-        <li class="menu-item has-dropdown">
-          <button type="button" class="dropdown-btn">
-            <span class="icon-box"><i class="fa-solid fa-diagram-project"></i></span>
-            <span class="text">Procesos de Software</span>
-            <i class="fa-solid fa-chevron-down arrow"></i>
-          </button>
-          <ul class="dropdown-list">
-            <li><a href="proceso.html#sdlc">Ciclo de Vida (SDLC)</a></li>
-            <li><a href="proceso.html#modelos">Modelos Tradicionales</a></li>
-            <li><a href="proceso.html#ilustraciones">Ilustraciones</a></li>
-          </ul>
-        </li>
-        <li class="menu-item has-dropdown">
-          <button type="button" class="dropdown-btn">
-            <span class="icon-box"><i class="fa-solid fa-circle-check"></i></span>
-            <span class="text">Calidad de Software</span>
-            <i class="fa-solid fa-chevron-down arrow"></i>
-          </button>
-          <ul class="dropdown-list">
-            <li><a href="gestion.html#fundamentos">Fundamentos</a></li>
-            <li><a href="gestion.html#aseguramiento">Aseguramiento</a></li>
-            <li><a href="gestion.html#herramientas">Herramientas</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
+        <!-- Menú de navegación flotante -->
+        <nav class="nav-menu" id="navMenu">
+            <ul class="menu-list">
+                <!-- Opción Inicio -->
+                <li class="menu-item">
+                    <a href="../Index.html" class="menu-link">
+                        <span class="icon-box"><i class="fa-solid fa-house"></i></span>
+                        <span>Inicio</span>
+                    </a>
+                </li>
 
+                <!-- Sección 1 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-regular fa-circle-check"></i></span>
+                        <span class="text">Gestión de la calidad del software</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="HTML/gestion.html#fundamentos">Fundamentos de Calidad</a></li>
+                        <li><a href="HTML/gestion.html#aseguramientos">Técnicas de aseguramiento de la calidad</a></li>
+                        <li><a href="HTML/gestion.html#herramientas">Herramientas de calidad</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sección 2 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-solid fa-code-branch"></i></span>
+                        <span class="text">Procesos de desarrollo de software</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="proceso.html#ciclodevida">Ciclo de vida del desarrollo de software</a></li>
+                        <li><a href="proceso.html#modelo">US–06 · Modelos Tradicionales</a></li>
+                        <li><a href="proceso.html#ilu">Ilustraciones de modelos tradicionales</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sección 3 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-solid fa-rotate"></i></span>
+                        <span class="text">Metodologías ágiles</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="#">US–08 · Metodologías Ágiles</a></li>
+                        <li><a href="#">Ilustraciones ágiles</a></li>
+                        <li><a href="#">Scrum</a></li>
+                        <li><a href="#">US–11 · Kanban en profundidad</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sección 4 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <span class="text">Recursos y aprendizaje</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="#">Glosario</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Enlaces de interés</a></li>
+                        <li><a href="#">US–15 · Ejercicios y Casos Prácticos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
   <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
   <main class="page-container">
 
@@ -106,81 +144,6 @@
 
     <hr class="section-divider">
 
-    <!-- SECCIÓN 2: MODELOS TRADICIONALES -->
-    <section id="modelos" class="section-block">
-      <span class="badge-coral">MODELOS TRADICIONALES</span>
-      <h2 class="section-title">Modelos para organizar el desarrollo.</h2>
-      <p class="section-intro">
-        Compará Cascada, Modelo en V e Iterativo para reconocer ventajas, límites y contextos de uso.
-      </p>
-
-      <!-- Tabs de selección de Modelo -->
-      <div class="filter-pills">
-        <button type="button" class="filter-btn active" data-model="cascada">Cascada</button>
-        <button type="button" class="filter-btn" data-model="modelov">Modelo en V</button>
-        <button type="button" class="filter-btn" data-model="iterativo">Iterativo</button>
-      </div>
-
-      <!-- Tarjeta informativa del modelo seleccionado -->
-      <div class="info-card wide-card">
-        <h2 class="card-heading" id="modelTitle">Modelo en cascada</h2>
-        <p class="card-description" id="modelDesc" style="margin-bottom: 1.5rem;">
-          Avanza secuencialmente y funciona bien cuando los requisitos son estables.
-        </p>
-
-        <div class="grid-2-col">
-          <div class="pill-info-card card-mint-light">
-            <span id="modelAdvantage">Ventaja: orden y documentación clara.</span>
-          </div>
-          <div class="pill-info-card card-pink-light">
-            <span id="modelLimit">Límite: menor flexibilidad ante cambios.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- SECCIÓN 3: ILUSTRACIONES DE MODELOS TRADICIONALES -->
-    <section id="ilustraciones" class="section-block">
-      <span class="badge-navy">· ILUSTRACIONES TRADICIONALES</span>
-      <h2 class="section-title">Diagramas para entender cada modelo.</h2>
-      <p class="section-intro">
-        Seleccioná cualquier esquema para ampliar su explicación visual.
-      </p>
-
-      <div class="grid-3-col">
-        <!-- Diagrama Cascada -->
-        <div class="diagram-card">
-          <div class="diagram-preview">
-            <span class="flow-pill">Requisitos</span>
-            <i class="fa-solid fa-arrow-right text-coral"></i>
-            <span class="flow-pill">Diseño</span>
-            <i class="fa-solid fa-arrow-right text-coral"></i>
-            <div class="flow-break">
-              <span class="flow-pill">Pruebas</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Diagrama Modelo en V -->
-        <div class="diagram-card flex-center">
-          <span class="v-symbol">V</span>
-        </div>
-
-        <!-- Diagrama Iterativo -->
-        <div class="diagram-card">
-          <div class="diagram-preview">
-            <span class="flow-pill">Plan</span>
-            <i class="fa-solid fa-rotate-right text-coral"></i>
-            <span class="flow-pill">Construir</span>
-            <i class="fa-solid fa-rotate-right text-coral"></i>
-            <span class="flow-pill">Aprender</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -190,11 +153,11 @@
       <p>Un espacio educativo dedicado a comprender cómo se construye software de calidad.</p>
     </div>
     <nav class="footer-nav">
-      <a href="index.html">Inicio</a>
-      <a href="index.html#sobre-nosotros">· Sobre nosotros y contacto</a>
+      <a href="../Index.html">Inicio</a>
+      <a href="../index.html#sobre-nosotros">· Sobre nosotros y contacto</a>
     </nav>
   </footer>
 
-  <script src="proceso.js"></script>
+  <script src="../JavaScript/proceso.js"></script>
 </body>
 </html>

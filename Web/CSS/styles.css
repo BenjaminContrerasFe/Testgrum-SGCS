@@ -198,29 +198,6 @@ button {
   font-weight: 500;
 }
 
-/* ==========================================================
-   DESPLEGABLE AUTOMÁTICO AL PASAR EL CURSOR (HOVER)
-   ========================================================== */
-
-/* 1. Abrir menú principal cuando el puntero esté sobre el botón o sobre el menú mismo */
-.menu-btn:hover + .nav-menu,
-.nav-menu:hover {
-  display: block !important;
-}
-
-/* 2. Abrir submenús al pasar el puntero sobre cada elemento */
-.has-dropdown:hover .dropdown-list {
-  display: block !important;
-}
-
-/* Rotar la flecha del submenú en hover */
-.has-dropdown:hover .arrow {
-  transform: rotate(180deg);
-}
-
-/* ==========================================================
-   HERO / CONTENIDO DE INICIO
-   ========================================================== */
 .hero-container {
   position: relative;
   min-height: 480px;
@@ -288,9 +265,7 @@ button {
   transform: translateY(-1px);
 }
 
-/* ==========================================================
-   SECCIÓN ACCESOS RÁPIDOS (TARJETAS)
-   ========================================================== */
+
 .quick-access-section {
   padding: 3.5rem 3rem 4rem;
   background-color: var(--bg-cream);
@@ -370,9 +345,7 @@ button {
 .card-mint { background-color: var(--bg-card-mint); }
 .card-gray { background-color: var(--bg-card-gray); }
 
-/* ==========================================================
-   FOOTER
-   ========================================================== */
+
 .footer {
   background-color: var(--bg-cream);
   border-top: 1px solid var(--border-light);

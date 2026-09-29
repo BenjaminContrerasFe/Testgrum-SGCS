@@ -7,41 +7,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.getElementById('navMenu');
     const dropdownBtns = document.querySelectorAll('.dropdown-btn');
 
-    // Toggle menú principal
     if (menuBtn && navMenu) {
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navMenu.classList.toggle('active');
+        menuBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            navMenu.classList.toggle('show');
         });
 
-        // Cerrar al hacer clic fuera del menú
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                navMenu.classList.remove('active');
-            }
+        // Evita que hacer clic dentro del menú desplegado lo cierre accidentalmente
+        navMenu.addEventListener('click', (event) => {
+            event.stopPropagation();
         });
     }
 
-    // Toggle para submenús dentro de la hamburguesa
-    dropdownBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const dropdownList = btn.nextElementSibling;
-            const arrow = btn.querySelector('.arrow');
+    dropdownBtns.forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
 
-            if (dropdownList) {
-                dropdownList.classList.toggle('show');
-            }
-            if (arrow) {
-                arrow.style.transform = dropdownList.classList.contains('show') 
-                    ? 'rotate(180deg)' 
-                    : 'rotate(0deg)';
+            const parentItem = btn.closest('.has-dropdown');
+            if (parentItem) {
+                parentItem.classList.toggle('open');
             }
         });
     });
 
+    // Cierra el menú al hacer clic fuera de él
+    document.addEventListener('click', () => {
+        if (navMenu) {
+            navMenu.classList.remove('show');
+        }
+        document.querySelectorAll('.has-dropdown').forEach((item) => {
+            item.classList.remove('open');
+        });
+    });
+
     // -----------------------------------------------------------
-    // 2. INTERACCIÓN ETAPAS SDLC (PÁGINA PROCESOS DE SOFTWARE)
+    // 2. INTERACCIÓN ETAPAS SDLC
     // -----------------------------------------------------------
     const sdlcBtns = document.querySelectorAll('.sdlc-step-btn');
     const sdlcTitle = document.getElementById('sdlcTitle');
@@ -82,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const step = btn.getAttribute('data-step');
                 if (sdlcData[step]) {
-                    sdlcTitle.textContent = sdlcData[step].title;
-                    sdlcDesc.textContent = sdlcData[step].desc;
+                    if (sdlcTitle) sdlcTitle.textContent = sdlcData[step].title;
+                    if (sdlcDesc) sdlcDesc.textContent = sdlcData[step].desc;
                 }
             });
         });
@@ -127,10 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const key = btn.getAttribute('data-model');
                 if (modelData[key]) {
-                    modelTitle.textContent = modelData[key].title;
-                    modelDesc.textContent = modelData[key].desc;
-                    modelAdvantage.textContent = modelData[key].adv;
-                    modelLimit.textContent = modelData[key].limit;
+                    if (modelTitle) modelTitle.textContent = modelData[key].title;
+                    if (modelDesc) modelDesc.textContent = modelData[key].desc;
+                    if (modelAdvantage) modelAdvantage.textContent = modelData[key].adv;
+                    if (modelLimit) modelLimit.textContent = modelData[key].limit;
                 }
             });
         });

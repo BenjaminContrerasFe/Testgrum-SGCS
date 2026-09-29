@@ -12,57 +12,84 @@
 
   <!-- HEADER Y MENÚ HAMBURGUESA COMPATIBLE -->
   <header class="header">
-    <a href="../Index.html" class="logo">educación</a>
-    
-    <button class="menu-btn" id="menuBtn" aria-label="Menú" type="button">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+        <div class="logo">Educación</div>
+        
+        <!-- Botón Hamburguesa -->
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
-    <nav class="nav-menu" id="navMenu">
-      <ul class="menu-list">
-        <li class="menu-item">
-          <a href="../Index.html" class="menu-link">
-            <span class="icon-box"><i class="fa-solid fa-house"></i></span> Inicio
-          </a>
-        </li>
-        <li class="menu-item has-dropdown">
-          <button type="button" class="dropdown-btn">
-            <span class="icon-box"><i class="fa-solid fa-circle-check"></i></span>
-            <span class="text">Fundamentos</span>
-            <i class="fa-solid fa-chevron-down arrow"></i>
-          </button>
-          <ul class="dropdown-list">
-            <li><a href="gestion.html#fundamentos">Conceptos Clave</a></li>
-            <li><a href="gestion.html#fundamentos">Métricas y Estándares</a></li>
-          </ul>
-        </li>
-        <li class="menu-item has-dropdown">
-          <button type="button" class="dropdown-btn">
-            <span class="icon-box"><i class="fa-solid fa-flask"></i></span>
-            <span class="text">Aseguramiento</span>
-            <i class="fa-solid fa-chevron-down arrow"></i>
-          </button>
-          <ul class="dropdown-list">
-            <li><a href="gestion.html#aseguramiento">Pruebas Unitarias</a></li>
-            <li><a href="gestion.html#aseguramiento">Pruebas de Integración</a></li>
-            <li><a href="gestion.html#aseguramiento">Pruebas de Sistema</a></li>
-          </ul>
-        </li>
-        <li class="menu-item has-dropdown">
-          <button type="button" class="dropdown-btn">
-            <span class="icon-box"><i class="fa-solid fa-wrench"></i></span>
-            <span class="text">Herramientas</span>
-            <i class="fa-solid fa-chevron-down arrow"></i>
-          </button>
-          <ul class="dropdown-list">
-            <li><a href="gestion.html#herramientas">Bug Trackers</a></li>
-            <li><a href="gestion.html#herramientas">Linters</a></li>
-            <li><a href="gestion.html#herramientas">Test Management</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
+        <!-- Menú de navegación flotante -->
+        <nav class="nav-menu" id="navMenu">
+            <ul class="menu-list">
+                <!-- Opción Inicio -->
+                <li class="menu-item">
+                    <a href="../Index.html" class="menu-link">
+                        <span class="icon-box"><i class="fa-solid fa-house"></i></span>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+
+                <!-- Sección 1 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-regular fa-circle-check"></i></span>
+                        <span class="text">Gestión de la calidad del software</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="HTML/gestion.html#fundamentos">Fundamentos de Calidad</a></li>
+                        <li><a href="HTML/gestion.html#aseguramientos">Técnicas de aseguramiento de la calidad</a></li>
+                        <li><a href="HTML/gestion.html#herramientas">Herramientas de calidad</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sección 2 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-solid fa-code-branch"></i></span>
+                        <span class="text">Procesos de desarrollo de software</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="proceso.html#ciclodevida">Ciclo de vida del desarrollo de software</a></li>
+                        <li><a href="proceso.html#modelo">US–06 · Modelos Tradicionales</a></li>
+                        <li><a href="proceso.html#ilu">Ilustraciones de modelos tradicionales</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sección 3 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-solid fa-rotate"></i></span>
+                        <span class="text">Metodologías ágiles</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="#">US–08 · Metodologías Ágiles</a></li>
+                        <li><a href="#">Ilustraciones ágiles</a></li>
+                        <li><a href="#">Scrum</a></li>
+                        <li><a href="#">US–11 · Kanban en profundidad</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sección 4 -->
+                <li class="menu-item has-dropdown">
+                    <button type="button" class="dropdown-btn">
+                        <span class="icon-box"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <span class="text">Recursos y aprendizaje</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li><a href="#">Glosario</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Enlaces de interés</a></li>
+                        <li><a href="#">US–15 · Ejercicios y Casos Prácticos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
   <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
   <main class="page-container">

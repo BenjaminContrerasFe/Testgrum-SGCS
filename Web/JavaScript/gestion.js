@@ -1,38 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // -----------------------------------------------------------
-    // 1. MENÚ HAMBURGUESA Y SUBMENÚS
-    // -----------------------------------------------------------
     const menuBtn = document.getElementById('menuBtn');
     const navMenu = document.getElementById('navMenu');
     const dropdownBtns = document.querySelectorAll('.dropdown-btn');
 
+    // Mantenemos el clic como respaldo para pantallas táctiles/móviles
     if (menuBtn && navMenu) {
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
+        menuBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
             navMenu.classList.toggle('show');
         });
-
-        dropdownBtns.forEach((btn) => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const parent = btn.closest('.has-dropdown');
-
-                document.querySelectorAll('.has-dropdown').forEach((item) => {
-                    if (item !== parent) item.classList.remove('open');
-                });
-
-                if (parent) parent.classList.toggle('open');
-            });
-        });
-
-        document.addEventListener('click', () => {
-            navMenu.classList.remove('show');
-            document.querySelectorAll('.has-dropdown').forEach((item) => {
-                item.classList.remove('open');
-            });
-        });
     }
+
+    dropdownBtns.forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const parentItem = btn.closest('.has-dropdown');
+            if (parentItem) {
+                parentItem.classList.toggle('open');
+            }
+        });
+    });
+
+    document.addEventListener('click', () => {
+        if (navMenu) {
+            navMenu.classList.remove('show');
+        }
+        document.querySelectorAll('.has-dropdown').forEach((item) => {
+            item.classList.remove('open');
+        });
+    });
+});
 
     // -----------------------------------------------------------
     // 2. ALTERNANCIA DE ESTÁNDARES ISO (ISO 9126 / ISO 25000)

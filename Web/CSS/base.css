@@ -1,0 +1,481 @@
+/* ==========================================================
+   BASE.CSS — Estilos compartidos por TODAS las páginas.
+   Cada página suma su propio CSS (inicio.css, gestion.css...)
+   Si hay que cambiar un color, se cambia SOLO acá.
+   ========================================================== */
+
+/* ---------- 1. Paleta y tokens ---------- */
+:root {
+  /* Colores de marca (derivados del logo) */
+  --color-ink: #0b1b33;          /* títulos, hero, textos fuertes */
+  --color-primary: #1f4fd1;      /* azul Testgrum: botones y links */
+  --color-primary-hover: #173fa8;
+  --color-primary-soft: #dce7fb; /* fondos de estado activo */
+  --color-accent: #f6b93b;       /* ámbar: solo para destacar */
+
+  /* Neutros */
+  --color-bg: #f4f7fb;
+  --color-surface: #ffffff;
+  --color-border: #d6dfec;
+  --color-text: #1b2a41;
+  --color-text-muted: #51607a;
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #c7d6f2;
+
+  /* Semánticos (ventajas / desventajas, validaciones) */
+  --color-success: #136f4e;
+  --color-success-soft: #e4f4ec;
+  --color-danger: #a5281b;
+  --color-danger-soft: #fcebe8;
+
+  /* Tipografía */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Espaciado, radios y sombras */
+  --space-page: clamp(1.25rem, 4vw, 3rem);
+  --max-width: 1180px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --shadow-menu: 0 18px 40px rgba(11, 27, 51, 0.16);
+  --focus-ring: 0 0 0 3px var(--color-surface), 0 0 0 5px var(--color-primary);
+}
+
+/* ---------- 2. Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem; /* que los anclajes no queden tapados por el header */
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* El atributo hidden SIEMPRE gana, aunque la clase tenga display:grid/flex */
+[hidden] {
+  display: none !important;
+}
+
+/* Texto solo para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- 3. Contenedor y tipografía ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-page);
+}
+
+.heading-xl,
+.heading-lg,
+.heading-md {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.heading-xl { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; }
+.heading-lg { font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 700; }
+.heading-md { font-size: 1.3rem; font-weight: 600; }
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 62ch;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-soft);
+  color: var(--color-ink);
+}
+
+.badge--accent {
+  background-color: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.badge--ink {
+  background-color: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+/* ---------- 4. Botones ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-dark);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn--ghost {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-primary);
+}
+
+/* Botones tipo "pastilla" (filtros, pestañas, navegación interna) */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.chip:hover {
+  border-color: var(--color-primary);
+}
+
+.chip.is-active,
+.chip[aria-selected="true"],
+.chip[aria-pressed="true"] {
+  background-color: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+/* ---------- 5. Tarjetas ---------- */
+.card {
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+}
+
+.card--soft {
+  background-color: var(--color-primary-soft);
+  border-color: transparent;
+}
+
+.card p {
+  color: var(--color-text-muted);
+}
+
+/* ---------- 6. Header y menú ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.5rem;
+  position: relative;
+}
+
+.logo img {
+  height: 28px;
+  width: auto;
+}
+
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  color: var(--color-ink);
+  transition: background-color 0.2s ease;
+}
+
+.menu-toggle:hover {
+  background-color: var(--color-bg);
+}
+
+.nav-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: var(--space-page);
+  width: min(360px, calc(100vw - 2 * var(--space-page)));
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-menu);
+  padding: 0.5rem 0;
+}
+
+.nav-menu__item + .nav-menu__item {
+  border-top: 1px solid var(--color-bg);
+}
+
+.nav-menu__link,
+.submenu-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  text-align: left;
+}
+
+.nav-menu__link:hover,
+.submenu-toggle:hover {
+  background-color: var(--color-bg);
+}
+
+.nav-menu__icon {
+  width: 1.4rem;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.submenu-toggle__text {
+  flex: 1;
+}
+
+.submenu-toggle__arrow {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  transition: transform 0.25s ease;
+}
+
+.submenu-toggle[aria-expanded="true"] .submenu-toggle__arrow {
+  transform: rotate(180deg);
+}
+
+.submenu {
+  background-color: var(--color-bg);
+  padding: 0.4rem 0;
+}
+
+.submenu a,
+.submenu .is-soon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.4rem 0.55rem 3.6rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.submenu a:hover {
+  color: var(--color-primary);
+}
+
+/* Página o sección actual resaltada */
+.nav-menu [aria-current] {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Secciones de sprints futuros: visibles pero no clickeables */
+.is-soon {
+  cursor: default;
+  opacity: 0.75;
+}
+
+.is-soon small {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+/* ---------- 7. Secciones genéricas ---------- */
+.section {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.section + .section {
+  border-top: 1px solid var(--color-border);
+}
+
+.section__header {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+  justify-items: start;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.grid--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.grid--3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.grid--4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.grid--pairs { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); } /* 4 ítems → 2x2 */
+
+/* Pestañas de navegación interna (fijas bajo el header) */
+.page-nav {
+  position: sticky;
+  top: 4.5rem;
+  z-index: 50;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: 0.75rem;
+}
+
+.page-nav .chip-group {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.page-nav .chip {
+  white-space: nowrap;
+}
+
+/* ---------- 8. Footer ---------- */
+.site-footer {
+  background-color: var(--color-ink);
+  color: var(--color-on-dark-muted);
+  padding-block: 2.5rem;
+  margin-top: auto;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.site-footer__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-on-dark);
+  margin-bottom: 0.3rem;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-weight: 600;
+}
+
+.site-footer__nav a {
+  color: var(--color-on-dark);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.site-footer__nav a:hover {
+  color: var(--color-accent);
+}
+
+.site-footer .is-soon {
+  color: var(--color-on-dark-muted);
+}

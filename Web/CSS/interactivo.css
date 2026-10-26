@@ -1,0 +1,400 @@
+/* ==========================================================
+   INTERACTIVO.CSS — Solo para html/interactivo.html (US-18, US-19)
+   ========================================================== */
+
+.narrow {
+  max-width: 860px;
+}
+
+/* ---------- US-18: comparador ---------- */
+.compare-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.compare-form {
+  position: sticky;
+  top: 9.5rem;
+  gap: 1.1rem;
+}
+
+.compare-form__group {
+  border: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.compare-form__group legend {
+  margin-bottom: 0.5rem;
+}
+
+.check-grid {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.check-option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.check-option:hover {
+  border-color: var(--color-primary);
+}
+
+.check-option:has(input:checked) {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.check-option:has(input:focus-visible) {
+  box-shadow: var(--focus-ring);
+}
+
+.check-option input:focus-visible {
+  box-shadow: none;
+}
+
+.compare-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.compare-form__actions .btn {
+  padding: 0.55rem 1rem;
+  font-size: 0.88rem;
+}
+
+.switch {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.compare-result {
+  display: grid;
+  gap: 1rem;
+}
+
+.compare-status {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+/* Tabla: la primera columna queda fija al desplazar horizontalmente */
+.methods-table {
+  min-width: 640px;
+}
+
+.methods-table th[scope="row"],
+.methods-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+.methods-table th[scope="row"] {
+  background-color: var(--color-surface);
+  min-width: 150px;
+  box-shadow: 1px 0 0 var(--color-border);
+}
+
+.methods-table thead th {
+  vertical-align: top;
+}
+
+.methods-table thead th:not(:first-child) {
+  position: relative;
+  padding-right: 2.6rem;
+  min-width: 170px;
+}
+
+.methods-table__name {
+  display: block;
+  color: var(--color-on-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-bottom: 0.35rem;
+}
+
+.methods-table__name:hover {
+  color: var(--color-accent);
+}
+
+.methods-table__remove {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.6rem;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-on-dark-muted);
+  font-size: 0.85rem;
+}
+
+.methods-table__remove:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-on-dark);
+}
+
+.family-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.1rem 0.55rem;
+  border-radius: var(--radius-pill);
+}
+
+.family-badge--tradicional {
+  background-color: var(--color-on-dark-muted);
+  color: var(--color-ink);
+}
+
+.family-badge--agil {
+  background-color: var(--color-accent);
+  color: var(--color-ink);
+}
+
+/* Puntaje con puntos */
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.rating__dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+}
+
+.rating__dot.is-on {
+  background-color: var(--color-primary);
+}
+
+.rating__text {
+  margin-left: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+/* Filas con diferencias resaltadas */
+.methods-table tr.is-diff > * {
+  background-color: #fdf1d8;
+}
+
+.methods-table tr.is-diff th[scope="row"]::after {
+  content: " ≠";
+  color: #8a5a00;
+  font-weight: 700;
+}
+
+/* ---------- US-19: encuesta (wizard) ---------- */
+.wizard {
+  gap: 1.5rem;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.wizard__progress {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.wizard__progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.progress {
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+.progress__fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background-color: var(--color-primary);
+  transition: width 0.35s ease;
+}
+
+.wizard__step {
+  display: grid;
+  gap: 1rem;
+}
+
+.wizard__step fieldset {
+  border: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.wizard__question {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-ink);
+}
+
+.wizard__options {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.wizard__option {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border);
+  background-color: var(--color-surface);
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.wizard__option:hover {
+  border-color: var(--color-primary);
+}
+
+.wizard__option:has(input:checked) {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.wizard__option:has(input:focus-visible) {
+  box-shadow: var(--focus-ring);
+}
+
+.wizard__option input:focus-visible {
+  box-shadow: none;
+}
+
+.wizard__nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.wizard__nav button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.wizard__result {
+  display: grid;
+  gap: 1.25rem;
+  animation: result-in 0.3s ease;
+}
+
+@keyframes result-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.result-bars {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.result-bar {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.result-bar__head {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.result-bar__track {
+  height: 14px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+.result-bar__fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background-color: var(--color-on-dark-muted);
+  transition: width 0.6s ease;
+}
+
+.result-bar.is-winner .result-bar__fill {
+  background-color: var(--color-primary);
+}
+
+.result-bar.is-winner .result-bar__head strong {
+  color: var(--color-primary);
+}
+
+.result-why {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+}
+
+.check-list {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.check-list li::before {
+  content: "✓";
+  margin-right: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .compare-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-form {
+    position: static;
+  }
+
+  .check-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+  }
+}

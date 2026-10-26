@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herramientas interactivas | Testgrum</title>
+  <meta name="description" content="Comparador de metodologías y encuesta para elegir la metodología adecuada para tu proyecto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="../CSS/base.css">
+  <link rel="stylesheet" href="../CSS/interactivo.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="logo">
+        <img src="../img/logo-testgrum.png" alt="Testgrum, ir al inicio" width="120" height="28">
+      </a>
+
+      <button type="button" class="menu-toggle" id="menuToggle"
+              aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Principal" hidden>
+        <ul>
+        <li class="nav-menu__item">
+          <a href="../index.html" class="nav-menu__link">
+            <i class="nav-menu__icon fa-solid fa-house" aria-hidden="true"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-calidad">
+            <i class="nav-menu__icon fa-regular fa-circle-check" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Gestión de la calidad</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-calidad" hidden>
+            <li><a href="gestion.html#fundamentos">Fundamentos de calidad</a></li>
+            <li><a href="gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
+            <li><a href="gestion.html#herramientas">Herramientas de calidad</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-procesos">
+            <i class="nav-menu__icon fa-solid fa-code-branch" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Procesos de desarrollo</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-procesos" hidden>
+            <li><a href="proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
+            <li><a href="proceso.html#modelos">Modelos tradicionales</a></li>
+            <li><a href="proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-agiles">
+            <i class="nav-menu__icon fa-solid fa-rotate" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Metodologías ágiles</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-agiles" hidden>
+            <li><a href="agiles.html#agiles">Metodologías ágiles</a></li>
+            <li><a href="agiles.html#ilustraciones-agiles">Ilustraciones ágiles</a></li>
+            <li><a href="metodologias.html#scrum">Scrum en profundidad</a></li>
+            <li><a href="metodologias.html#kanban">Kanban en profundidad</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-recursos">
+            <i class="nav-menu__icon fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Recursos y aprendizaje</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-recursos" hidden>
+            <li><a href="recursos.html#glosario">Glosario</a></li>
+            <li><a href="recursos.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="recursos.html#enlaces">Enlaces de interés</a></li>
+            <li><a href="recursos.html#ejercicios">Ejercicios y casos prácticos</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-interactivo">
+            <i class="nav-menu__icon fa-solid fa-sliders" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Herramientas interactivas</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-interactivo" hidden>
+            <li><a href="interactivo.html#comparador">Comparador de metodologías</a></li>
+            <li><a href="interactivo.html#encuesta">Encuesta metodológica</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-nosotros">
+            <i class="nav-menu__icon fa-solid fa-people-group" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Sobre nosotros</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-nosotros" hidden>
+            <li><a href="nosotros.html#equipo">El equipo</a></li>
+            <li><a href="nosotros.html#contacto">Contacto</a></li>
+          </ul>
+        </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="page-nav" aria-label="Secciones de esta página">
+    <div class="container chip-group">
+      <a href="#comparador" class="chip">Comparador</a>
+      <a href="#encuesta" class="chip">Encuesta</a>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <section class="section" id="comparador" aria-labelledby="comparador-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge">Herramientas interactivas</span>
+          <h1 class="heading-xl" id="comparador-title">Comparador de metodologías</h1>
+          <p class="lead">Elegí dos o más metodologías y mirá sus diferencias lado a lado. La tabla se arma sola con tu selección.</p>
+        </div>
+
+        <div class="compare-layout">
+          <form class="card compare-form" id="compareForm" aria-describedby="compareHint">
+            <fieldset class="compare-form__group">
+              <legend class="field__label">Tradicionales</legend>
+              <div class="check-grid" data-family="tradicional"></div>
+            </fieldset>
+            <fieldset class="compare-form__group">
+              <legend class="field__label">Ágiles</legend>
+              <div class="check-grid" data-family="agil"></div>
+            </fieldset>
+            <p class="field__hint" id="compareHint">Podés elegir hasta seis. Tu selección se guarda para la próxima visita.</p>
+            <div class="compare-form__actions">
+              <button type="button" class="btn btn--ghost" id="compareAll"><i class="fa-solid fa-check-double" aria-hidden="true"></i> Elegir todas</button>
+              <button type="button" class="btn btn--ghost" id="compareClear"><i class="fa-solid fa-eraser" aria-hidden="true"></i> Limpiar</button>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="compareDiff">
+              <span>Resaltar las filas donde hay diferencias de puntaje</span>
+            </label>
+          </form>
+
+          <div class="compare-result">
+            <p class="compare-status" id="compareStatus" aria-live="polite"></p>
+            <div class="empty-state" id="compareEmpty">
+              <i class="fa-solid fa-table-columns" aria-hidden="true"></i>
+              <strong>Elegí al menos dos metodologías</strong>
+              <p>La tabla comparativa aparece cuando hay dos o más seleccionadas.</p>
+            </div>
+            <!-- La tabla la arma interactivo.js desde el arreglo METHODOLOGIES -->
+            <div class="table-wrap compare-wrap" id="compareWrap" hidden>
+              <table class="compare-table methods-table" id="compareTable">
+                <caption class="sr-only">Comparación de las metodologías seleccionadas</caption>
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="encuesta" aria-labelledby="encuesta-title">
+      <div class="container narrow">
+        <div class="section__header">
+          <span class="badge badge--ink">Herramientas interactivas</span>
+          <h2 class="heading-lg" id="encuesta-title">¿Qué metodología le conviene a tu proyecto?</h2>
+          <p class="lead">Respondé ocho preguntas sobre tu proyecto y calculamos qué tanto coincide con Scrum, Kanban y Cascada.</p>
+        </div>
+
+        <div class="card wizard" id="wizard">
+          <!-- Barra de progreso -->
+          <div class="wizard__progress">
+            <div class="wizard__progress-text">
+              <span id="wizardStepLabel">Pregunta 1 de 8</span>
+              <span id="wizardPercent">0 %</span>
+            </div>
+            <div class="progress" role="progressbar" id="wizardBar" aria-label="Progreso de la encuesta"
+                 aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <span class="progress__fill" id="wizardFill"></span>
+            </div>
+          </div>
+
+          <form class="wizard__step" id="wizardForm" novalidate>
+            <fieldset>
+              <legend class="wizard__question" id="wizardQuestion" tabindex="-1"></legend>
+              <p class="field__hint" id="wizardHelp"></p>
+              <div class="wizard__options" id="wizardOptions"></div>
+            </fieldset>
+            <p class="field__error" id="wizardError" hidden>
+              <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> Elegí una opción para continuar.
+            </p>
+            <div class="wizard__nav">
+              <button type="button" class="btn btn--ghost" id="wizardPrev">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Anterior
+              </button>
+              <button type="submit" class="btn btn--primary" id="wizardNext">
+                Siguiente <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
+
+          <div class="wizard__result" id="wizardResult" hidden>
+            <h3 class="heading-lg wizard__result-title" id="resultTitle" tabindex="-1"></h3>
+            <p class="lead" id="resultText"></p>
+            <ul class="result-bars" id="resultBars" aria-label="Porcentaje de coincidencia por metodología"></ul>
+            <div class="result-why">
+              <h4 class="heading-md">Por qué lo sugerimos</h4>
+              <ul class="check-list" id="resultReasons"></ul>
+            </div>
+            <p class="note">Es una orientación para empezar a conversar en equipo, no una regla: muchos equipos combinan prácticas de varias metodologías.</p>
+            <div class="wizard__nav">
+              <button type="button" class="btn btn--ghost" id="wizardRestart">
+                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Volver a empezar
+              </button>
+              <a class="btn btn--primary" id="resultLink" href="agiles.html">Leer sobre esta metodología</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__title">Testgrum</p>
+        <p>Un espacio educativo para entender cómo se construye software de calidad.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Pie de página">
+        <a href="../index.html">Inicio</a>
+        <a href="recursos.html#glosario">Glosario</a>
+        <a href="nosotros.html#equipo">Sobre nosotros</a>
+        <a href="nosotros.html#contacto">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../JavaScript/scrip.js"></script>
+  <script src="../JavaScript/interactivo.js"></script>
+</body>
+</html>

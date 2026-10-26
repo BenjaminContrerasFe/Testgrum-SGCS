@@ -1,0 +1,322 @@
+/* ==========================================================
+   RECURSOS.CSS — Solo para html/recursos.html (US-12 a US-15)
+   ========================================================== */
+
+.narrow {
+  max-width: 860px;
+}
+
+.inline-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- US-12: glosario ---------- */
+.glossary-tools {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.glossary-search__box {
+  position: relative;
+}
+
+.glossary-search__box i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.glossary-search__box .input {
+  padding-left: 2.6rem;
+  font-size: 1.05rem;
+}
+
+.az-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.az-index__letter {
+  min-width: 2.1rem;
+  height: 2.1rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.az-index__letter:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+/* Letras sin términos (o sin resultados en la búsqueda) */
+.az-index__letter:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+.glossary {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Separador visual por letra */
+.glossary__group {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.glossary__letter {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+.glossary__terms {
+  display: grid;
+  gap: 0;
+  border-top: 2px solid var(--color-ink);
+}
+
+.glossary__item {
+  display: grid;
+  grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+  gap: 0.4rem 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.glossary__item dt {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.glossary__item dd {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.glossary__cat {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.1rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-soft);
+  color: var(--color-ink);
+}
+
+/* Coincidencia resaltada en la búsqueda */
+.glossary mark {
+  background-color: rgba(246, 185, 59, 0.55);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 1px;
+}
+
+/* ---------- US-13: FAQ ---------- */
+.faq-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq-q {
+  font-size: inherit;
+  margin: 0;
+}
+
+.faq-a {
+  font-size: 0.98rem;
+  color: var(--color-text);
+}
+
+.faq-a p + p {
+  margin-top: 0.6rem;
+}
+
+/* ---------- US-14: enlaces ---------- */
+.link-card {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--type-color, var(--color-primary));
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.link-card:hover {
+  border-color: var(--type-color, var(--color-primary));
+  transform: translateY(-2px);
+}
+
+/* Un color por tipo de recurso */
+.link-card[data-type="web"]  { --type-color: #1f4fd1; --type-soft: #dce7fb; }
+.link-card[data-type="pdf"]  { --type-color: #a5281b; --type-soft: #fcebe8; }
+.link-card[data-type="book"] { --type-color: #8a5a00; --type-soft: #fdf1d8; }
+.link-card[data-type="org"]  { --type-color: #136f4e; --type-soft: #e4f4ec; }
+
+.link-card__type {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--type-soft, var(--color-primary-soft));
+  color: var(--type-color, var(--color-primary));
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.link-card__title {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  line-height: 1.25;
+  color: var(--color-ink);
+}
+
+.link-card__desc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+.link-card__host {
+  margin-top: auto;
+  padding-top: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.link-card__host i {
+  font-size: 0.7rem;
+}
+
+/* ---------- US-15: ejercicios ---------- */
+.exercise {
+  gap: 0.8rem;
+}
+
+.exercise--case {
+  border-left: 4px solid var(--color-accent);
+}
+
+.exercise__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.exercise__topic,
+.exercise__level {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.65rem;
+  border-radius: var(--radius-pill);
+}
+
+.exercise__topic {
+  background-color: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+.exercise__level {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  border: 1px solid var(--color-border);
+}
+
+.exercise__items {
+  display: grid;
+  gap: 0.35rem;
+  padding-left: 1.3rem;
+  list-style: lower-alpha;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+ul.exercise__items {
+  list-style: disc;
+}
+
+.exercise__toggle {
+  justify-self: start;
+}
+
+.exercise__toggle[aria-expanded="true"] {
+  background-color: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+.exercise__solution {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-success-soft);
+  border-left: 4px solid var(--color-success);
+  font-size: 0.95rem;
+  animation: reveal 0.25s ease;
+}
+
+.card .exercise__solution p,
+.exercise__solution li {
+  color: var(--color-text);
+}
+
+.exercise__rubric {
+  font-size: 0.88rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed rgba(19, 111, 78, 0.35);
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .glossary__group {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .glossary__letter {
+    font-size: 2rem;
+  }
+
+  .glossary__item {
+    grid-template-columns: 1fr;
+  }
+}

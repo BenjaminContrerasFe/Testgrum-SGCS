@@ -9,14 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/gestion.css">
+  
+  <link rel="stylesheet" href="../CSS/base.css">
+  <link rel="stylesheet" href="../CSS/gestion.css">
 </head>
 <body>
+
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="../index.html" class="logo">
-        <img src="../img/logo-testgrum.png" alt="Testgrum, ir al inicio" width="150" height="50">
+        <img src="../img/logo-testgrum.png" alt="Testgrum, ir al inicio" width="120" height="28">
       </a>
 
       <button type="button" class="menu-toggle" id="menuToggle"
@@ -38,9 +40,9 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-calidad" hidden>
-              <li><a href="gestion.html#fundamentos">Fundamentos de calidad</a></li>
-              <li><a href="gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
-              <li><a href="gestion.html#herramientas">Herramientas de calidad</a></li>
+            <li><a href="gestion.html#fundamentos">Fundamentos de calidad</a></li>
+            <li><a href="gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
+            <li><a href="gestion.html#herramientas">Herramientas de calidad</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -50,9 +52,9 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-procesos" hidden>
-              <li><a href="proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
-              <li><a href="proceso.html#modelos">Modelos tradicionales</a></li>
-              <li><a href="proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
+            <li><a href="proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
+            <li><a href="proceso.html#modelos">Modelos tradicionales</a></li>
+            <li><a href="proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -62,10 +64,10 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-agiles" hidden>
-              <li><span class="is-soon" aria-disabled="true">Metodologías ágiles <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Ilustraciones ágiles <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Scrum en profundidad <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Kanban en profundidad <small>Sprint 2</small></span></li>
+            <li><a href="agiles.html#agiles">Metodologías ágiles</a></li>
+            <li><a href="agiles.html#ilustraciones-agiles">Ilustraciones ágiles</a></li>
+            <li><a href="metodologias.html#scrum">Scrum en profundidad</a></li>
+            <li><a href="metodologias.html#kanban">Kanban en profundidad</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -75,10 +77,10 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-recursos" hidden>
-              <li><span class="is-soon" aria-disabled="true">Glosario <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Preguntas frecuentes <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Enlaces de interés <small>Sprint 3</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Ejercicios y casos prácticos <small>Sprint 3</small></span></li>
+            <li><a href="recursos.html#glosario">Glosario</a></li>
+            <li><a href="recursos.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="recursos.html#enlaces">Enlaces de interés</a></li>
+            <li><a href="recursos.html#ejercicios">Ejercicios y casos prácticos</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -88,11 +90,22 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-interactivo" hidden>
-              <li><span class="is-soon" aria-disabled="true">Comparador de metodologías <small>Sprint 3</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Encuesta metodológica <small>Sprint 3</small></span></li>
+            <li><a href="interactivo.html#comparador">Comparador de metodologías</a></li>
+            <li><a href="interactivo.html#encuesta">Encuesta metodológica</a></li>
           </ul>
         </li>
-      </ul>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-nosotros">
+            <i class="nav-menu__icon fa-solid fa-people-group" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Sobre nosotros</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-nosotros" hidden>
+            <li><a href="nosotros.html#equipo">El equipo</a></li>
+            <li><a href="nosotros.html#contacto">Contacto</a></li>
+          </ul>
+        </li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -106,7 +119,6 @@
   </nav>
 
   <main id="contenido">
-    <!-- ============ US-02 · FUNDAMENTOS ============ -->
     <section class="section" id="fundamentos" aria-labelledby="fundamentos-title">
       <div class="container">
         <div class="section__header">
@@ -187,7 +199,6 @@
       </div>
     </section>
 
-    <!-- ============ US-03 · ASEGURAMIENTO ============ -->
     <section class="section" id="aseguramiento" aria-labelledby="aseguramiento-title">
       <div class="container">
         <div class="section__header">
@@ -269,7 +280,6 @@
       </div>
     </section>
 
-    <!-- ============ US-04 · HERRAMIENTAS ============ -->
     <section class="section" id="herramientas" aria-labelledby="herramientas-title">
       <div class="container">
         <div class="section__header">
@@ -330,7 +340,9 @@
       </div>
       <nav class="site-footer__nav" aria-label="Pie de página">
         <a href="../index.html">Inicio</a>
-        <span class="is-soon" aria-disabled="true">Sobre nosotros y contacto (Sprint 3)</span>
+        <a href="recursos.html#glosario">Glosario</a>
+        <a href="nosotros.html#equipo">Sobre nosotros</a>
+        <a href="nosotros.html#contacto">Contacto</a>
       </nav>
     </div>
   </footer>

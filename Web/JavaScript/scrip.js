@@ -13,9 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ----------------------------------------------------------
-   1. MENÚ HAMBURGUESA (US-01)
-   - Abre/cierra con clic o toque (sin hover: en celulares
-     el hover genera estados trabados).
+   1. MENÚ HAMBURGUESA Y SUBMENÚS (US-01)
+   - Abre/cierra con clic o toque.
    - Se cierra con Escape, al tocar fuera o al elegir un link.
    - Los submenús funcionan como acordeón: uno abierto a la vez.
    ---------------------------------------------------------- */
@@ -30,6 +29,13 @@ function initMenu() {
     menu.hidden = false;
     toggle.setAttribute('aria-expanded', 'true');
     toggle.setAttribute('aria-label', 'Cerrar menú');
+    
+    // Cambiar icono a equis si existe
+    const icon = toggle.querySelector('i');
+    if (icon) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-xmark');
+    }
   };
 
   const closeMenu = ({ returnFocus = false } = {}) => {
@@ -37,6 +43,14 @@ function initMenu() {
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Abrir menú');
     closeAllSubmenus();
+
+    // Restaurar icono a barras si existe
+    const icon = toggle.querySelector('i');
+    if (icon) {
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+    }
+
     if (returnFocus) toggle.focus();
   };
 
@@ -44,7 +58,11 @@ function initMenu() {
     submenuToggles.forEach((btn) => {
       if (btn === except) return;
       btn.setAttribute('aria-expanded', 'false');
-      document.getElementById(btn.getAttribute('aria-controls')).hidden = true;
+      const controlsId = btn.getAttribute('aria-controls');
+      if (controlsId) {
+        const submenu = document.getElementById(controlsId);
+        if (submenu) submenu.hidden = true;
+      }
     });
   };
 
@@ -55,11 +73,14 @@ function initMenu() {
 
   submenuToggles.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const submenu = document.getElementById(btn.getAttribute('aria-controls'));
+      const controlsId = btn.getAttribute('aria-controls');
+      if (!controlsId) return;
+      const submenu = document.getElementById(controlsId);
       const willOpen = btn.getAttribute('aria-expanded') !== 'true';
+      
       closeAllSubmenus(btn);
       btn.setAttribute('aria-expanded', String(willOpen));
-      submenu.hidden = !willOpen;
+      if (submenu) submenu.hidden = !willOpen;
     });
   });
 
@@ -92,11 +113,18 @@ function markCurrentPage() {
   const currentFile = getFileName(window.location.pathname) || 'index.html';
 
   document.querySelectorAll('#navMenu a[href]').forEach((link) => {
-    const url = new URL(link.getAttribute('href'), window.location.href);
-    const isSamePage = getFileName(url.pathname) === currentFile;
+    const hrefAttr = link.getAttribute('href');
+    if (!hrefAttr || hrefAttr.startsWith('#')) return;
 
-    if (isSamePage && !url.hash) {
-      link.setAttribute('aria-current', 'page');
+    try {
+      const url = new URL(hrefAttr, window.location.href);
+      const isSamePage = getFileName(url.pathname) === currentFile;
+
+      if (isSamePage && !url.hash) {
+        link.setAttribute('aria-current', 'page');
+      }
+    } catch {
+      // Ignorar rutas relativas malformadas
     }
   });
 }
@@ -130,11 +158,15 @@ function initSectionSpy() {
     });
 
     document.querySelectorAll('#navMenu .submenu a[href*="#"]').forEach((link) => {
-      const hash = new URL(link.href).hash;
-      if (hash === `#${id}` && getFileName(new URL(link.href).pathname) === getFileName(location.pathname)) {
-        link.setAttribute('aria-current', 'location');
-      } else if (link.getAttribute('aria-current') === 'location') {
-        link.removeAttribute('aria-current');
+      try {
+        const linkUrl = new URL(link.href, window.location.href);
+        if (linkUrl.hash === `#${id}` && getFileName(linkUrl.pathname) === getFileName(location.pathname)) {
+          link.setAttribute('aria-current', 'location');
+        } else if (link.getAttribute('aria-current') === 'location') {
+          link.removeAttribute('aria-current');
+        }
+      } catch {
+        // Ignorar errores de URL
       }
     });
   };
@@ -145,7 +177,6 @@ function initSectionSpy() {
         if (entry.isIntersecting) setActive(entry.target.id);
       });
     },
-    // Se considera "activa" la sección que cruza la franja superior de la pantalla
     { rootMargin: '-30% 0px -60% 0px' }
   );
 
@@ -162,13 +193,19 @@ function initSectionSpy() {
 function initTabs() {
   document.querySelectorAll('[role="tablist"]').forEach((tablist) => {
     const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+    if (tabs.length === 0) return;
 
     const selectTab = (selectedTab, { moveFocus = false } = {}) => {
       tabs.forEach((tab) => {
         const isSelected = tab === selectedTab;
         tab.setAttribute('aria-selected', String(isSelected));
         tab.tabIndex = isSelected ? 0 : -1;
-        document.getElementById(tab.getAttribute('aria-controls')).hidden = !isSelected;
+        
+        const controlsId = tab.getAttribute('aria-controls');
+        if (controlsId) {
+          const panel = document.getElementById(controlsId);
+          if (panel) panel.hidden = !isSelected;
+        }
       });
       if (moveFocus) selectedTab.focus();
     };
@@ -190,20 +227,13 @@ function initTabs() {
       });
     });
 
-    // Estado inicial: la pestaña marcada en el HTML o la primera
     const initial = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
     selectTab(initial);
   });
 }
 
 /* ----------------------------------------------------------
-   5. DESPLEGABLES / ACORDEÓN REUTILIZABLE (US-03, y luego US-13)
-   HTML esperado:
-   <div class="disclosure" [data-group="nombre"]>
-     <button class="disclosure__toggle" aria-expanded="false" aria-controls="id">
-     <div class="disclosure__panel" id="id"> <div> contenido </div> </div>
-   La animación de altura se hace en CSS con grid-template-rows,
-   así no hay que adivinar un max-height que corte el texto.
+   5. DESPLEGABLES / ACORDEÓN REUTILIZABLE
    ---------------------------------------------------------- */
 function initDisclosures() {
   const toggles = document.querySelectorAll('.disclosure__toggle');
@@ -211,10 +241,11 @@ function initDisclosures() {
   toggles.forEach((toggle) => {
     toggle.addEventListener('click', () => {
       const item = toggle.closest('.disclosure');
+      if (!item) return;
+      
       const willOpen = toggle.getAttribute('aria-expanded') !== 'true';
       const group = item.dataset.group;
 
-      // Si pertenece a un grupo, se cierran los demás del mismo grupo
       if (group && willOpen) {
         document
           .querySelectorAll(`.disclosure[data-group="${group}"] .disclosure__toggle`)
@@ -230,7 +261,10 @@ function initDisclosures() {
 
 function setDisclosure(toggle, isOpen) {
   toggle.setAttribute('aria-expanded', String(isOpen));
-  toggle.closest('.disclosure').classList.toggle('is-open', isOpen);
+  const item = toggle.closest('.disclosure');
+  if (item) {
+    item.classList.toggle('is-open', isOpen);
+  }
 }
 
 /* ----------------------------------------------------------

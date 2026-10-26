@@ -1,6 +1,30 @@
 /* ==========================================================
-   GESTION.CSS — Solo para html/gestion.html (US-02, US-03, US-04)
+   GESTION.CSS — Adaptado con la paleta de colores solicitada
    ========================================================== */
+
+:root {
+  --bg-header: #b8d7f2;
+  --bg-page: #f4f8fb;
+  --bg-footer: #0a192f;
+  --yellow-badge: #f1b333;
+  --btn-blue: #375b7e;
+  --btn-blue-hover: #2c4966;
+  --text-dark: #0f172a;
+  --text-muted: #52637a;
+  --border-card: #e2eaf0;
+
+  /* Mapeo hacia las variables que usa este archivo CSS */
+  --color-primary: var(--btn-blue);
+  --color-primary-soft: #e3edf7;
+  --color-accent: var(--yellow-badge);
+  --color-bg: var(--bg-page);
+  --color-surface: #ffffff;
+  --color-border: var(--border-card);
+  --color-text: var(--text-dark);
+  --color-text-muted: var(--text-muted);
+  --color-ink: var(--text-dark);
+  --color-on-dark: #ffffff;
+}
 
 /* ---------- US-02: conceptos y pestañas ISO ---------- */
 .concept-list {
@@ -37,10 +61,11 @@
 
 .iso-traits li {
   padding: 0.9rem 1rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm, 12px);
   background-color: var(--color-bg);
   color: var(--color-text);
   font-size: 0.92rem;
+  border: 1px solid var(--color-border);
 }
 
 .iso-traits strong {
@@ -58,12 +83,14 @@
 /* ---------- US-03: desplegables de pruebas ---------- */
 .subheading {
   margin: 2.5rem 0 1rem;
+  color: var(--color-ink);
+  font-family: var(--font-display, inherit);
 }
 
 .disclosure {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-md, 16px);
   align-self: start;
   transition: border-color 0.2s ease;
 }
@@ -80,10 +107,13 @@
   gap: 1rem;
   padding: 1.2rem 1.4rem;
   text-align: left;
-  font-family: var(--font-display);
+  font-family: var(--font-display, inherit);
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--color-ink);
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .disclosure__toggle i {
@@ -128,7 +158,7 @@
 .table-wrap {
   overflow-x: auto;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-md, 16px);
   background-color: var(--color-surface);
 }
 
@@ -148,9 +178,9 @@
 }
 
 .compare-table thead th {
-  background-color: var(--color-ink);
+  background-color: var(--bg-footer);
   color: var(--color-on-dark);
-  font-family: var(--font-display);
+  font-family: var(--font-display, inherit);
 }
 
 .compare-table tbody th {
@@ -181,12 +211,16 @@
   display: grid;
   gap: 0.6rem;
   align-content: start;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 16px);
+  padding: 1.5rem;
 }
 
 .tool-card__icon {
   width: 44px;
   height: 44px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm, 12px);
   display: grid;
   place-items: center;
   background-color: var(--color-primary-soft);
@@ -199,13 +233,16 @@
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-top: 0.3rem;
+  list-style: none;
+  padding: 0;
 }
 
 .tool-card__tags li {
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.2rem 0.65rem;
-  border-radius: var(--radius-pill);
+  border-radius: 9999px;
   background-color: var(--color-bg);
   color: var(--color-ink);
+  border: 1px solid var(--color-border);
 }

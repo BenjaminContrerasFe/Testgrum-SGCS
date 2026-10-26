@@ -9,10 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link rel="stylesheet" href="../CSS/base.css">
   <link rel="stylesheet" href="../CSS/proceso.css">
 </head>
 <body>
+
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="../index.html" class="logo">
@@ -38,9 +40,9 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-calidad" hidden>
-              <li><a href="gestion.html#fundamentos">Fundamentos de calidad</a></li>
-              <li><a href="gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
-              <li><a href="gestion.html#herramientas">Herramientas de calidad</a></li>
+            <li><a href="gestion.html#fundamentos">Fundamentos de calidad</a></li>
+            <li><a href="gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
+            <li><a href="gestion.html#herramientas">Herramientas de calidad</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -50,9 +52,9 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-procesos" hidden>
-              <li><a href="proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
-              <li><a href="proceso.html#modelos">Modelos tradicionales</a></li>
-              <li><a href="proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
+            <li><a href="proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
+            <li><a href="proceso.html#modelos">Modelos tradicionales</a></li>
+            <li><a href="proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -62,10 +64,10 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-agiles" hidden>
-              <li><span class="is-soon" aria-disabled="true">Metodologías ágiles <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Ilustraciones ágiles <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Scrum en profundidad <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Kanban en profundidad <small>Sprint 2</small></span></li>
+            <li><a href="agiles.html#agiles">Metodologías ágiles</a></li>
+            <li><a href="agiles.html#ilustraciones-agiles">Ilustraciones ágiles</a></li>
+            <li><a href="metodologias.html#scrum">Scrum en profundidad</a></li>
+            <li><a href="metodologias.html#kanban">Kanban en profundidad</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -75,10 +77,10 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-recursos" hidden>
-              <li><span class="is-soon" aria-disabled="true">Glosario <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Preguntas frecuentes <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Enlaces de interés <small>Sprint 3</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Ejercicios y casos prácticos <small>Sprint 3</small></span></li>
+            <li><a href="recursos.html#glosario">Glosario</a></li>
+            <li><a href="recursos.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="recursos.html#enlaces">Enlaces de interés</a></li>
+            <li><a href="recursos.html#ejercicios">Ejercicios y casos prácticos</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -88,11 +90,22 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-interactivo" hidden>
-              <li><span class="is-soon" aria-disabled="true">Comparador de metodologías <small>Sprint 3</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Encuesta metodológica <small>Sprint 3</small></span></li>
+            <li><a href="interactivo.html#comparador">Comparador de metodologías</a></li>
+            <li><a href="interactivo.html#encuesta">Encuesta metodológica</a></li>
           </ul>
         </li>
-      </ul>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-nosotros">
+            <i class="nav-menu__icon fa-solid fa-people-group" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Sobre nosotros</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-nosotros" hidden>
+            <li><a href="nosotros.html#equipo">El equipo</a></li>
+            <li><a href="nosotros.html#contacto">Contacto</a></li>
+          </ul>
+        </li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -106,7 +119,6 @@
   </nav>
 
   <main id="contenido">
-    <!-- ============ US-05 · SDLC ============ -->
     <section class="section" id="sdlc" aria-labelledby="sdlc-title">
       <div class="container">
         <div class="section__header">
@@ -118,11 +130,10 @@
           </p>
         </div>
 
-        <!-- El JS genera los pasos desde el arreglo SDLC_STAGES -->
         <ol class="timeline" id="sdlcTimeline" aria-label="Etapas del ciclo de vida"></ol>
 
         <article class="card stage-detail" id="stageDetail" aria-live="polite">
-          <h2 class="heading-md" id="stageTitle">1. Requisitos</h2>
+          <h2 class="heading-md" id="stageTitle">Requisitos</h2>
           <p id="stageDesc">Se relevan las necesidades de usuarios y negocio.</p>
           <dl class="stage-detail__meta">
             <div><dt>Entregable típico</dt><dd id="stageOutput"></dd></div>
@@ -140,118 +151,198 @@
       </div>
     </section>
 
-    <!-- ============ US-06 · MODELOS TRADICIONALES (Sprint 2) ============ -->
     <section class="section" id="modelos" aria-labelledby="modelos-title">
       <div class="container">
         <div class="section__header">
           <span class="badge">Modelos tradicionales</span>
           <h2 class="heading-lg" id="modelos-title">Modelos para organizar el desarrollo</h2>
-          <p class="lead">Compará cascada, modelo en V e iterativo para reconocer ventajas, límites y contextos de uso.</p>
+          <p class="lead">Compará cascada, modelo en V e iterativo para reconocer ventajas, límites y contextos de uso. Cada modelo tiene su propio enlace: podés compartir, por ejemplo, <a class="inline-link" href="#modelo-v">proceso.html#modelo-v</a>.</p>
         </div>
 
-        <div class="chip-group tablist-spaced" role="tablist" aria-label="Modelos tradicionales">
-          <button type="button" class="chip" role="tab" id="tab-cascada" aria-controls="panel-cascada" aria-selected="true">Cascada</button>
-          <button type="button" class="chip" role="tab" id="tab-v" aria-controls="panel-v" aria-selected="false">Modelo en V</button>
-          <button type="button" class="chip" role="tab" id="tab-iterativo" aria-controls="panel-iterativo" aria-selected="false">Iterativo e incremental</button>
+        <div class="chip-group tablist-spaced" role="tablist" aria-label="Modelos tradicionales" data-hash-sync>
+          <button type="button" class="chip" role="tab" id="tab-cascada" aria-controls="cascada" aria-selected="true">
+            <i class="fa-solid fa-stairs" aria-hidden="true"></i> Cascada
+          </button>
+          <button type="button" class="chip" role="tab" id="tab-v" aria-controls="modelo-v" aria-selected="false">
+            <i class="fa-solid fa-v" aria-hidden="true"></i> Modelo en V
+          </button>
+          <button type="button" class="chip" role="tab" id="tab-iterativo" aria-controls="iterativo" aria-selected="false">
+            <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i> Iterativo e incremental
+          </button>
         </div>
 
-        <div class="card model-panel" role="tabpanel" id="panel-cascada" aria-labelledby="tab-cascada" tabindex="0">
-          <h3 class="heading-md">Modelo en cascada</h3>
-          <p>Avanza por etapas secuenciales: cada una empieza cuando la anterior terminó y fue aprobada.</p>
+        <article class="card model-panel" role="tabpanel" id="cascada" aria-labelledby="tab-cascada" tabindex="0">
+          <div class="model-panel__head">
+            <h3 class="heading-md">Modelo en cascada</h3>
+            <p>Propuesto por Winston Royce en 1970, avanza por etapas secuenciales: cada una empieza cuando la anterior terminó y su entregable fue aprobado. Es el modelo más antiguo y el punto de comparación de todos los demás.</p>
+          </div>
+
+          <ol class="model-steps" aria-label="Etapas del modelo en cascada">
+            <li>Requisitos</li><li>Diseño</li><li>Implementación</li><li>Pruebas</li><li>Despliegue</li><li>Mantenimiento</li>
+          </ol>
+
           <div class="pros-cons">
             <div class="pros-cons__box pros-cons__box--pro">
               <h4><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ventajas</h4>
-              <ul><li>Orden y documentación clara.</li><li>Fácil de planificar y controlar.</li></ul>
+              <ul>
+                <li>Orden y documentación completa en cada etapa.</li>
+                <li>Fácil de planificar, presupuestar y controlar.</li>
+                <li>Hitos claros: se sabe exactamente en qué etapa está el proyecto.</li>
+                <li>Sencillo de entender para equipos nuevos.</li>
+              </ul>
             </div>
             <div class="pros-cons__box pros-cons__box--con">
               <h4><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Desventajas</h4>
-              <ul><li>Poca flexibilidad ante cambios.</li><li>El cliente ve el producto recién al final.</li></ul>
+              <ul>
+                <li>Poca flexibilidad: volver atrás es caro.</li>
+                <li>El cliente ve el producto funcionando recién al final.</li>
+                <li>Los errores de requisitos se descubren tarde, en las pruebas.</li>
+                <li>Supone que todo se puede definir desde el principio.</li>
+              </ul>
             </div>
           </div>
-          <p class="model-when"><strong>Cuándo usarlo:</strong> requisitos estables y bien entendidos, proyectos cortos o muy regulados.</p>
-        </div>
 
-        <div class="card model-panel" role="tabpanel" id="panel-v" aria-labelledby="tab-v" tabindex="0" hidden>
-          <h3 class="heading-md">Modelo en V</h3>
-          <p>Relaciona cada etapa de desarrollo con su nivel de prueba: los requisitos con la aceptación, el diseño con la integración y el código con las pruebas unitarias.</p>
+          <div class="model-when">
+            <p><strong>Cuándo usarlo:</strong> requisitos estables y bien entendidos, tecnología conocida, proyectos cortos o con contratos de alcance cerrado.</p>
+            <p><strong>Ejemplo:</strong> migrar un sistema de facturación a una nueva base de datos manteniendo exactamente las mismas funciones.</p>
+          </div>
+          <a class="model-panel__figure-link" href="#fig-cascada"><i class="fa-regular fa-image" aria-hidden="true"></i> Ver el diagrama de cascada</a>
+        </article>
+
+        <article class="card model-panel" role="tabpanel" id="modelo-v" aria-labelledby="tab-v" tabindex="0" hidden>
+          <div class="model-panel__head">
+            <h3 class="heading-md">Modelo en V</h3>
+            <p>Es una evolución de la cascada que pone las pruebas al mismo nivel que el desarrollo. Cada etapa de la rama izquierda (definición) tiene su nivel de prueba en la rama derecha (verificación y validación), y las pruebas se planifican mientras se define.</p>
+          </div>
+
+          <div class="table-wrap">
+            <table class="compare-table v-pairs">
+              <caption class="sr-only">Correspondencia entre etapas de desarrollo y niveles de prueba en el modelo en V</caption>
+              <thead><tr><th scope="col">Etapa de definición</th><th scope="col">Se verifica con…</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Requisitos del usuario</th><td>Pruebas de aceptación</td></tr>
+                <tr><th scope="row">Diseño del sistema</th><td>Pruebas de sistema</td></tr>
+                <tr><th scope="row">Diseño de arquitectura</th><td>Pruebas de integración</td></tr>
+                <tr><th scope="row">Diseño de módulos</th><td>Pruebas unitarias</td></tr>
+              </tbody>
+            </table>
+          </div>
+
           <div class="pros-cons">
             <div class="pros-cons__box pros-cons__box--pro">
               <h4><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ventajas</h4>
-              <ul><li>Las pruebas se planifican desde el inicio.</li><li>Detección temprana de errores de diseño.</li></ul>
+              <ul>
+                <li>Las pruebas se diseñan desde el inicio, no al final.</li>
+                <li>Detección temprana de errores de diseño.</li>
+                <li>Trazabilidad clara entre requisitos y pruebas.</li>
+                <li>Muy valorado en auditorías y certificaciones.</li>
+              </ul>
             </div>
             <div class="pros-cons__box pros-cons__box--con">
               <h4><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Desventajas</h4>
-              <ul><li>Tan rígido como la cascada.</li><li>Costoso si cambian los requisitos.</li></ul>
+              <ul>
+                <li>Tan rígido como la cascada ante cambios.</li>
+                <li>Costoso si cambian los requisitos a mitad de camino.</li>
+                <li>No produce prototipos ni versiones intermedias.</li>
+                <li>Requiere mucha documentación de pruebas.</li>
+              </ul>
             </div>
           </div>
-          <p class="model-when"><strong>Cuándo usarlo:</strong> sistemas críticos (salud, aviación) donde la verificación es obligatoria.</p>
-        </div>
 
-        <div class="card model-panel" role="tabpanel" id="panel-iterativo" aria-labelledby="tab-iterativo" tabindex="0" hidden>
-          <h3 class="heading-md">Modelo iterativo e incremental</h3>
-          <p>Construye el producto en ciclos cortos; cada ciclo entrega una parte funcional que se mejora en el siguiente.</p>
+          <div class="model-when">
+            <p><strong>Cuándo usarlo:</strong> sistemas críticos donde la verificación es obligatoria (salud, aviación, automotriz, banca).</p>
+            <p><strong>Ejemplo:</strong> el software de un monitor de signos vitales, que debe demostrar que cada requisito fue probado.</p>
+          </div>
+          <a class="model-panel__figure-link" href="#fig-modelo-v"><i class="fa-regular fa-image" aria-hidden="true"></i> Ver el diagrama del modelo en V</a>
+        </article>
+
+        <article class="card model-panel" role="tabpanel" id="iterativo" aria-labelledby="tab-iterativo" tabindex="0" hidden>
+          <div class="model-panel__head">
+            <h3 class="heading-md">Modelo iterativo e incremental</h3>
+            <p>Construye el producto en ciclos cortos. <strong>Iterativo</strong> significa que el ciclo se repite y en cada vuelta se mejora lo hecho; <strong>incremental</strong>, que cada vuelta agrega una parte nueva que funciona. Es la base sobre la que nacen las metodologías ágiles.</p>
+          </div>
+
+          <ol class="model-steps model-steps--loop" aria-label="Actividades de cada iteración">
+            <li>Planificar</li><li>Analizar y diseñar</li><li>Construir</li><li>Probar</li><li>Evaluar con el cliente</li>
+          </ol>
+
           <div class="pros-cons">
             <div class="pros-cons__box pros-cons__box--pro">
               <h4><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ventajas</h4>
-              <ul><li>Entregas tempranas y retroalimentación constante.</li><li>Los riesgos aparecen antes.</li></ul>
+              <ul>
+                <li>Entregas tempranas y retroalimentación constante.</li>
+                <li>Los riesgos técnicos aparecen y se resuelven antes.</li>
+                <li>Se adapta a requisitos que cambian.</li>
+                <li>El cliente usa partes del sistema desde temprano.</li>
+              </ul>
             </div>
             <div class="pros-cons__box pros-cons__box--con">
               <h4><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Desventajas</h4>
-              <ul><li>Requiere más gestión en cada iteración.</li><li>Sin control, el alcance puede crecer sin fin.</li></ul>
+              <ul>
+                <li>Requiere más gestión y coordinación en cada iteración.</li>
+                <li>Sin control, el alcance puede crecer sin fin.</li>
+                <li>Es difícil fijar costo y fecha total desde el inicio.</li>
+                <li>La arquitectura debe pensarse para crecer.</li>
+              </ul>
             </div>
           </div>
-          <p class="model-when"><strong>Cuándo usarlo:</strong> requisitos que van a cambiar o proyectos grandes que conviene dividir.</p>
+
+          <div class="model-when">
+            <p><strong>Cuándo usarlo:</strong> requisitos que van a cambiar, proyectos grandes que conviene dividir o productos que necesitan salir al mercado rápido.</p>
+            <p><strong>Ejemplo:</strong> una app de delivery que primero lanza pedidos, después pagos en línea y después seguimiento en tiempo real.</p>
+          </div>
+          <a class="model-panel__figure-link" href="#fig-iterativo"><i class="fa-regular fa-image" aria-hidden="true"></i> Ver el diagrama iterativo</a>
+        </article>
+
+        <h3 class="heading-md subheading">Los tres modelos de un vistazo</h3>
+        <div class="table-wrap">
+          <table class="compare-table">
+            <caption class="sr-only">Comparación rápida entre cascada, modelo en V e iterativo</caption>
+            <thead>
+              <tr><th scope="col">Criterio</th><th scope="col">Cascada</th><th scope="col">Modelo en V</th><th scope="col">Iterativo</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Flexibilidad ante cambios</th><td>Baja</td><td>Baja</td><td>Alta</td></tr>
+              <tr><th scope="row">Primera versión usable</th><td>Al final</td><td>Al final</td><td>En la primera iteración</td></tr>
+              <tr><th scope="row">Momento de las pruebas</th><td>Después de construir</td><td>Planificadas desde el inicio</td><td>En cada iteración</td></tr>
+              <tr><th scope="row">Documentación</th><td>Extensa</td><td>Extensa</td><td>La necesaria por iteración</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- ============ US-07 · ILUSTRACIONES (Sprint 2: pasar a SVG + lightbox) ============ -->
     <section class="section" id="ilustraciones" aria-labelledby="ilustraciones-title">
       <div class="container">
         <div class="section__header">
           <span class="badge badge--ink">Ilustraciones</span>
           <h2 class="heading-lg" id="ilustraciones-title">Diagramas para entender cada modelo</h2>
-          <p class="lead">Un esquema por modelo para ver de un vistazo cómo fluye el trabajo.</p>
+          <p class="lead">Tocá un diagrama para verlo en pantalla completa. Dentro de la vista ampliada podés pasar de uno a otro con las flechas.</p>
         </div>
 
         <div class="grid grid--3">
-          <figure class="card diagram">
-            <div class="diagram__art" role="img" aria-label="Cascada: requisitos, diseño, desarrollo y pruebas en escalera descendente">
-              <div class="cascade">
-                <span class="flow-pill">Requisitos</span>
-                <span class="flow-pill">Diseño</span>
-                <span class="flow-pill">Desarrollo</span>
-                <span class="flow-pill">Pruebas</span>
-              </div>
-            </div>
-            <figcaption><strong>Cascada</strong>Cada etapa "cae" en la siguiente, sin volver atrás.</figcaption>
+          <figure class="card figure-zoom" id="fig-cascada">
+            <button type="button" class="figure-zoom__trigger" data-lightbox="modelos" aria-label="Ampliar diagrama del modelo en cascada">
+              <img src="../img/diagramas/cascada.svg" width="640" height="420" loading="lazy" decoding="async"
+                   alt="Diagrama del modelo en cascada: seis etapas en escalera descendente, de requisitos a mantenimiento, cada una conectada con una flecha a la siguiente.">
+            </button>
+            <figcaption><strong>Cascada</strong>Cada etapa “cae” en la siguiente. Volver atrás (flecha punteada) es posible, pero caro.</figcaption>
           </figure>
 
-          <figure class="card diagram">
-            <div class="diagram__art" role="img" aria-label="Modelo en V: requisitos se valida con aceptación, diseño con integración, y en la base está la codificación">
-              <div class="v-model">
-                <span class="flow-pill">Requisitos</span>
-                <span class="flow-pill">Aceptación</span>
-                <span class="flow-pill">Diseño</span>
-                <span class="flow-pill">Integración</span>
-                <span class="flow-pill v-model__base">Codificación</span>
-              </div>
-            </div>
-            <figcaption><strong>Modelo en V</strong>A la izquierda se construye, a la derecha se prueba cada nivel.</figcaption>
+          <figure class="card figure-zoom" id="fig-modelo-v">
+            <button type="button" class="figure-zoom__trigger" data-lightbox="modelos" aria-label="Ampliar diagrama del modelo en V">
+              <img src="../img/diagramas/modelo-v.svg" width="640" height="420" loading="lazy" decoding="async"
+                   alt="Diagrama del modelo en V: a la izquierda bajan requisitos, diseño del sistema, arquitectura y módulos; en la base está la codificación; a la derecha suben pruebas unitarias, de integración, de sistema y de aceptación, cada una unida con línea punteada a su etapa de definición.">
+            </button>
+            <figcaption><strong>Modelo en V</strong>A la izquierda se define, a la derecha se prueba. Cada nivel tiene su par.</figcaption>
           </figure>
 
-          <figure class="card diagram">
-            <div class="diagram__art" role="img" aria-label="Iterativo: planificar, construir y evaluar se repite en ciclos">
-              <div class="loop">
-                <span class="flow-pill">Planificar</span>
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                <span class="flow-pill">Construir</span>
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                <span class="flow-pill">Evaluar</span>
-                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
-              </div>
-            </div>
-            <figcaption><strong>Iterativo</strong>El ciclo se repite y en cada vuelta el producto crece.</figcaption>
+          <figure class="card figure-zoom" id="fig-iterativo">
+            <button type="button" class="figure-zoom__trigger" data-lightbox="modelos" aria-label="Ampliar diagrama del modelo iterativo e incremental">
+              <img src="../img/diagramas/iterativo.svg" width="640" height="420" loading="lazy" decoding="async"
+                   alt="Diagrama del modelo iterativo e incremental: tres ciclos de planificar, construir, probar y evaluar; debajo de cada ciclo el producto crece de uno a tres bloques.">
+            </button>
+            <figcaption><strong>Iterativo e incremental</strong>El ciclo se repite y en cada vuelta el producto suma una parte que funciona.</figcaption>
           </figure>
         </div>
       </div>
@@ -266,7 +357,9 @@
       </div>
       <nav class="site-footer__nav" aria-label="Pie de página">
         <a href="../index.html">Inicio</a>
-        <span class="is-soon" aria-disabled="true">Sobre nosotros y contacto (Sprint 3)</span>
+        <a href="recursos.html#glosario">Glosario</a>
+        <a href="nosotros.html#equipo">Sobre nosotros</a>
+        <a href="nosotros.html#contacto">Contacto</a>
       </nav>
     </div>
   </footer>

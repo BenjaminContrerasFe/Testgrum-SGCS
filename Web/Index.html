@@ -9,10 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Hojas de estilo conectadas con la carpeta CSS -->
+  <link rel="stylesheet" href="CSS/base.css">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="index.html" class="logo">
@@ -38,9 +41,9 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-calidad" hidden>
-              <li><a href="html/gestion.html#fundamentos">Fundamentos de calidad</a></li>
-              <li><a href="html/gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
-              <li><a href="html/gestion.html#herramientas">Herramientas de calidad</a></li>
+            <li><a href="html/gestion.html#fundamentos">Fundamentos de calidad</a></li>
+            <li><a href="html/gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
+            <li><a href="html/gestion.html#herramientas">Herramientas de calidad</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -50,9 +53,9 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-procesos" hidden>
-              <li><a href="html/proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
-              <li><a href="html/proceso.html#modelos">Modelos tradicionales</a></li>
-              <li><a href="html/proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
+            <li><a href="html/proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
+            <li><a href="html/proceso.html#modelos">Modelos tradicionales</a></li>
+            <li><a href="html/proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -62,10 +65,10 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-agiles" hidden>
-              <li><span class="is-soon" aria-disabled="true">Metodologías ágiles <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Ilustraciones ágiles <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Scrum en profundidad <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Kanban en profundidad <small>Sprint 2</small></span></li>
+            <li><a href="html/agiles.html#agiles">Metodologías ágiles</a></li>
+            <li><a href="html/agiles.html#ilustraciones-agiles">Ilustraciones ágiles</a></li>
+            <li><a href="html/metodologias.html#scrum">Scrum en profundidad</a></li>
+            <li><a href="html/metodologias.html#kanban">Kanban en profundidad</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -75,10 +78,10 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-recursos" hidden>
-              <li><span class="is-soon" aria-disabled="true">Glosario <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Preguntas frecuentes <small>Sprint 2</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Enlaces de interés <small>Sprint 3</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Ejercicios y casos prácticos <small>Sprint 3</small></span></li>
+            <li><a href="html/recursos.html#glosario">Glosario</a></li>
+            <li><a href="html/recursos.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="html/recursos.html#enlaces">Enlaces de interés</a></li>
+            <li><a href="html/recursos.html#ejercicios">Ejercicios y casos prácticos</a></li>
           </ul>
         </li>
         <li class="nav-menu__item">
@@ -88,18 +91,28 @@
             <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
           <ul class="submenu" id="submenu-interactivo" hidden>
-              <li><span class="is-soon" aria-disabled="true">Comparador de metodologías <small>Sprint 3</small></span></li>
-              <li><span class="is-soon" aria-disabled="true">Encuesta metodológica <small>Sprint 3</small></span></li>
+            <li><a href="html/interactivo.html#comparador">Comparador de metodologías</a></li>
+            <li><a href="html/interactivo.html#encuesta">Encuesta metodológica</a></li>
           </ul>
         </li>
-      </ul>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-nosotros">
+            <i class="nav-menu__icon fa-solid fa-people-group" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Sobre nosotros</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-nosotros" hidden>
+            <li><a href="html/nosotros.html#equipo">El equipo</a></li>
+            <li><a href="html/nosotros.html#contacto">Contacto</a></li>
+          </ul>
+        </li>
+        </ul>
       </nav>
     </div>
   </header>
 
   <main id="contenido">
     <section class="hero" aria-labelledby="hero-title">
-      <!-- Recomendado: descargar la foto, pasarla a WebP y servirla desde img/ -->
       <img class="hero__image"
            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop"
            alt="" fetchpriority="high">
@@ -126,7 +139,7 @@
           <p class="lead">Seguí las secciones en orden o entrá directo a la que necesites.</p>
         </div>
 
-        <ol class="grid grid--4 route">
+        <ol class="grid grid--3 route">
           <li>
             <a href="html/gestion.html" class="card route__card">
               <span class="route__icon"><i class="fa-regular fa-circle-check" aria-hidden="true"></i></span>
@@ -142,20 +155,32 @@
             </a>
           </li>
           <li>
-            <div class="card route__card is-soon" aria-disabled="true">
+            <a href="html/agiles.html" class="card route__card">
               <span class="route__icon"><i class="fa-solid fa-rotate" aria-hidden="true"></i></span>
               <h3 class="heading-md">Metodologías ágiles</h3>
-              <p>Scrum, Kanban y XP en detalle.</p>
-              <small>Sprint 2</small>
-            </div>
+              <p>Manifiesto Ágil, Scrum, Kanban y XP.</p>
+            </a>
           </li>
           <li>
-            <div class="card route__card is-soon" aria-disabled="true">
+            <a href="html/metodologias.html" class="card route__card">
+              <span class="route__icon"><i class="fa-solid fa-table-columns" aria-hidden="true"></i></span>
+              <h3 class="heading-md">Scrum y Kanban en detalle</h3>
+              <p>Un sprint interactivo y un tablero para practicar el límite de WIP.</p>
+            </a>
+          </li>
+          <li>
+            <a href="html/recursos.html" class="card route__card">
               <span class="route__icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
               <h3 class="heading-md">Recursos y aprendizaje</h3>
-              <p>Glosario, preguntas frecuentes y ejercicios.</p>
-              <small>Sprint 2</small>
-            </div>
+              <p>Glosario, preguntas frecuentes, enlaces y ejercicios.</p>
+            </a>
+          </li>
+          <li>
+            <a href="html/interactivo.html" class="card route__card">
+              <span class="route__icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i></span>
+              <h3 class="heading-md">Herramientas interactivas</h3>
+              <p>Compará metodologías y descubrí cuál le sirve a tu proyecto.</p>
+            </a>
           </li>
         </ol>
       </div>
@@ -170,11 +195,14 @@
       </div>
       <nav class="site-footer__nav" aria-label="Pie de página">
         <a href="index.html">Inicio</a>
-        <span class="is-soon" aria-disabled="true">Sobre nosotros y contacto (Sprint 3)</span>
+        <a href="html/recursos.html#glosario">Glosario</a>
+        <a href="html/nosotros.html#equipo">Sobre nosotros</a>
+        <a href="html/nosotros.html#contacto">Contacto</a>
       </nav>
     </div>
   </footer>
 
+  <!-- Script JS conectado con la carpeta JavaScript -->
   <script src="JavaScript/scrip.js"></script>
 </body>
 </html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrum y Kanban en detalle | Testgrum</title>
+  <meta name="description" content="Roles, eventos y artefactos de Scrum con un sprint interactivo, y un tablero Kanban con límite de WIP.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="../CSS/base.css">
+  <link rel="stylesheet" href="../CSS/metodologias.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="logo">
+        <img src="../img/logo-testgrum.png" alt="Testgrum, ir al inicio" width="120" height="28">
+      </a>
+
+      <button type="button" class="menu-toggle" id="menuToggle"
+              aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Principal" hidden>
+        <ul>
+        <li class="nav-menu__item">
+          <a href="../index.html" class="nav-menu__link">
+            <i class="nav-menu__icon fa-solid fa-house" aria-hidden="true"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-calidad">
+            <i class="nav-menu__icon fa-regular fa-circle-check" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Gestión de la calidad</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-calidad" hidden>
+            <li><a href="gestion.html#fundamentos">Fundamentos de calidad</a></li>
+            <li><a href="gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
+            <li><a href="gestion.html#herramientas">Herramientas de calidad</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-procesos">
+            <i class="nav-menu__icon fa-solid fa-code-branch" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Procesos de desarrollo</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-procesos" hidden>
+            <li><a href="proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
+            <li><a href="proceso.html#modelos">Modelos tradicionales</a></li>
+            <li><a href="proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-agiles">
+            <i class="nav-menu__icon fa-solid fa-rotate" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Metodologías ágiles</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-agiles" hidden>
+            <li><a href="agiles.html#agiles">Metodologías ágiles</a></li>
+            <li><a href="agiles.html#ilustraciones-agiles">Ilustraciones ágiles</a></li>
+            <li><a href="metodologias.html#scrum">Scrum en profundidad</a></li>
+            <li><a href="metodologias.html#kanban">Kanban en profundidad</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-recursos">
+            <i class="nav-menu__icon fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Recursos y aprendizaje</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-recursos" hidden>
+            <li><a href="recursos.html#glosario">Glosario</a></li>
+            <li><a href="recursos.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="recursos.html#enlaces">Enlaces de interés</a></li>
+            <li><a href="recursos.html#ejercicios">Ejercicios y casos prácticos</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-interactivo">
+            <i class="nav-menu__icon fa-solid fa-sliders" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Herramientas interactivas</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-interactivo" hidden>
+            <li><a href="interactivo.html#comparador">Comparador de metodologías</a></li>
+            <li><a href="interactivo.html#encuesta">Encuesta metodológica</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-nosotros">
+            <i class="nav-menu__icon fa-solid fa-people-group" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Sobre nosotros</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-nosotros" hidden>
+            <li><a href="nosotros.html#equipo">El equipo</a></li>
+            <li><a href="nosotros.html#contacto">Contacto</a></li>
+          </ul>
+        </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="page-nav" aria-label="Secciones de esta página">
+    <div class="container chip-group">
+      <a href="#scrum" class="chip">Scrum</a>
+      <a href="#sprint-interactivo" class="chip">Sprint interactivo</a>
+      <a href="#kanban" class="chip">Kanban</a>
+      <a href="#tablero" class="chip">Tablero interactivo</a>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <section class="section" id="scrum" aria-labelledby="scrum-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge">Metodologías en detalle</span>
+          <h1 class="heading-xl" id="scrum-title">Scrum en profundidad</h1>
+          <p class="lead">
+            Scrum organiza el trabajo en sprints de duración fija. Acá lo vemos por bloques: quiénes participan,
+            en qué momentos se encuentran y qué producen. Después, armá tu propio sprint y explorá cada evento.
+          </p>
+        </div>
+
+        <div class="chip-group tablist-spaced" role="tablist" aria-label="Bloques de Scrum" data-hash-sync>
+          <button type="button" class="chip" role="tab" id="tab-roles" aria-controls="roles" aria-selected="true">
+            <i class="fa-solid fa-user-group" aria-hidden="true"></i> 1. Roles
+          </button>
+          <button type="button" class="chip" role="tab" id="tab-eventos" aria-controls="eventos" aria-selected="false">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> 2. Eventos
+          </button>
+          <button type="button" class="chip" role="tab" id="tab-artefactos" aria-controls="artefactos" aria-selected="false">
+            <i class="fa-solid fa-layer-group" aria-hidden="true"></i> 3. Artefactos
+          </button>
+        </div>
+
+        <div class="tab-panel" role="tabpanel" id="roles" aria-labelledby="tab-roles" tabindex="0">
+          <p class="tab-panel__intro">El Scrum Team es pequeño (10 personas o menos), multifuncional y sin jerarquías internas. Tiene tres responsabilidades:</p>
+          <div class="grid grid--3">
+            <article class="card role-card">
+              <span class="role-card__icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span>
+              <h2 class="heading-md">Product Owner</h2>
+              <p>Es <strong>una persona</strong>, no un comité. Responde por maximizar el valor del producto.</p>
+              <ul class="check-list">
+                <li>Define y comunica el Objetivo del Producto.</li>
+                <li>Crea y ordena los elementos del Product Backlog.</li>
+                <li>Se asegura de que el backlog sea visible y entendible.</li>
+              </ul>
+              <p class="role-card__myth"><strong>No es:</strong> el jefe del equipo ni quien dice cómo programar.</p>
+            </article>
+            <article class="card role-card">
+              <span class="role-card__icon"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></span>
+              <h2 class="heading-md">Scrum Master</h2>
+              <p>Responde por la efectividad del equipo: que Scrum se entienda y se aplique bien.</p>
+              <ul class="check-list">
+                <li>Acompaña al equipo en la autogestión.</li>
+                <li>Elimina impedimentos que frenan el avance.</li>
+                <li>Cuida que los eventos ocurran, sean útiles y respeten su tiempo.</li>
+              </ul>
+              <p class="role-card__myth"><strong>No es:</strong> un secretario que anota tareas ni un gerente de proyecto.</p>
+            </article>
+            <article class="card role-card">
+              <span class="role-card__icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></span>
+              <h2 class="heading-md">Developers</h2>
+              <p>Todas las personas que construyen el incremento: programan, diseñan, prueban o documentan.</p>
+              <ul class="check-list">
+                <li>Crean el plan del sprint (Sprint Backlog).</li>
+                <li>Cumplen la Definición de Hecho.</li>
+                <li>Se adaptan cada día para alcanzar el Objetivo del Sprint.</li>
+              </ul>
+              <p class="role-card__myth"><strong>No es:</strong> solo “los programadores”: el tester y el diseñador también son Developers.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" role="tabpanel" id="eventos" aria-labelledby="tab-eventos" tabindex="0" hidden>
+          <p class="tab-panel__intro">Cada evento tiene un tiempo máximo (<em>timebox</em>). Los valores de la tabla corresponden a un sprint de un mes; en sprints más cortos suelen ser proporcionalmente menores.</p>
+          <div class="table-wrap">
+            <table class="compare-table">
+              <caption class="sr-only">Eventos de Scrum con su duración máxima y su objetivo</caption>
+              <thead>
+                <tr><th scope="col">Evento</th><th scope="col">Duración máxima</th><th scope="col">Objetivo</th><th scope="col">Resultado</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Sprint</th><td>1 mes</td><td>Contener todo el trabajo y los demás eventos.</td><td>Un incremento terminado.</td></tr>
+                <tr><th scope="row">Sprint Planning</th><td>8 horas</td><td>Definir por qué es valioso el sprint, qué se hará y cómo.</td><td>Objetivo del Sprint y Sprint Backlog.</td></tr>
+                <tr><th scope="row">Daily Scrum</th><td>15 minutos</td><td>Revisar el avance hacia el objetivo y ajustar el plan del día.</td><td>Plan de las próximas 24 horas.</td></tr>
+                <tr><th scope="row">Sprint Review</th><td>4 horas</td><td>Mostrar el resultado a los interesados y recibir comentarios.</td><td>Product Backlog actualizado.</td></tr>
+                <tr><th scope="row">Sprint Retrospective</th><td>3 horas</td><td>Mejorar la calidad y la efectividad del equipo.</td><td>Mejoras concretas para el próximo sprint.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <a class="text-link" href="#sprint-interactivo"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Ver los eventos en el sprint interactivo</a>
+        </div>
+
+        <div class="tab-panel" role="tabpanel" id="artefactos" aria-labelledby="tab-artefactos" tabindex="0" hidden>
+          <p class="tab-panel__intro">Cada artefacto tiene un <strong>compromiso</strong> que le da foco y permite medir el progreso.</p>
+          <div class="grid grid--3">
+            <article class="card artifact-card">
+              <h2 class="heading-md">Product Backlog</h2>
+              <p>Lista ordenada y viva de todo lo que podría necesitar el producto.</p>
+              <dl class="artifact-card__meta">
+                <div><dt>Compromiso</dt><dd>Objetivo del Producto</dd></div>
+                <div><dt>Lo gestiona</dt><dd>Product Owner</dd></div>
+                <div><dt>Cambia</dt><dd>Constantemente (refinamiento)</dd></div>
+              </dl>
+            </article>
+            <article class="card artifact-card">
+              <h2 class="heading-md">Sprint Backlog</h2>
+              <p>Los elementos elegidos para el sprint más el plan para entregarlos.</p>
+              <dl class="artifact-card__meta">
+                <div><dt>Compromiso</dt><dd>Objetivo del Sprint</dd></div>
+                <div><dt>Lo gestionan</dt><dd>Developers</dd></div>
+                <div><dt>Cambia</dt><dd>Todos los días, durante el sprint</dd></div>
+              </dl>
+            </article>
+            <article class="card artifact-card">
+              <h2 class="heading-md">Incremento</h2>
+              <p>Un paso concreto hacia el Objetivo del Producto, utilizable y verificado.</p>
+              <dl class="artifact-card__meta">
+                <div><dt>Compromiso</dt><dd>Definición de Hecho (DoD)</dd></div>
+                <div><dt>Lo crean</dt><dd>Developers</dd></div>
+                <div><dt>Cambia</dt><dd>Se suma uno o más por sprint</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+
+        <div class="sprint-lab" id="sprint-interactivo">
+          <div class="sprint-lab__head">
+            <div>
+              <h2 class="heading-lg">Sprint interactivo</h2>
+              <p class="lead">Elegí la duración del sprint y tocá cualquier evento del calendario para ver cuánto dura y para qué sirve.</p>
+            </div>
+            <div class="sprint-lab__controls">
+              <span class="field__label" id="sprintLengthLabel">Duración del sprint</span>
+              <div class="chip-group" role="group" aria-labelledby="sprintLengthLabel">
+                <button type="button" class="chip" data-weeks="1" aria-pressed="false">1 semana</button>
+                <button type="button" class="chip" data-weeks="2" aria-pressed="true">2 semanas</button>
+                <button type="button" class="chip" data-weeks="3" aria-pressed="false">3 semanas</button>
+                <button type="button" class="chip" data-weeks="4" aria-pressed="false">4 semanas</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="sprint-lab__body">
+            <div class="sprint-calendar-wrap">
+              <button type="button" class="sprint-bar" id="sprintBar" data-event="sprint" aria-pressed="false">
+                <span id="sprintBarText">Sprint de 2 semanas</span>
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+              </button>
+              <div class="sprint-calendar" id="sprintCalendar"></div>
+              <ul class="sprint-legend" aria-label="Referencias">
+                <li><span class="event-dot event-dot--planning"></span> Planning</li>
+                <li><span class="event-dot event-dot--daily"></span> Daily</li>
+                <li><span class="event-dot event-dot--review"></span> Review</li>
+                <li><span class="event-dot event-dot--retro"></span> Retrospectiva</li>
+              </ul>
+            </div>
+
+            <aside class="card event-detail" id="eventDetail" aria-live="polite">
+              <div class="event-detail__head">
+                <span class="event-detail__icon" id="eventIcon"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i></span>
+                <h3 class="heading-md" id="eventName">Sprint Planning</h3>
+              </div>
+              <p class="event-detail__duration"><i class="fa-regular fa-clock" aria-hidden="true"></i> <span id="eventDuration"></span></p>
+              <dl class="event-detail__meta">
+                <div><dt>Objetivo</dt><dd id="eventGoal"></dd></div>
+                <div><dt>Participan</dt><dd id="eventWho"></dd></div>
+                <div><dt>Resultado</dt><dd id="eventOutput"></dd></div>
+              </dl>
+              <p class="note" id="eventTip"></p>
+            </aside>
+          </div>
+
+          <p class="sprint-summary" id="sprintSummary" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kanban" aria-labelledby="kanban-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge badge--ink">Metodologías en detalle</span>
+          <h2 class="heading-lg" id="kanban-title">Kanban como herramienta de gestión de procesos</h2>
+          <p class="lead">
+            Kanban no reemplaza tu proceso: lo hace visible para mejorarlo. Su idea central es simple:
+            <strong>dejar de empezar y empezar a terminar</strong>.
+          </p>
+        </div>
+
+        <div class="grid grid--2 kanban-concepts">
+          <article class="card">
+            <h3 class="heading-md"><i class="fa-solid fa-eye" aria-hidden="true"></i> Visualizar el flujo</h3>
+            <p>Cada columna del tablero es un estado del proceso y cada tarjeta, un trabajo. Con mirar el tablero se sabe qué está trabado y dónde.</p>
+          </article>
+          <article class="card">
+            <h3 class="heading-md"><i class="fa-solid fa-hand" aria-hidden="true"></i> Limitar el trabajo en curso (WIP)</h3>
+            <p>Cada columna tiene un máximo de tarjetas. Si está llena, nadie empieza algo nuevo: se ayuda a terminar lo que hay. Menos tareas a la vez = cada una termina antes.</p>
+          </article>
+          <article class="card">
+            <h3 class="heading-md"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i> Medir el flujo</h3>
+            <p><strong>Tiempo de ciclo:</strong> desde que se empieza una tarea hasta que se termina. <strong>Rendimiento:</strong> tareas terminadas por período. <strong>Ley de Little:</strong> tiempo de ciclo promedio = WIP promedio ÷ rendimiento.</p>
+          </article>
+          <article class="card">
+            <h3 class="heading-md"><i class="fa-solid fa-scroll" aria-hidden="true"></i> Políticas explícitas</h3>
+            <p>Las reglas se escriben y se ven: cuándo una tarjeta está “lista para empezar”, qué significa “Hecho” y quién puede mover cada tarjeta.</p>
+          </article>
+        </div>
+
+        <div class="board-lab" id="tablero">
+          <div class="board-lab__head">
+            <div>
+              <h3 class="heading-lg">Tablero interactivo</h3>
+              <p class="lead">Arrastrá las tarjetas entre columnas o usá las flechas de cada tarjeta. Probá llenar “En proceso”.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__title">Testgrum</p>
+        <p>Un espacio educativo para entender cómo se construye software de calidad.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Pie de página">
+        <a href="../index.html">Inicio</a>
+        <a href="recursos.html#glosario">Glosario</a>
+        <a href="nosotros.html#equipo">Sobre nosotros</a>
+        <a href="nosotros.html#contacto">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../JavaScript/scrip.js"></script>
+  <script src="../JavaScript/metodologias.js"></script>
+</body>
+</html>

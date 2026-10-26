@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodologías ágiles | Testgrum</title>
+  <meta name="description" content="Manifiesto Ágil, Scrum, Kanban y XP: principios, roles, ceremonias y artefactos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="../CSS/base.css">
+  <link rel="stylesheet" href="../CSS/agiles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="logo">
+        <img src="../img/logo-testgrum.png" alt="Testgrum, ir al inicio" width="120" height="28">
+      </a>
+
+      <button type="button" class="menu-toggle" id="menuToggle"
+              aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Principal" hidden>
+        <ul>
+        <li class="nav-menu__item">
+          <a href="../index.html" class="nav-menu__link">
+            <i class="nav-menu__icon fa-solid fa-house" aria-hidden="true"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-calidad">
+            <i class="nav-menu__icon fa-regular fa-circle-check" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Gestión de la calidad</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-calidad" hidden>
+            <li><a href="gestion.html#fundamentos">Fundamentos de calidad</a></li>
+            <li><a href="gestion.html#aseguramiento">Técnicas de aseguramiento</a></li>
+            <li><a href="gestion.html#herramientas">Herramientas de calidad</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-procesos">
+            <i class="nav-menu__icon fa-solid fa-code-branch" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Procesos de desarrollo</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-procesos" hidden>
+            <li><a href="proceso.html#sdlc">Ciclo de vida (SDLC)</a></li>
+            <li><a href="proceso.html#modelos">Modelos tradicionales</a></li>
+            <li><a href="proceso.html#ilustraciones">Ilustraciones de modelos</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-agiles">
+            <i class="nav-menu__icon fa-solid fa-rotate" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Metodologías ágiles</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-agiles" hidden>
+            <li><a href="agiles.html#agiles">Metodologías ágiles</a></li>
+            <li><a href="agiles.html#ilustraciones-agiles">Ilustraciones ágiles</a></li>
+            <li><a href="metodologias.html#scrum">Scrum en profundidad</a></li>
+            <li><a href="metodologias.html#kanban">Kanban en profundidad</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-recursos">
+            <i class="nav-menu__icon fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Recursos y aprendizaje</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-recursos" hidden>
+            <li><a href="recursos.html#glosario">Glosario</a></li>
+            <li><a href="recursos.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="recursos.html#enlaces">Enlaces de interés</a></li>
+            <li><a href="recursos.html#ejercicios">Ejercicios y casos prácticos</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-interactivo">
+            <i class="nav-menu__icon fa-solid fa-sliders" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Herramientas interactivas</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-interactivo" hidden>
+            <li><a href="interactivo.html#comparador">Comparador de metodologías</a></li>
+            <li><a href="interactivo.html#encuesta">Encuesta metodológica</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu__item">
+          <button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="submenu-nosotros">
+            <i class="nav-menu__icon fa-solid fa-people-group" aria-hidden="true"></i>
+            <span class="submenu-toggle__text">Sobre nosotros</span>
+            <i class="submenu-toggle__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="submenu" id="submenu-nosotros" hidden>
+            <li><a href="nosotros.html#equipo">El equipo</a></li>
+            <li><a href="nosotros.html#contacto">Contacto</a></li>
+          </ul>
+        </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="page-nav" aria-label="Secciones de esta página">
+    <div class="container chip-group">
+      <a href="#manifiesto" class="chip">Manifiesto</a>
+      <a href="#scrum-agil" class="chip">Scrum</a>
+      <a href="#kanban-agil" class="chip">Kanban</a>
+      <a href="#xp" class="chip">XP</a>
+      <a href="#comparativa" class="chip">Ágil vs. tradicional</a>
+      <a href="#ilustraciones-agiles" class="chip">Ilustraciones</a>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <section class="section" id="agiles" aria-labelledby="agiles-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge">Metodologías ágiles</span>
+          <h1 class="heading-xl" id="agiles-title">Metodologías ágiles</h1>
+          <p class="lead">
+            Las metodologías ágiles entregan software en ciclos cortos, se adaptan al cambio y ponen a las personas
+            en el centro. Empezamos por el Manifiesto que las une y después recorremos Scrum, Kanban y XP con la
+            misma estructura: principios, roles, ceremonias y artefactos.
+          </p>
+        </div>
+
+        <div class="agile-layout">
+          <aside class="toc" aria-labelledby="toc-title">
+            <button type="button" class="toc__toggle" id="tocToggle" aria-expanded="false" aria-controls="tocPanel">
+              <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+              <span id="toc-title">Índice de la sección</span>
+              <i class="toc__arrow fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <nav class="toc__panel" id="tocPanel" aria-label="Índice de metodologías ágiles">
+              <ol class="toc__list" id="tocList"></ol>
+            </nav>
+          </aside>
+
+          <div class="agile-content toc-scope">
+            <section class="agile-block" id="manifiesto" aria-labelledby="manifiesto-title">
+              <h2 class="heading-lg" id="manifiesto-title" data-toc>El Manifiesto Ágil</h2>
+              <p class="agile-block__intro">
+                En febrero de 2001, diecisiete referentes del desarrollo de software se reunieron en Snowbird (Utah, EE. UU.)
+                y acordaron una forma común de trabajar. El resultado fueron 4 valores y 12 principios que siguen guiando
+                a Scrum, Kanban, XP y a casi cualquier equipo ágil.
+              </p>
+
+              <h3 class="heading-md agile-subtitle" id="manifiesto-valores" data-toc>Los 4 valores</h3>
+              <p class="note">Se valoran los elementos de la derecha, pero se valoran <strong>más</strong> los de la izquierda.</p>
+              <ul class="values-grid">
+                <li class="value-card">
+                  <span class="value-card__icon"><i class="fa-solid fa-people-arrows" aria-hidden="true"></i></span>
+                  <strong>Individuos e interacciones</strong>
+                  <span class="value-card__over">sobre procesos y herramientas</span>
+                </li>
+                <li class="value-card">
+                  <span class="value-card__icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></span>
+                  <strong>Software funcionando</strong>
+                  <span class="value-card__over">sobre documentación extensiva</span>
+                </li>
+                <li class="value-card">
+                  <span class="value-card__icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></span>
+                  <strong>Colaboración con el cliente</strong>
+                  <span class="value-card__over">sobre negociación contractual</span>
+                </li>
+                <li class="value-card">
+                  <span class="value-card__icon"><i class="fa-solid fa-shuffle" aria-hidden="true"></i></span>
+                  <strong>Respuesta ante el cambio</strong>
+                  <span class="value-card__over">sobre seguir un plan</span>
+                </li>
+              </ul>
+
+              <h3 class="heading-md agile-subtitle" id="manifiesto-principios" data-toc>Los 12 principios</h3>
+              <ol class="principles">
+                <li>La mayor prioridad es satisfacer al cliente mediante la entrega temprana y continua de software con valor.</li>
+                <li>Se aceptan requisitos cambiantes, incluso en etapas tardías: el cambio se aprovecha como ventaja para el cliente.</li>
+                <li>Se entrega software funcionando con frecuencia, entre dos semanas y dos meses, prefiriendo el período más corto.</li>
+                <li>Las personas de negocio y los desarrolladores trabajan juntos todos los días durante el proyecto.</li>
+                <li>Los proyectos se construyen con personas motivadas: hay que darles el entorno y el apoyo que necesitan y confiar en ellas.</li>
+                <li>La conversación cara a cara es la forma más eficiente de comunicar información dentro del equipo.</li>
+                <li>El software funcionando es la medida principal de progreso.</li>
+                <li>Los procesos ágiles promueven un desarrollo sostenible: el equipo debe poder mantener un ritmo constante indefinidamente.</li>
+                <li>La atención continua a la excelencia técnica y al buen diseño mejora la agilidad.</li>
+                <li>La simplicidad, el arte de maximizar el trabajo no realizado, es esencial.</li>
+                <li>Las mejores arquitecturas, requisitos y diseños surgen de equipos autoorganizados.</li>
+                <li>A intervalos regulares, el equipo reflexiona sobre cómo ser más efectivo y ajusta su forma de trabajar.</li>
+              </ol>
+            </section>
+
+            <article class="agile-block method" id="scrum-agil" aria-labelledby="scrum-agil-title">
+              <header class="method__head">
+                <span class="method__icon"><i class="fa-solid fa-rotate" aria-hidden="true"></i></span>
+                <div>
+                  <h2 class="heading-lg" id="scrum-agil-title" data-toc>Scrum</h2>
+                  <p>Marco de trabajo para resolver problemas complejos entregando valor en ciclos fijos llamados <strong>sprints</strong> (de 1 a 4 semanas). Definido en la Guía Scrum de Ken Schwaber y Jeff Sutherland (versión 2020).</p>
+                </div>
+              </header>
+
+              <div class="facets">
+                <section class="facet" aria-labelledby="scrum-principios">
+                  <h3 class="facet__title" id="scrum-principios" data-toc><i class="fa-solid fa-compass" aria-hidden="true"></i> Principios</h3>
+                  <p>Se apoya en el <strong>empirismo</strong> (decidir según lo observado) y el pensamiento <em>lean</em>. Tres pilares:</p>
+                  <ul class="facet__list">
+                    <li><strong>Transparencia:</strong> el trabajo y el progreso son visibles para todos.</li>
+                    <li><strong>Inspección:</strong> se revisa con frecuencia lo hecho y cómo se hizo.</li>
+                    <li><strong>Adaptación:</strong> si algo se desvía, se ajusta cuanto antes.</li>
+                  </ul>
+                  <p class="facet__extra">Valores: compromiso, foco, apertura, respeto y coraje.</p>
+                </section>
+
+                <section class="facet" aria-labelledby="scrum-roles">
+                  <h3 class="facet__title" id="scrum-roles" data-toc><i class="fa-solid fa-user-group" aria-hidden="true"></i> Roles</h3>
+                  <ul class="facet__list">
+                    <li><strong>Product Owner:</strong> maximiza el valor del producto y ordena el Product Backlog.</li>
+                    <li><strong>Scrum Master:</strong> vela por que Scrum se entienda y se aplique; quita impedimentos.</li>
+                    <li><strong>Developers:</strong> construyen el incremento cada sprint y se organizan solos.</li>
+                  </ul>
+                </section>
+
+                <section class="facet" aria-labelledby="scrum-ceremonias">
+                  <h3 class="facet__title" id="scrum-ceremonias" data-toc><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Ceremonias</h3>
+                  <ul class="facet__list">
+                    <li><strong>Sprint:</strong> el contenedor de todos los eventos.</li>
+                    <li><strong>Sprint Planning:</strong> qué se hará y cómo.</li>
+                    <li><strong>Daily Scrum:</strong> 15 minutos para coordinar el día.</li>
+                    <li><strong>Sprint Review:</strong> se muestra el incremento a los interesados.</li>
+                    <li><strong>Sprint Retrospective:</strong> el equipo mejora su forma de trabajar.</li>
+                  </ul>
+                </section>
+
+                <section class="facet" aria-labelledby="scrum-artefactos">
+                  <h3 class="facet__title" id="scrum-artefactos" data-toc><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Artefactos</h3>
+                  <ul class="facet__list">
+                    <li><strong>Product Backlog</strong> → compromiso: Objetivo del Producto.</li>
+                    <li><strong>Sprint Backlog</strong> → compromiso: Objetivo del Sprint.</li>
+                    <li><strong>Incremento</strong> → compromiso: Definición de Hecho (DoD).</li>
+                  </ul>
+                </section>
+              </div>
+              <a class="method__more" href="metodologias.html#scrum">Ver Scrum en profundidad y el sprint interactivo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+
+            <article class="agile-block method" id="kanban-agil" aria-labelledby="kanban-agil-title">
+              <header class="method__head">
+                <span class="method__icon"><i class="fa-solid fa-table-columns" aria-hidden="true"></i></span>
+                <div>
+                  <h2 class="heading-lg" id="kanban-agil-title" data-toc>Kanban</h2>
+                  <p>Método para gestionar el flujo de trabajo. Nació en la producción de Toyota y David J. Anderson lo adaptó al software en 2007. No usa iteraciones fijas: el trabajo fluye de forma continua y se limita cuánto se hace a la vez.</p>
+                </div>
+              </header>
+
+              <div class="facets">
+                <section class="facet" aria-labelledby="kanban-principios">
+                  <h3 class="facet__title" id="kanban-principios" data-toc><i class="fa-solid fa-compass" aria-hidden="true"></i> Principios</h3>
+                  <ul class="facet__list">
+                    <li><strong>Empezar con lo que hacés hoy</strong>, sin cambiar roles de golpe.</li>
+                    <li><strong>Visualizar el flujo</strong> de trabajo en un tablero.</li>
+                    <li><strong>Limitar el trabajo en curso</strong> (WIP).</li>
+                    <li><strong>Gestionar el flujo</strong> y hacer explícitas las reglas.</li>
+                    <li><strong>Mejorar en colaboración</strong>, con cambios pequeños y medidos.</li>
+                  </ul>
+                </section>
+
+                <section class="facet" aria-labelledby="kanban-roles">
+                  <h3 class="facet__title" id="kanban-roles" data-toc><i class="fa-solid fa-user-group" aria-hidden="true"></i> Roles</h3>
+                  <p>Kanban no exige roles nuevos: se respetan los cargos existentes. Muchos equipos suman dos roles opcionales:</p>
+                  <ul class="facet__list">
+                    <li><strong>Service Request Manager:</strong> entiende al cliente y prioriza qué entra al tablero.</li>
+                    <li><strong>Service Delivery Manager:</strong> cuida el flujo y ayuda a destrabar bloqueos.</li>
+                  </ul>
+                </section>
+
+                <section class="facet" aria-labelledby="kanban-ceremonias">
+                  <h3 class="facet__title" id="kanban-ceremonias" data-toc><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Ceremonias</h3>
+                  <p>Se llaman <strong>cadencias</strong> y cada equipo elige su frecuencia:</p>
+                  <ul class="facet__list">
+                    <li><strong>Reunión Kanban diaria:</strong> se recorre el tablero de derecha a izquierda.</li>
+                    <li><strong>Reposición (replenishment):</strong> se decide qué entra a “Por hacer”.</li>
+                    <li><strong>Revisión de entrega del servicio:</strong> se analizan métricas y mejoras.</li>
+                  </ul>
+                </section>
+
+                <section class="facet" aria-labelledby="kanban-artefactos">
+                  <h3 class="facet__title" id="kanban-artefactos" data-toc><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Artefactos</h3>
+                  <ul class="facet__list">
+                    <li><strong>Tablero Kanban</strong> con columnas por estado.</li>
+                    <li><strong>Tarjetas</strong>: una por elemento de trabajo.</li>
+                    <li><strong>Límites WIP</strong> por columna.</li>
+                    <li><strong>Métricas de flujo:</strong> tiempo de ciclo, rendimiento (throughput) y edad del trabajo.</li>
+                  </ul>
+                </section>
+              </div>
+              <a class="method__more" href="metodologias.html#kanban">Probar el tablero Kanban interactivo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+
+            <article class="agile-block method" id="xp" aria-labelledby="xp-title">
+              <header class="method__head">
+                <span class="method__icon"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
+                <div>
+                  <h2 class="heading-lg" id="xp-title" data-toc>Extreme Programming (XP)</h2>
+                  <p>Metodología ágil centrada en la excelencia técnica y las buenas prácticas de ingeniería de software. Creada por Kent Beck a finales de los 90.</p>
+                </div>
+              </header>
+
+              <div class="facets">
+                <section class="facet" aria-labelledby="xp-valores">
+                  <h3 class="facet__title" id="xp-valores" data-toc><i class="fa-solid fa-compass" aria-hidden="true"></i> Valores</h3>
+                  <ul class="facet__list">
+                    <li><strong>Comunicación:</strong> feedback constante entre equipo y cliente.</li>
+                    <li><strong>Simplicidad:</strong> hacer lo más sencillo que funcione hoy.</li>
+                    <li><strong>Feedback:</strong> pruebas, iteraciones cortas y adaptación.</li>
+                    <li><strong>Coraje:</strong> refactorizar código y decir la verdad sobre estimaciones.</li>
+                    <li><strong>Respeto:</strong> valorar las contribuciones de todos.</li>
+                  </ul>
+                </section>
+
+                <section class="facet" aria-labelledby="xp-practicas">
+                  <h3 class="facet__title" id="xp-practicas" data-toc><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Prácticas clave</h3>
+                  <ul class="facet__list">
+                    <li><strong>TDD (Test-Driven Development):</strong> escribir las pruebas antes del código.</li>
+                    <li><strong>Programación en pareja (Pair Programming):</strong> dos programadores en una pantalla.</li>
+                    <li><strong>Refactorización:</strong> mejorar el código sin cambiar su comportamiento.</li>
+                    <li><strong>Integración continua:</strong> fusionar cambios varias veces al día.</li>
+                  </ul>
+                </section>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__title">Testgrum</p>
+        <p>Un espacio educativo para entender cómo se construye software de calidad.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Pie de página">
+        <a href="../index.html">Inicio</a>
+        <a href="recursos.html#glosario">Glosario</a>
+        <a href="nosotros.html#equipo">Sobre nosotros</a>
+        <a href="nosotros.html#contacto">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../JavaScript/scrip.js"></script>
+  <script src="../JavaScript/agiles.js"></script>
+</body>
+</html>

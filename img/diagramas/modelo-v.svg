@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-labelledby="t d" font-family="DM Sans, Segoe UI, Helvetica, Arial, sans-serif">
+  <title id="t">Modelo en V</title>
+  <desc id="d">A la izquierda bajan las etapas de definición: requisitos, diseño del sistema, arquitectura y diseño de módulos. En la base está la codificación. A la derecha suben las pruebas unitarias, de integración, de sistema y de aceptación; cada una se une con una línea punteada a la etapa que verifica.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f4fd1"/>
+    </marker>
+    <marker id="arrowMuted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#51607a"/>
+    </marker>
+    <marker id="arrowAcc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b07a0c"/>
+    </marker>
+  </defs>
+  <rect width="640" height="420" rx="18" fill="#f4f7fb"/>
+  <text x="20" y="32" text-anchor="start" font-size="13" font-weight="700" fill="#1f4fd1">Definición ↓</text>
+  <text x="620" y="32" text-anchor="end" font-size="13" font-weight="700" fill="#136f4e">↑ Verificación</text>
+  <rect x="20" y="48" width="168" height="44" rx="10" fill="#dce7fb" stroke="#1f4fd1" stroke-width="1.5"/>
+  <text x="104.0" y="75.0" text-anchor="middle" font-size="13" font-weight="700" fill="#0b1b33">Requisitos</text>
+  <rect x="452" y="48" width="168" height="44" rx="10" fill="#e4f4ec" stroke="#136f4e" stroke-width="1.5"/>
+  <text x="536.0" y="75.0" text-anchor="middle" font-size="13" font-weight="700" fill="#136f4e">Pruebas de aceptación</text>
+  <line x1="192" y1="70" x2="448" y2="70" stroke="#51607a" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <line x1="104.0" y1="92" x2="136.0" y2="120" stroke="#1f4fd1" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="542.0" y1="122" x2="536.0" y2="94" stroke="#136f4e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="58" y="122" width="168" height="44" rx="10" fill="#dce7fb" stroke="#1f4fd1" stroke-width="1.5"/>
+  <text x="142.0" y="149.0" text-anchor="middle" font-size="13" font-weight="700" fill="#0b1b33">Diseño del sistema</text>
+  <rect x="414" y="122" width="168" height="44" rx="10" fill="#e4f4ec" stroke="#136f4e" stroke-width="1.5"/>
+  <text x="498.0" y="149.0" text-anchor="middle" font-size="13" font-weight="700" fill="#136f4e">Pruebas de sistema</text>
+  <line x1="230" y1="144" x2="410" y2="144" stroke="#51607a" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <line x1="142.0" y1="166" x2="174.0" y2="194" stroke="#1f4fd1" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="504.0" y1="196" x2="498.0" y2="168" stroke="#136f4e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="96" y="196" width="168" height="44" rx="10" fill="#dce7fb" stroke="#1f4fd1" stroke-width="1.5"/>
+  <text x="180.0" y="223.0" text-anchor="middle" font-size="13" font-weight="700" fill="#0b1b33">Arquitectura</text>
+  <rect x="376" y="196" width="168" height="44" rx="10" fill="#e4f4ec" stroke="#136f4e" stroke-width="1.5"/>
+  <text x="460.0" y="223.0" text-anchor="middle" font-size="13" font-weight="700" fill="#136f4e">Pruebas de integración</text>
+  <line x1="268" y1="218" x2="372" y2="218" stroke="#51607a" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <line x1="180.0" y1="240" x2="212.0" y2="268" stroke="#1f4fd1" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="466.0" y1="270" x2="460.0" y2="242" stroke="#136f4e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="134" y="270" width="168" height="44" rx="10" fill="#dce7fb" stroke="#1f4fd1" stroke-width="1.5"/>
+  <text x="218.0" y="297.0" text-anchor="middle" font-size="13" font-weight="700" fill="#0b1b33">Diseño de módulos</text>
+  <rect x="338" y="270" width="168" height="44" rx="10" fill="#e4f4ec" stroke="#136f4e" stroke-width="1.5"/>
+  <text x="422.0" y="297.0" text-anchor="middle" font-size="13" font-weight="700" fill="#136f4e">Pruebas unitarias</text>
+  <line x1="306" y1="292" x2="334" y2="292" stroke="#51607a" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <rect x="235" y="354" width="170" height="46" rx="10" fill="#0b1b33" stroke="#0b1b33" stroke-width="1.5"/>
+  <text x="320.0" y="382.0" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Codificación</text>
+  <line x1="218.0" y1="314" x2="250" y2="352" stroke="#1f4fd1" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="390" y1="354" x2="422.0" y2="317" stroke="#136f4e" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+</svg>

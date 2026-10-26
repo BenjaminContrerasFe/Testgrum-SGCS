@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-labelledby="t d" font-family="DM Sans, Segoe UI, Helvetica, Arial, sans-serif">
+  <title id="t">Flujo de un tablero Kanban</title>
+  <desc id="d">Tablero con cuatro columnas: Por hacer, En proceso con límite de 3 tarjetas (llena), En pruebas con límite de 2 y un lugar libre, y Hecho. Una flecha muestra que una tarjeta se tira de En proceso a En pruebas cuando se libera lugar.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f4fd1"/>
+    </marker>
+    <marker id="arrowMuted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#51607a"/>
+    </marker>
+    <marker id="arrowAcc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b07a0c"/>
+    </marker>
+  </defs>
+  <rect width="640" height="420" rx="18" fill="#f4f7fb"/>
+  <text x="24" y="34" text-anchor="start" font-size="12" font-weight="400" fill="#51607a">El trabajo avanza de izquierda a derecha y solo entra a una columna si hay lugar</text>
+  <rect x="18" y="52" width="146" height="300" rx="12" fill="#ffffff" stroke="#d6dfec" stroke-width="1.5"/>
+  <rect x="18" y="52" width="146" height="42" rx="12" fill="#0b1b33"/>
+  <rect x="18" y="80" width="146" height="14" fill="#0b1b33"/>
+  <text x="30" y="79" text-anchor="start" font-size="12.5" font-weight="700" fill="#ffffff">Por hacer</text>
+  <rect x="30" y="106" width="122" height="40" rx="8" fill="#dce7fb" stroke="#1f4fd1" stroke-width="1"/>
+  <text x="42" y="131" text-anchor="start" font-size="12" font-weight="600" fill="#0b1b33">Glosario A–Z</text>
+  <rect x="30" y="158" width="122" height="40" rx="8" fill="#dce7fb" stroke="#1f4fd1" stroke-width="1"/>
+  <text x="42" y="183" text-anchor="start" font-size="12" font-weight="600" fill="#0b1b33">Formulario</text>
+  <rect x="30" y="210" width="122" height="40" rx="8" fill="#dce7fb" stroke="#1f4fd1" stroke-width="1"/>
+  <text x="42" y="235" text-anchor="start" font-size="12" font-weight="600" fill="#0b1b33">FAQ</text>
+  <rect x="170" y="52" width="146" height="300" rx="12" fill="#ffffff" stroke="#d6dfec" stroke-width="1.5"/>
+  <rect x="170" y="52" width="146" height="42" rx="12" fill="#0b1b33"/>
+  <rect x="170" y="80" width="146" height="14" fill="#0b1b33"/>
+  <text x="182" y="79" text-anchor="start" font-size="12.5" font-weight="700" fill="#ffffff">En proceso</text>
+  <rect x="266" y="62" width="42" height="22" rx="11" fill="#f6b93b"/>
+  <text x="287" y="77" text-anchor="middle" font-size="10" font-weight="700" fill="#0b1b33">WIP 3</text>
+  <rect x="182" y="106" width="122" height="40" rx="8" fill="#dce7fb" stroke="#1f4fd1" stroke-width="1"/>
+  <text x="194" y="131" text-anchor="start" font-size="12" font-weight="600" fill="#0b1b33">Comparador</text>
+  <rect x="182" y="158" width="122" height="40" rx="8" fill="#dce7fb" stroke="#1f4fd1" stroke-width="1"/>
+  <text x="194" y="183" text-anchor="start" font-size="12" font-weight="600" fill="#0b1b33">Encuesta</text>
+  <rect x="182" y="210" width="122" height="40" rx="8" fill="#dce7fb" stroke="#1f4fd1" stroke-width="1"/>
+  <text x="194" y="235" text-anchor="start" font-size="12" font-weight="600" fill="#0b1b33">Timeline</text>
+  <text x="243.0" y="330" text-anchor="middle" font-size="11" font-weight="700" fill="#a5281b">Columna llena</text>
+  <rect x="322" y="52" width="146" height="300" rx="12" fill="#ffffff" stroke="#d6dfec" stroke-width="1.5"/>
+  <rect x="322" y="52" width="146" height="42" rx="12" fill="#0b1b33"/>
+  <rect x="322" y="80" width="146" height="14" fill="#0b1b33"/>
+  <text x="334" y="79" text-anchor="start" font-size="12.5" font-weight="700" fill="#ffffff">En pruebas</text>
+  <rect x="418" y="62" width="42" height="22" rx="11" fill="#f6b93b"/>
+  <text x="439" y="77" text-anchor="middle" font-size="10" font-weight="700" fill="#0b1b33">WIP 2</text>
+  <rect x="334" y="106" width="122" height="40" rx="8" fill="#dce7fb" stroke="#1f4fd1" stroke-width="1"/>
+  <text x="346" y="131" text-anchor="start" font-size="12" font-weight="600" fill="#0b1b33">Lightbox</text>
+  <rect x="334" y="158" width="122" height="40" rx="8" fill="none" stroke="#1f4fd1" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="395.0" y="183" text-anchor="middle" font-size="11" font-weight="600" fill="#1f4fd1">lugar libre</text>
+  <rect x="474" y="52" width="146" height="300" rx="12" fill="#ffffff" stroke="#d6dfec" stroke-width="1.5"/>
+  <rect x="474" y="52" width="146" height="42" rx="12" fill="#136f4e"/>
+  <rect x="474" y="80" width="146" height="14" fill="#136f4e"/>
+  <text x="486" y="79" text-anchor="start" font-size="12.5" font-weight="700" fill="#ffffff">Hecho</text>
+  <rect x="486" y="106" width="122" height="40" rx="8" fill="#e4f4ec" stroke="#136f4e" stroke-width="1"/>
+  <text x="498" y="131" text-anchor="start" font-size="12" font-weight="600" fill="#0b1b33">Menú</text>
+  <rect x="486" y="158" width="122" height="40" rx="8" fill="#e4f4ec" stroke="#136f4e" stroke-width="1"/>
+  <text x="498" y="183" text-anchor="start" font-size="12" font-weight="600" fill="#0b1b33">Inicio</text>
+  <rect x="486" y="210" width="122" height="40" rx="8" fill="#e4f4ec" stroke="#136f4e" stroke-width="1"/>
+  <text x="498" y="235" text-anchor="start" font-size="12" font-weight="600" fill="#0b1b33">Filtros</text>
+  <path d="M292,270 C 330,250 330,180 344,146" fill="none" stroke="#1f4fd1" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="325" y="285" text-anchor="middle" font-size="11" font-weight="700" fill="#1f4fd1">Se “tira” la tarjeta</text>
+  <text x="325" y="299" text-anchor="middle" font-size="11" font-weight="700" fill="#1f4fd1">cuando se libera lugar</text>
+  <path d="M30,378 H610" fill="none" stroke="#1f4fd1" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="24" y="404" text-anchor="start" font-size="12" font-weight="400" fill="#51607a">Flujo de trabajo: medimos cuánto tarda cada tarjeta en llegar a “Hecho” (tiempo de ciclo).</text>
+
+</svg>

@@ -57,6 +57,12 @@ html {
   scroll-padding-top: 5.5rem; /* que los anclajes no queden tapados por el header */
 }
 
+/* Si la página tiene la barra de pestañas fija, el anclaje necesita más margen
+   (antes los títulos quedaban tapados por .page-nav) */
+html:has(.page-nav) {
+  scroll-padding-top: 9rem;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
@@ -478,4 +484,417 @@ button {
 
 .site-footer .is-soon {
   color: var(--color-on-dark-muted);
+}
+
+/* ---------- 9. Componentes reutilizables (antes en gestion.css) ---------- */
+.note {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  border-left: 3px solid var(--color-accent);
+  padding-left: 0.9rem;
+}
+
+.subheading {
+  margin: 2.5rem 0 1rem;
+}
+
+.disclosure {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  align-self: start;
+  transition: border-color 0.2s ease;
+}
+
+.disclosure.is-open {
+  border-color: var(--color-primary);
+}
+
+.disclosure__toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.disclosure__toggle i {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  transition: transform 0.25s ease;
+}
+
+.disclosure.is-open .disclosure__toggle i {
+  transform: rotate(180deg);
+}
+
+/* Truco de grid: anima de 0 a la altura REAL del contenido */
+.disclosure__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.disclosure.is-open .disclosure__panel {
+  grid-template-rows: 1fr;
+}
+
+.disclosure__panel > div {
+  overflow: hidden;
+}
+
+.disclosure__body {
+  padding: 0 1.4rem 1.3rem;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.93rem;
+  color: var(--color-text-muted);
+}
+
+.disclosure__body dt {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+/* Tabla comparativa caja negra / caja blanca */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.compare-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.compare-table thead th {
+  background-color: var(--color-ink);
+  color: var(--color-on-dark);
+  font-family: var(--font-display);
+}
+
+.compare-table tbody th {
+  color: var(--color-ink);
+  width: 22%;
+}
+
+.compare-table tr:last-child > * {
+  border-bottom: none;
+}
+
+
+/* ---------- 10. Saltar al contenido (accesibilidad de teclado) ---------- */
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 200;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-ink);
+  color: var(--color-on-dark);
+  font-weight: 700;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* ---------- 11. Mensajes de estado y vacíos ---------- */
+.status-msg {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.93rem;
+  font-weight: 600;
+}
+
+.status-msg--success {
+  background-color: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.status-msg--danger {
+  background-color: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.status-msg--info {
+  background-color: var(--color-primary-soft);
+  color: var(--color-ink);
+}
+
+.empty-state {
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+}
+
+.empty-state i {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+}
+
+.empty-state strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-ink);
+}
+
+/* ---------- 12. Figuras ampliables + Lightbox (US-07 y US-09) ----------
+   HTML esperado:
+   <figure class="card figure-zoom">
+     <button type="button" class="figure-zoom__trigger" data-lightbox="grupo">
+       <img src="..." alt="..." width="640" height="400">
+     </button>
+     <figcaption>...</figcaption>
+   </figure>
+   El <dialog> lo crea main.js una sola vez por página. */
+.figure-zoom {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.figure-zoom__trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+  cursor: zoom-in;
+}
+
+.figure-zoom__trigger img {
+  width: 100%;
+  height: auto;
+}
+
+/* Ícono de lupa: indica que la imagen se puede ampliar */
+.figure-zoom__trigger::after {
+  content: "\f00e"; /* lupa con + de Font Awesome */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--color-ink);
+  color: var(--color-on-dark);
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.figure-zoom__trigger:hover::after,
+.figure-zoom__trigger:focus-visible::after {
+  transform: scale(1.1);
+}
+
+.figure-zoom figcaption {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.figure-zoom figcaption strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-ink);
+}
+
+.lightbox {
+  width: min(1100px, 94vw);
+  max-height: 94vh;
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-menu);
+  overflow: hidden;
+}
+
+.lightbox::backdrop {
+  background-color: rgba(11, 27, 51, 0.82);
+}
+
+.lightbox[open] {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  animation: lightbox-in 0.2s ease;
+}
+
+@keyframes lightbox-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+
+.lightbox__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0.75rem 0.75rem 1.4rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.lightbox__counter {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.lightbox__stage {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background-color: var(--color-bg);
+  overflow: auto;
+  min-height: 0;
+}
+
+.lightbox__stage img {
+  max-height: calc(94vh - 11rem);
+  width: auto;
+  max-width: 100%;
+}
+
+.lightbox__caption {
+  padding: 1rem 1.4rem 1.2rem;
+  font-size: 0.93rem;
+  color: var(--color-text-muted);
+}
+
+.lightbox__caption strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-ink);
+}
+
+.lightbox__nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: grid;
+  place-items: center;
+  color: var(--color-ink);
+  background-color: var(--color-surface);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.icon-btn:hover {
+  border-color: var(--color-primary);
+}
+
+.icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Mientras el lightbox está abierto, la página de atrás no se desplaza */
+body:has(.lightbox[open]) {
+  overflow: hidden;
+}
+
+/* ---------- 13. Campos de formulario (US-12, US-17, US-18, US-19) ---------- */
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field label,
+.field__label {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.field__hint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.input {
+  width: 100%;
+  font: inherit;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.input:hover {
+  border-color: var(--color-text-muted);
+}
+
+.input:focus-visible {
+  border-color: var(--color-primary);
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--color-danger);
+  background-color: var(--color-danger-soft);
+}
+
+.field__error {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-danger);
+}
+
+textarea.input {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+/* Checkbox y radio con el color de la marca */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--color-primary);
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
 }

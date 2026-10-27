@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="../CSS/base.css">
-  <link rel="stylesheet" href="../CSS/agiles.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/agiles.css">
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
@@ -122,6 +122,7 @@
   </nav>
 
   <main id="contenido">
+    <!-- ============ US-08 · METODOLOGÍAS ÁGILES ============ -->
     <section class="section" id="agiles" aria-labelledby="agiles-title">
       <div class="container">
         <div class="section__header">
@@ -135,6 +136,7 @@
         </div>
 
         <div class="agile-layout">
+          <!-- Índice flotante: lo arma agiles.js leyendo los títulos con data-toc -->
           <aside class="toc" aria-labelledby="toc-title">
             <button type="button" class="toc__toggle" id="tocToggle" aria-expanded="false" aria-controls="tocPanel">
               <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
@@ -147,6 +149,7 @@
           </aside>
 
           <div class="agile-content toc-scope">
+            <!-- ---------- Manifiesto ---------- -->
             <section class="agile-block" id="manifiesto" aria-labelledby="manifiesto-title">
               <h2 class="heading-lg" id="manifiesto-title" data-toc>El Manifiesto Ágil</h2>
               <p class="agile-block__intro">
@@ -197,6 +200,7 @@
               </ol>
             </section>
 
+            <!-- ---------- Scrum ---------- -->
             <article class="agile-block method" id="scrum-agil" aria-labelledby="scrum-agil-title">
               <header class="method__head">
                 <span class="method__icon"><i class="fa-solid fa-rotate" aria-hidden="true"></i></span>
@@ -250,6 +254,7 @@
               <a class="method__more" href="metodologias.html#scrum">Ver Scrum en profundidad y el sprint interactivo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- ---------- Kanban ---------- -->
             <article class="agile-block method" id="kanban-agil" aria-labelledby="kanban-agil-title">
               <header class="method__head">
                 <span class="method__icon"><i class="fa-solid fa-table-columns" aria-hidden="true"></i></span>
@@ -303,40 +308,123 @@
               <a class="method__more" href="metodologias.html#kanban">Probar el tablero Kanban interactivo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- ---------- XP ---------- -->
             <article class="agile-block method" id="xp" aria-labelledby="xp-title">
               <header class="method__head">
                 <span class="method__icon"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
                 <div>
-                  <h2 class="heading-lg" id="xp-title" data-toc>Extreme Programming (XP)</h2>
-                  <p>Metodología ágil centrada en la excelencia técnica y las buenas prácticas de ingeniería de software. Creada por Kent Beck a finales de los 90.</p>
+                  <h2 class="heading-lg" id="xp-title" data-toc>XP · Extreme Programming</h2>
+                  <p>Metodología creada por Kent Beck a fines de los años 90. Lleva al “extremo” las buenas prácticas de programación: si revisar código es bueno, se revisa todo el tiempo (programación en pares); si probar es bueno, se prueba antes de programar (TDD).</p>
                 </div>
               </header>
 
               <div class="facets">
-                <section class="facet" aria-labelledby="xp-valores">
-                  <h3 class="facet__title" id="xp-valores" data-toc><i class="fa-solid fa-compass" aria-hidden="true"></i> Valores</h3>
+                <section class="facet" aria-labelledby="xp-principios">
+                  <h3 class="facet__title" id="xp-principios" data-toc><i class="fa-solid fa-compass" aria-hidden="true"></i> Principios</h3>
+                  <p>Cinco valores guían cada decisión:</p>
                   <ul class="facet__list">
-                    <li><strong>Comunicación:</strong> feedback constante entre equipo y cliente.</li>
-                    <li><strong>Simplicidad:</strong> hacer lo más sencillo que funcione hoy.</li>
-                    <li><strong>Feedback:</strong> pruebas, iteraciones cortas y adaptación.</li>
-                    <li><strong>Coraje:</strong> refactorizar código y decir la verdad sobre estimaciones.</li>
-                    <li><strong>Respeto:</strong> valorar las contribuciones de todos.</li>
+                    <li><strong>Comunicación</strong> constante dentro del equipo y con el cliente.</li>
+                    <li><strong>Simplicidad:</strong> lo más simple que funcione.</li>
+                    <li><strong>Retroalimentación</strong> rápida de pruebas, cliente y equipo.</li>
+                    <li><strong>Coraje</strong> para refactorizar y decir la verdad sobre el avance.</li>
+                    <li><strong>Respeto</strong> por el trabajo de todos.</li>
                   </ul>
                 </section>
 
-                <section class="facet" aria-labelledby="xp-practicas">
-                  <h3 class="facet__title" id="xp-practicas" data-toc><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Prácticas clave</h3>
+                <section class="facet" aria-labelledby="xp-roles">
+                  <h3 class="facet__title" id="xp-roles" data-toc><i class="fa-solid fa-user-group" aria-hidden="true"></i> Roles</h3>
                   <ul class="facet__list">
-                    <li><strong>TDD (Test-Driven Development):</strong> escribir las pruebas antes del código.</li>
-                    <li><strong>Programación en pareja (Pair Programming):</strong> dos programadores en una pantalla.</li>
-                    <li><strong>Refactorización:</strong> mejorar el código sin cambiar su comportamiento.</li>
-                    <li><strong>Integración continua:</strong> fusionar cambios varias veces al día.</li>
+                    <li><strong>Cliente:</strong> escribe historias y pruebas de aceptación; está disponible siempre.</li>
+                    <li><strong>Programador:</strong> estima, programa en pares y escribe pruebas unitarias.</li>
+                    <li><strong>Tester:</strong> ayuda al cliente a definir y automatizar pruebas.</li>
+                    <li><strong>Coach:</strong> guía al equipo en las prácticas.</li>
+                    <li><strong>Tracker:</strong> mide el avance y compara estimaciones con lo real.</li>
+                  </ul>
+                </section>
+
+                <section class="facet" aria-labelledby="xp-ceremonias">
+                  <h3 class="facet__title" id="xp-ceremonias" data-toc><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Ceremonias y prácticas</h3>
+                  <ul class="facet__list">
+                    <li><strong>Juego de planificación</strong> por entrega y por iteración (1 a 2 semanas).</li>
+                    <li><strong>Reunión de pie</strong> diaria.</li>
+                    <li><strong>Programación en pares</strong> y <strong>TDD</strong> (prueba primero).</li>
+                    <li><strong>Refactorización</strong> e <strong>integración continua</strong>.</li>
+                    <li><strong>Entregas pequeñas</strong> y <strong>ritmo sostenible</strong>.</li>
+                  </ul>
+                </section>
+
+                <section class="facet" aria-labelledby="xp-artefactos">
+                  <h3 class="facet__title" id="xp-artefactos" data-toc><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Artefactos</h3>
+                  <ul class="facet__list">
+                    <li><strong>Historias de usuario</strong> escritas en tarjetas.</li>
+                    <li><strong>Tarjetas de tarea</strong> en las que se divide cada historia.</li>
+                    <li><strong>Pruebas de aceptación</strong> y <strong>pruebas unitarias</strong> automatizadas.</li>
+                    <li><strong>Spikes:</strong> prototipos rápidos para reducir incertidumbre técnica.</li>
                   </ul>
                 </section>
               </div>
             </article>
 
+            <!-- ---------- Comparativa ---------- -->
+            <section class="agile-block" id="comparativa" aria-labelledby="comparativa-title">
+              <h2 class="heading-lg" id="comparativa-title" data-toc>Ágil vs. tradicional</h2>
+              <p class="agile-block__intro">Las diferencias de fondo entre los modelos tradicionales (cascada, en V) y las metodologías ágiles.</p>
+              <div class="table-wrap">
+                <table class="compare-table">
+                  <caption class="sr-only">Comparación entre modelos tradicionales y metodologías ágiles</caption>
+                  <thead>
+                    <tr><th scope="col">Aspecto</th><th scope="col">Tradicional</th><th scope="col">Ágil</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Planificación</th><td>Completa al inicio del proyecto.</td><td>Continua, se ajusta en cada ciclo.</td></tr>
+                    <tr><th scope="row">Requisitos</th><td>Fijos y documentados antes de construir.</td><td>Evolucionan con el aprendizaje.</td></tr>
+                    <tr><th scope="row">Entregas</th><td>Una entrega final.</td><td>Incrementos frecuentes.</td></tr>
+                    <tr><th scope="row">Cliente</th><td>Participa al principio y al final.</td><td>Participa durante todo el proyecto.</td></tr>
+                    <tr><th scope="row">Cambios</th><td>Se controlan y suelen ser costosos.</td><td>Se esperan y se aprovechan.</td></tr>
+                    <tr><th scope="row">Medida de avance</th><td>Etapas y documentos terminados.</td><td>Software funcionando.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <a class="method__more" href="interactivo.html#comparador">Comparar metodologías a tu medida <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </section>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ US-09 · ILUSTRACIONES ÁGILES (reutiliza el lightbox de main.js) ============ -->
+    <section class="section" id="ilustraciones-agiles" aria-labelledby="ilustraciones-agiles-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge badge--ink">Ilustraciones</span>
+          <h2 class="heading-lg" id="ilustraciones-agiles-title">Esquemas de las metodologías ágiles</h2>
+          <p class="lead">Tocá un esquema para ampliarlo. Son gráficos vectoriales (SVG): se ven nítidos incluso en pantallas Retina o 4K.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <figure class="card figure-zoom">
+            <button type="button" class="figure-zoom__trigger" data-lightbox="agiles" aria-label="Ampliar esquema del ciclo del Sprint">
+              <img src="../img/diagramas/sprint-scrum.svg" width="640" height="420" loading="lazy" decoding="async"
+                   alt="Ciclo del Sprint: del Product Backlog se eligen elementos en la Sprint Planning y forman el Sprint Backlog; el Sprint dura de 1 a 4 semanas con una Daily cada 24 horas; produce un Incremento que se muestra en la Sprint Review, y la Retrospectiva lleva mejoras al próximo sprint.">
+            </button>
+            <figcaption><strong>Ciclo del Sprint (Scrum)</strong>Del backlog al incremento, con la Daily marcando el ritmo de cada día.</figcaption>
+          </figure>
+
+          <figure class="card figure-zoom">
+            <button type="button" class="figure-zoom__trigger" data-lightbox="agiles" aria-label="Ampliar esquema del flujo Kanban">
+              <img src="../img/diagramas/flujo-kanban.svg" width="640" height="420" loading="lazy" decoding="async"
+                   alt="Flujo Kanban: tablero con las columnas Por hacer, En proceso con límite de 3 y llena, En pruebas con límite de 2 y un lugar libre, y Hecho. Una flecha muestra que una tarjeta pasa a En pruebas cuando se libera lugar.">
+            </button>
+            <figcaption><strong>Flujo Kanban</strong>Las tarjetas avanzan solo si la columna siguiente tiene lugar: así funciona el límite de WIP.</figcaption>
+          </figure>
+
+          <figure class="card figure-zoom">
+            <button type="button" class="figure-zoom__trigger" data-lightbox="agiles" aria-label="Ampliar esquema de los bucles de XP">
+              <img src="../img/diagramas/bucles-xp.svg" width="640" height="420" loading="lazy" decoding="async"
+                   alt="Bucles de XP: círculos concéntricos que van del plan de entregas (meses) al plan de iteración (semanas), las pruebas de aceptación (días), la reunión de pie (un día), las pruebas unitarias (minutos) y, en el centro, la programación en pares sobre el código (segundos).">
+            </button>
+            <figcaption><strong>Bucles de XP</strong>Cada práctica es un ciclo de retroalimentación: cuanto más adentro, más rápido llega el aviso.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -357,7 +445,7 @@
     </div>
   </footer>
 
-  <script src="../JavaScript/scrip.js"></script>
-  <script src="../JavaScript/agiles.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/agiles.js"></script>
 </body>
 </html>

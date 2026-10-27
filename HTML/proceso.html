@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-ar">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="../CSS/base.css">
-  <link rel="stylesheet" href="../CSS/proceso.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/proceso.css">
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
@@ -119,6 +119,7 @@
   </nav>
 
   <main id="contenido">
+    <!-- ============ US-05 · SDLC ============ -->
     <section class="section" id="sdlc" aria-labelledby="sdlc-title">
       <div class="container">
         <div class="section__header">
@@ -130,10 +131,11 @@
           </p>
         </div>
 
+        <!-- El JS genera los pasos desde el arreglo SDLC_STAGES -->
         <ol class="timeline" id="sdlcTimeline" aria-label="Etapas del ciclo de vida"></ol>
 
         <article class="card stage-detail" id="stageDetail" aria-live="polite">
-          <h2 class="heading-md" id="stageTitle">Requisitos</h2>
+          <h2 class="heading-md" id="stageTitle">1. Requisitos</h2>
           <p id="stageDesc">Se relevan las necesidades de usuarios y negocio.</p>
           <dl class="stage-detail__meta">
             <div><dt>Entregable típico</dt><dd id="stageOutput"></dd></div>
@@ -151,6 +153,7 @@
       </div>
     </section>
 
+    <!-- ============ US-06 · MODELOS TRADICIONALES ============ -->
     <section class="section" id="modelos" aria-labelledby="modelos-title">
       <div class="container">
         <div class="section__header">
@@ -159,6 +162,7 @@
           <p class="lead">Compará cascada, modelo en V e iterativo para reconocer ventajas, límites y contextos de uso. Cada modelo tiene su propio enlace: podés compartir, por ejemplo, <a class="inline-link" href="#modelo-v">proceso.html#modelo-v</a>.</p>
         </div>
 
+        <!-- data-hash-sync: al cambiar de pestaña se actualiza el #ancla de la URL (main.js) -->
         <div class="chip-group tablist-spaced" role="tablist" aria-label="Modelos tradicionales" data-hash-sync>
           <button type="button" class="chip" role="tab" id="tab-cascada" aria-controls="cascada" aria-selected="true">
             <i class="fa-solid fa-stairs" aria-hidden="true"></i> Cascada
@@ -171,6 +175,7 @@
           </button>
         </div>
 
+        <!-- ---------- Cascada ---------- -->
         <article class="card model-panel" role="tabpanel" id="cascada" aria-labelledby="tab-cascada" tabindex="0">
           <div class="model-panel__head">
             <h3 class="heading-md">Modelo en cascada</h3>
@@ -209,6 +214,7 @@
           <a class="model-panel__figure-link" href="#fig-cascada"><i class="fa-regular fa-image" aria-hidden="true"></i> Ver el diagrama de cascada</a>
         </article>
 
+        <!-- ---------- Modelo en V ---------- -->
         <article class="card model-panel" role="tabpanel" id="modelo-v" aria-labelledby="tab-v" tabindex="0" hidden>
           <div class="model-panel__head">
             <h3 class="heading-md">Modelo en V</h3>
@@ -256,6 +262,7 @@
           <a class="model-panel__figure-link" href="#fig-modelo-v"><i class="fa-regular fa-image" aria-hidden="true"></i> Ver el diagrama del modelo en V</a>
         </article>
 
+        <!-- ---------- Iterativo ---------- -->
         <article class="card model-panel" role="tabpanel" id="iterativo" aria-labelledby="tab-iterativo" tabindex="0" hidden>
           <div class="model-panel__head">
             <h3 class="heading-md">Modelo iterativo e incremental</h3>
@@ -312,6 +319,7 @@
       </div>
     </section>
 
+    <!-- ============ US-07 · ILUSTRACIONES (SVG + lightbox) ============ -->
     <section class="section" id="ilustraciones" aria-labelledby="ilustraciones-title">
       <div class="container">
         <div class="section__header">
@@ -320,6 +328,7 @@
           <p class="lead">Tocá un diagrama para verlo en pantalla completa. Dentro de la vista ampliada podés pasar de uno a otro con las flechas.</p>
         </div>
 
+        <!-- Los diagramas son SVG: pesan pocos KB y se ven nítidos en cualquier pantalla -->
         <div class="grid grid--3">
           <figure class="card figure-zoom" id="fig-cascada">
             <button type="button" class="figure-zoom__trigger" data-lightbox="modelos" aria-label="Ampliar diagrama del modelo en cascada">
@@ -364,7 +373,7 @@
     </div>
   </footer>
 
-  <script src="../JavaScript/scrip.js"></script>
-  <script src="../JavaScript/proceso.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/proceso.js"></script>
 </body>
 </html>

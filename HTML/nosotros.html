@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="../CSS/base.css">
-  <link rel="stylesheet" href="../CSS/nosotros.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/nosotros.css">
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
@@ -118,6 +118,7 @@
   </nav>
 
   <main id="contenido">
+    <!-- ============ US-16 · SOBRE NOSOTROS ============ -->
     <section class="section" id="equipo" aria-labelledby="equipo-title">
       <div class="container">
         <div class="section__header">
@@ -129,13 +130,14 @@
           </p>
         </div>
 
+        <!-- COMPLETAR: reemplazar los datos entre corchetes por los del equipo -->
         <div class="team-grid">
           <article class="profile" data-tilt>
             <div class="profile__top">
               <span class="profile__avatar" aria-hidden="true">SM</span>
               <span class="profile__role"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Scrum Master</span>
             </div>
-            <h2 class="profile__name">Benjamin Contreras</h2>
+            <h2 class="profile__name">[Nombre Apellido]</h2>
             <p class="profile__inst"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> [Institución · Carrera]</p>
             <p class="profile__task">Organiza los sprints, cuida el tablero de Trello y arma el gráfico Burndown.</p>
             <blockquote class="profile__quote">
@@ -148,7 +150,7 @@
               <span class="profile__avatar" aria-hidden="true">DI</span>
               <span class="profile__role"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i> Diseñador/a</span>
             </div>
-            <h2 class="profile__name">Eric Aap</h2>
+            <h2 class="profile__name">[Nombre Apellido]</h2>
             <p class="profile__inst"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> [Institución · Carrera]</p>
             <p class="profile__task">Define la paleta, la tipografía y los prototipos; ajusta el CSS después de cada revisión.</p>
             <blockquote class="profile__quote">
@@ -161,7 +163,7 @@
               <span class="profile__avatar" aria-hidden="true">PR</span>
               <span class="profile__role"><i class="fa-solid fa-code" aria-hidden="true"></i> Programador/a</span>
             </div>
-            <h2 class="profile__name">Candela Velazquez</h2>
+            <h2 class="profile__name">[Nombre Apellido]</h2>
             <p class="profile__inst"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> [Institución · Carrera]</p>
             <p class="profile__task">Escribe el HTML y el JavaScript: menú, filtros, tablero Kanban, comparador y encuesta.</p>
             <blockquote class="profile__quote">
@@ -174,7 +176,7 @@
               <span class="profile__avatar" aria-hidden="true">QA</span>
               <span class="profile__role"><i class="fa-solid fa-bug" aria-hidden="true"></i> Tester</span>
             </div>
-            <h2 class="profile__name">Sofia Montesino</h2>
+            <h2 class="profile__name">[Nombre Apellido]</h2>
             <p class="profile__inst"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> [Institución · Carrera]</p>
             <p class="profile__task">Diseña la matriz de casos de prueba, ejecuta las pruebas y reporta los defectos encontrados.</p>
             <blockquote class="profile__quote">
@@ -196,6 +198,7 @@
       </div>
     </section>
 
+    <!-- ============ US-17 · FORMULARIO DE CONTACTO ============ -->
     <section class="section" id="contacto" aria-labelledby="contacto-title">
       <div class="container contact-layout">
         <div class="section__header contact-intro">
@@ -209,6 +212,7 @@
           </ul>
         </div>
 
+        <!-- novalidate: la validación la hace nosotros.js para mostrar mensajes propios y accesibles -->
         <form class="card contact-form" id="contactForm" novalidate>
           <div class="status-msg status-msg--danger" id="formSummary" role="alert" tabindex="-1" hidden>
             <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
@@ -266,6 +270,7 @@
           </div>
         </form>
 
+        <!-- Confirmación: se muestra en lugar del formulario al enviar -->
         <div class="card contact-success" id="contactSuccess" tabindex="-1" hidden>
           <span class="contact-success__icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
           <h3 class="heading-md">¡Mensaje enviado!</h3>
@@ -297,7 +302,7 @@
     </div>
   </footer>
 
-  <script src="../JavaScript/scrip.js"></script>
-  <script src="../JavaScript/nosotros.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/nosotros.js"></script>
 </body>
 </html>

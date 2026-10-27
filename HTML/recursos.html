@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="../CSS/base.css">
-  <link rel="stylesheet" href="../CSS/recursos.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/recursos.css">
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
@@ -120,6 +120,7 @@
   </nav>
 
   <main id="contenido">
+    <!-- ============ US-12 · GLOSARIO ============ -->
     <section class="section" id="glosario" aria-labelledby="glosario-title">
       <div class="container">
         <div class="section__header">
@@ -139,6 +140,7 @@
             <p class="field__hint" id="glossaryCount" aria-live="polite"></p>
           </div>
 
+          <!-- Índice A-Z: lo genera recursos.js -->
           <nav class="az-index" id="azIndex" aria-label="Índice alfabético del glosario"></nav>
         </div>
 
@@ -155,6 +157,7 @@
       </div>
     </section>
 
+    <!-- ============ US-13 · PREGUNTAS FRECUENTES ============ -->
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="container narrow">
         <div class="section__header">
@@ -163,6 +166,7 @@
           <p class="lead">Las dudas que más aparecen al empezar a estudiar calidad y metodologías. Podés abrir varias a la vez.</p>
         </div>
 
+        <!-- Reutiliza initDisclosures() de main.js: no hizo falta escribir JS nuevo -->
         <div class="faq-list">
           <div class="disclosure">
             <h3 class="faq-q">
@@ -272,6 +276,7 @@
       </div>
     </section>
 
+    <!-- ============ US-14 · ENLACES DE INTERÉS ============ -->
     <section class="section" id="enlaces" aria-labelledby="enlaces-title">
       <div class="container">
         <div class="section__header">
@@ -280,6 +285,8 @@
           <p class="lead">Guías oficiales, organizaciones y libros de referencia. Todos los enlaces se abren en una pestaña nueva.</p>
         </div>
 
+        <!-- Todos los links externos llevan target="_blank" rel="noopener noreferrer" (US-14).
+             main.js además los revisa por si se agrega uno sin esos atributos. -->
         <ul class="grid grid--3 link-grid">
           <li>
             <a class="link-card" data-type="pdf" href="https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Spanish-Latin-South-American.pdf" target="_blank" rel="noopener noreferrer">
@@ -325,11 +332,198 @@
             <a class="link-card" data-type="org" href="https://www.agilealliance.org/" target="_blank" rel="noopener noreferrer">
               <span class="link-card__type"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Organización</span>
               <strong class="link-card__title">Agile Alliance</strong>
-              <span class="link-card__desc">Organización global sin fines de lucro dedicada a promover los principios ágiles.</span>
+              <span class="link-card__desc">Organización sin fines de lucro que difunde los principios ágiles. Tiene un glosario muy completo.</span>
               <span class="link-card__host">agilealliance.org <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
             </a>
           </li>
+          <li>
+            <a class="link-card" data-type="org" href="https://www.scrum.org/" target="_blank" rel="noopener noreferrer">
+              <span class="link-card__type"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Organización</span>
+              <strong class="link-card__title">Scrum.org</strong>
+              <span class="link-card__desc">Fundada por Ken Schwaber. Ofrece artículos, foros y evaluaciones abiertas de Scrum.</span>
+              <span class="link-card__host">scrum.org <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-card" data-type="book" href="https://search.worldcat.org/search?q=Pressman+Ingenieria+del+software+un+enfoque+practico" target="_blank" rel="noopener noreferrer">
+              <span class="link-card__type"><i class="fa-solid fa-book" aria-hidden="true"></i> Libro</span>
+              <strong class="link-card__title">Ingeniería del software: un enfoque práctico</strong>
+              <span class="link-card__desc">Roger S. Pressman. Clásico de la carrera: procesos, modelos, calidad y pruebas.</span>
+              <span class="link-card__host">Buscar en bibliotecas · WorldCat <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-card" data-type="book" href="https://search.worldcat.org/search?q=Sommerville+Ingenieria+de+software" target="_blank" rel="noopener noreferrer">
+              <span class="link-card__type"><i class="fa-solid fa-book" aria-hidden="true"></i> Libro</span>
+              <strong class="link-card__title">Ingeniería de software</strong>
+              <span class="link-card__desc">Ian Sommerville. Muy usado para modelos de proceso, requisitos y verificación.</span>
+              <span class="link-card__host">Buscar en bibliotecas · WorldCat <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-card" data-type="book" href="https://search.worldcat.org/search?q=Kent+Beck+Extreme+Programming+Explained" target="_blank" rel="noopener noreferrer">
+              <span class="link-card__type"><i class="fa-solid fa-book" aria-hidden="true"></i> Libro</span>
+              <strong class="link-card__title">Extreme Programming Explained</strong>
+              <span class="link-card__desc">Kent Beck. El libro que presentó XP: valores, principios y prácticas.</span>
+              <span class="link-card__host">Buscar en bibliotecas · WorldCat <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-card" data-type="web" href="https://www.w3.org/WAI/standards-guidelines/wcag/es" target="_blank" rel="noopener noreferrer">
+              <span class="link-card__type"><i class="fa-solid fa-globe" aria-hidden="true"></i> Web</span>
+              <strong class="link-card__title">Pautas de accesibilidad WCAG</strong>
+              <span class="link-card__desc">Introducción en español a las pautas que usamos para revisar la accesibilidad del sitio.</span>
+              <span class="link-card__host">w3.org <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-card" data-type="pdf" href="https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf" target="_blank" rel="noopener noreferrer">
+              <span class="link-card__type"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> PDF</span>
+              <strong class="link-card__title">The Scrum Guide 2020 (inglés)</strong>
+              <span class="link-card__desc">La versión original, útil para conocer los términos en inglés que se usan en la industria.</span>
+              <span class="link-card__host">scrumguides.org <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+            </a>
+          </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ============ US-15 · EJERCICIOS ============ -->
+    <section class="section" id="ejercicios" aria-labelledby="ejercicios-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="badge badge--ink">Ejercicios y casos prácticos</span>
+          <h2 class="heading-lg" id="ejercicios-title">Practicá lo aprendido</h2>
+          <p class="lead">Resolvé cada consigna antes de mirar la solución. Las soluciones están ocultas hasta que las pidas.</p>
+        </div>
+
+        <!-- Cada solución tiene el atributo hidden en el HTML: aunque falle el JS,
+             arrancan ocultas (criterio de QA de US-15). recursos.js maneja el botón. -->
+        <div class="grid grid--pairs exercises">
+          <article class="card exercise">
+            <div class="exercise__meta"><span class="exercise__topic">Pruebas</span><span class="exercise__level">Básico</span></div>
+            <h3 class="heading-md">1. ¿Caja negra o caja blanca?</h3>
+            <p>Clasificá cada prueba:</p>
+            <ol class="exercise__items">
+              <li>Ingresar una fecha 31/02 en un formulario y ver qué responde.</li>
+              <li>Lograr que cada rama de un <code>if/else</code> se ejecute al menos una vez.</li>
+              <li>Comprobar que el buscador devuelva “Sin resultados” con una palabra inexistente.</li>
+            </ol>
+            <button type="button" class="btn btn--ghost exercise__toggle" aria-expanded="false" aria-controls="sol-1">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> <span>Mostrar solución</span>
+            </button>
+            <div class="exercise__solution" id="sol-1" hidden>
+              <p><strong>a) Caja negra</strong> (solo mira entrada y salida), <strong>b) caja blanca</strong> (necesita ver el código: cobertura de ramas), <strong>c) caja negra</strong>.</p>
+              <p class="exercise__rubric"><strong>Pauta:</strong> correcto si la justificación menciona si hace falta o no conocer el código.</p>
+            </div>
+          </article>
+
+          <article class="card exercise">
+            <div class="exercise__meta"><span class="exercise__topic">Pruebas</span><span class="exercise__level">Intermedio</span></div>
+            <h3 class="heading-md">2. Valores límite</h3>
+            <p>Un campo acepta edades <strong>entre 18 y 65 inclusive</strong>. ¿Qué valores probarías con la técnica de valores límite?</p>
+            <button type="button" class="btn btn--ghost exercise__toggle" aria-expanded="false" aria-controls="sol-2">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> <span>Mostrar solución</span>
+            </button>
+            <div class="exercise__solution" id="sol-2" hidden>
+              <p>Los valores en cada borde y justo afuera: <strong>17</strong> (rechaza), <strong>18</strong> (acepta), <strong>65</strong> (acepta) y <strong>66</strong> (rechaza). Muchos agregan también 19 y 64.</p>
+              <p class="exercise__rubric"><strong>Pauta:</strong> deben aparecer al menos los cuatro valores límite con su resultado esperado.</p>
+            </div>
+          </article>
+
+          <article class="card exercise">
+            <div class="exercise__meta"><span class="exercise__topic">Procesos</span><span class="exercise__level">Intermedio</span></div>
+            <h3 class="heading-md">3. Elegí el modelo</h3>
+            <p>Un hospital necesita el software de una bomba de insulina. Los requisitos los fija una normativa y cada uno debe demostrar que fue probado. ¿Qué modelo tradicional conviene y por qué?</p>
+            <button type="button" class="btn btn--ghost exercise__toggle" aria-expanded="false" aria-controls="sol-3">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> <span>Mostrar solución</span>
+            </button>
+            <div class="exercise__solution" id="sol-3" hidden>
+              <p>El <strong>modelo en V</strong>: los requisitos son estables y cada etapa de definición tiene su nivel de prueba asociado, lo que da la trazabilidad que exige una auditoría en un sistema crítico.</p>
+              <p class="exercise__rubric"><strong>Pauta:</strong> debe mencionar requisitos estables y trazabilidad entre requisitos y pruebas.</p>
+            </div>
+          </article>
+
+          <article class="card exercise">
+            <div class="exercise__meta"><span class="exercise__topic">Scrum</span><span class="exercise__level">Intermedio</span></div>
+            <h3 class="heading-md">4. Velocidad del equipo</h3>
+            <p>En los últimos tres sprints el equipo terminó 18, 22 y 20 puntos de historia. El Product Backlog tiene 120 puntos pendientes. ¿Cuántos sprints harían falta, aproximadamente?</p>
+            <button type="button" class="btn btn--ghost exercise__toggle" aria-expanded="false" aria-controls="sol-4">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> <span>Mostrar solución</span>
+            </button>
+            <div class="exercise__solution" id="sol-4" hidden>
+              <p>Velocidad promedio = (18 + 22 + 20) ÷ 3 = <strong>20 puntos por sprint</strong>. Sprints necesarios = 120 ÷ 20 = <strong>6 sprints</strong>.</p>
+              <p class="exercise__rubric"><strong>Pauta:</strong> se acepta si aclara que es una estimación: el backlog cambia y la velocidad también.</p>
+            </div>
+          </article>
+
+          <article class="card exercise">
+            <div class="exercise__meta"><span class="exercise__topic">Kanban</span><span class="exercise__level">Avanzado</span></div>
+            <h3 class="heading-md">5. Ley de Little</h3>
+            <p>Un equipo de soporte tiene en promedio <strong>12 tickets en curso</strong> y resuelve <strong>4 tickets por día</strong>. ¿Cuál es su tiempo de ciclo promedio? ¿Qué pasa si bajan el WIP a 8?</p>
+            <button type="button" class="btn btn--ghost exercise__toggle" aria-expanded="false" aria-controls="sol-5">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> <span>Mostrar solución</span>
+            </button>
+            <div class="exercise__solution" id="sol-5" hidden>
+              <p>Tiempo de ciclo = WIP ÷ rendimiento = 12 ÷ 4 = <strong>3 días</strong>. Con WIP 8 y el mismo rendimiento: 8 ÷ 4 = <strong>2 días</strong>. Limitar el trabajo en curso hace que cada ticket termine antes.</p>
+              <p class="exercise__rubric"><strong>Pauta:</strong> ambos cálculos correctos y la conclusión sobre el efecto de limitar el WIP.</p>
+            </div>
+          </article>
+
+          <article class="card exercise">
+            <div class="exercise__meta"><span class="exercise__topic">Calidad</span><span class="exercise__level">Básico</span></div>
+            <h3 class="heading-md">6. Características ISO/IEC 25010</h3>
+            <p>¿Qué característica de calidad se ve afectada en cada caso?</p>
+            <ol class="exercise__items">
+              <li>La página tarda 9 segundos en cargar.</li>
+              <li>Un usuario con lector de pantalla no puede usar el menú.</li>
+              <li>Cambiar un color obliga a editar 12 archivos.</li>
+            </ol>
+            <button type="button" class="btn btn--ghost exercise__toggle" aria-expanded="false" aria-controls="sol-6">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> <span>Mostrar solución</span>
+            </button>
+            <div class="exercise__solution" id="sol-6" hidden>
+              <p><strong>a) Eficiencia de desempeño</strong> (comportamiento temporal), <strong>b) usabilidad</strong> (accesibilidad), <strong>c) mantenibilidad</strong> (modularidad).</p>
+              <p class="exercise__rubric"><strong>Pauta:</strong> se acepta nombrar la característica; la subcaracterística suma puntos.</p>
+            </div>
+          </article>
+
+          <article class="card exercise exercise--case">
+            <div class="exercise__meta"><span class="exercise__topic">Caso práctico</span><span class="exercise__level">Avanzado</span></div>
+            <h3 class="heading-md">7. Escribí una historia de usuario</h3>
+            <p>Para este mismo sitio, escribí la historia del buscador del glosario con el formato “Como… quiero… para…” y al menos tres criterios de aceptación verificables.</p>
+            <button type="button" class="btn btn--ghost exercise__toggle" aria-expanded="false" aria-controls="sol-7">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> <span>Mostrar solución</span>
+            </button>
+            <div class="exercise__solution" id="sol-7" hidden>
+              <p><strong>Historia:</strong> Como estudiante, quiero buscar un término en el glosario para encontrar su definición sin recorrer toda la lista.</p>
+              <p><strong>Criterios de aceptación:</strong></p>
+              <ul class="exercise__items">
+                <li>Al escribir, la lista se filtra sin recargar la página.</li>
+                <li>La búsqueda ignora mayúsculas y tildes (“integracion” encuentra “Integración”).</li>
+                <li>Si no hay coincidencias, se muestra “Sin resultados” y un botón para limpiar.</li>
+              </ul>
+              <p class="exercise__rubric"><strong>Pauta:</strong> la historia debe cumplir INVEST y cada criterio debe poder probarse con un sí o un no.</p>
+            </div>
+          </article>
+
+          <article class="card exercise exercise--case">
+            <div class="exercise__meta"><span class="exercise__topic">Caso práctico</span><span class="exercise__level">Avanzado</span></div>
+            <h3 class="heading-md">8. Diagnóstico de un sprint</h3>
+            <p>En la Retrospectiva, el equipo cuenta que la Daily dura 45 minutos, que el Product Owner cambió el Objetivo del Sprint a mitad de camino y que nadie sabía si una historia estaba “terminada”. Identificá tres problemas y una mejora para cada uno.</p>
+            <button type="button" class="btn btn--ghost exercise__toggle" aria-expanded="false" aria-controls="sol-8">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> <span>Mostrar solución</span>
+            </button>
+            <div class="exercise__solution" id="sol-8" hidden>
+              <ul class="exercise__items">
+                <li><strong>Daily larga:</strong> respetar los 15 minutos; los temas largos se tratan después con quien corresponda.</li>
+                <li><strong>Objetivo cambiado:</strong> el Objetivo del Sprint no cambia durante el sprint; si pierde sentido, el PO puede cancelar el sprint.</li>
+                <li><strong>“Terminado” ambiguo:</strong> acordar y publicar una Definición de Hecho.</li>
+              </ul>
+              <p class="exercise__rubric"><strong>Pauta:</strong> un punto por problema bien identificado y otro por mejora alineada con la Guía Scrum.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
@@ -349,7 +543,7 @@
     </div>
   </footer>
 
-  <script src="../JavaScript/scrip.js"></script>
-  <script src="../JavaScript/recursos.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/recursos.js"></script>
 </body>
 </html>

@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="../CSS/base.css">
-  <link rel="stylesheet" href="../CSS/interactivo.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/interactivo.css">
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
@@ -118,6 +118,7 @@
   </nav>
 
   <main id="contenido">
+    <!-- ============ US-18 · COMPARADOR DE METODOLOGÍAS ============ -->
     <section class="section" id="comparador" aria-labelledby="comparador-title">
       <div class="container">
         <div class="section__header">
@@ -167,6 +168,7 @@
       </div>
     </section>
 
+    <!-- ============ US-19 · ENCUESTA METODOLÓGICA (WIZARD) ============ -->
     <section class="section" id="encuesta" aria-labelledby="encuesta-title">
       <div class="container narrow">
         <div class="section__header">
@@ -188,6 +190,7 @@
             </div>
           </div>
 
+          <!-- Paso actual: lo dibuja interactivo.js -->
           <form class="wizard__step" id="wizardForm" novalidate>
             <fieldset>
               <legend class="wizard__question" id="wizardQuestion" tabindex="-1"></legend>
@@ -207,6 +210,7 @@
             </div>
           </form>
 
+          <!-- Resultado -->
           <div class="wizard__result" id="wizardResult" hidden>
             <h3 class="heading-lg wizard__result-title" id="resultTitle" tabindex="-1"></h3>
             <p class="lead" id="resultText"></p>
@@ -243,7 +247,7 @@
     </div>
   </footer>
 
-  <script src="../JavaScript/scrip.js"></script>
-  <script src="../JavaScript/interactivo.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/interactivo.js"></script>
 </body>
 </html>

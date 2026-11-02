@@ -121,7 +121,7 @@
   </nav>
 
   <main id="contenido">
-    <!-- ============ US-12 · GLOSARIO ============ -->
+    <!-- US-12 · GLOSARIO -->
     <section class="section" id="glosario" aria-labelledby="glosario-title">
       <div class="container">
         <div class="section__header">
@@ -141,7 +141,6 @@
             <p class="field__hint" id="glossaryCount" aria-live="polite"></p>
           </div>
 
-          <!-- Índice A-Z: lo genera recursos.js -->
           <nav class="az-index" id="azIndex" aria-label="Índice alfabético del glosario"></nav>
         </div>
 
@@ -158,7 +157,7 @@
       </div>
     </section>
 
-    <!-- ============ US-13 · PREGUNTAS FRECUENTES ============ -->
+    <!-- US-13 ·-->
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="container narrow">
         <div class="section__header">
@@ -277,7 +276,7 @@
       </div>
     </section>
 
-    <!-- ============ US-14 · ENLACES DE INTERÉS ============ -->
+    <!-- US-14 · ENLACES DE INTERÉS-->
     <section class="section" id="enlaces" aria-labelledby="enlaces-title">
       <div class="container">
         <div class="section__header">
@@ -286,8 +285,7 @@
           <p class="lead">Guías oficiales, organizaciones y libros de referencia. Todos los enlaces se abren en una pestaña nueva.</p>
         </div>
 
-        <!-- Todos los links externos llevan target="_blank" rel="noopener noreferrer" (US-14).
-             main.js además los revisa por si se agrega uno sin esos atributos. -->
+        
         <ul class="grid grid--3 link-grid">
           <li>
             <a class="link-card" data-type="pdf" href="https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Spanish-Latin-South-American.pdf" target="_blank" rel="noopener noreferrer">
@@ -389,7 +387,7 @@
       </div>
     </section>
 
-    <!-- ============ US-15 · EJERCICIOS ============ -->
+    <!-- US-15 · EJERCICIOS  -->
     <section class="section" id="ejercicios" aria-labelledby="ejercicios-title">
       <div class="container">
         <div class="section__header">
@@ -398,8 +396,6 @@
           <p class="lead">Resolvé cada consigna antes de mirar la solución. Las soluciones están ocultas hasta que las pidas.</p>
         </div>
 
-        <!-- Cada solución tiene el atributo hidden en el HTML: aunque falle el JS,
-             arrancan ocultas (criterio de QA de US-15). recursos.js maneja el botón. -->
         <div class="grid grid--pairs exercises">
           <article class="card exercise">
             <div class="exercise__meta"><span class="exercise__topic">Pruebas</span><span class="exercise__level">Básico</span></div>
